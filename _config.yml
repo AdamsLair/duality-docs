@@ -1,1 +1,7 @@
 theme: jekyll-theme-minimal
+
+header_pages:
+  - about.md
+  - portfolio.md
+
+rss: https://blog.adamslair.net/feed.xml
