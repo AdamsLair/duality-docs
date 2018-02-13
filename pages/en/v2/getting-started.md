@@ -23,7 +23,7 @@ Your first step should be to check whether your system meets all the requirement
 
 That's it! You have successfully installed Duality.
 
-[[/img/GettingStarted/DualitorSplash.png|align=center]]
+[[../../img/GettingStarted/DualitorSplash.png|align=center]]
 
 # Setting up a Project
 
@@ -37,7 +37,7 @@ A Duality project spans the folder in which editor and engine application are lo
 
 There you are, sitting in front of your computer screen and staring at some grey-ish thing named Dualitor. What next? Where is the game content going to be? When do you get to write some code? What are all these areas and why are they _all empty?_ Well. May I Introduce?
 
-[[/img/GettingStarted/DualitorViews.png|align=center]]
+[[../../img/GettingStarted/DualitorViews.png|align=center]]
 
 1. **Project View:** This area is essentially a filtered file system browser rooted at your project's Data folder. In other words: This is where all your game content goes. It shows all the Resources your project has and the ones that are embedded in Duality itself. The latter ones are called `Default` and are always available.
 2. **Scene View:** While the Project View deals with Resources, the Scene View deals with Gameobjects and Components. It shows the contents of the currently active Scene as a hierarchial scene graph.
@@ -51,20 +51,20 @@ There you are, sitting in front of your computer screen and staring at some grey
 
 Time to get your hands on actual development. Let's start with something simple, a space shooter maybe. Space has the advantage of being completely empty, which naturally ressembles the state of a new project, so we're authentic right from the beginning. All we need to do now is fill the void with _stuff_. Here's a background and a space ship. Download them:
 
-[[/img/GettingStarted/SpaceBg.png|align=center]]
-[[/img/GettingStarted/ShipOne.png|align=center]]
+[[../../img/GettingStarted/SpaceBg.png|align=center]]
+[[../../img/GettingStarted/ShipOne.png|align=center]]
 
 Grab the image files you downloaded, drag them onto the Dualitor and drop them at the Project View. Two new **Pixmap** Resources will appear; Pixmap is short for _pixel map_ and represents an image as it has been imported into Duality's Resource file format. Resources are project-global data that represent your game's content. Note that, once imported, Resources are quite self-sufficient and never rely on external files to get their data from. You can safely delete the two files you downloaded and those Pixmaps just don't mind.
 
-[[/img/GettingStarted/ImportResources.png|align=center]]
+[[../../img/GettingStarted/ImportResources.png|align=center]]
 
 However, Resources are just some static data and space certainly isn't filled with _data_. It's filled with objects, so let's construct some. Select the two Pixmaps in the Project View and dragdrop them onto the Camera View or Scene View. You will see two objects appear: A space ship and the background. You can move, rotate or scale them around in the Camera View.
 
-[[/img/GettingStarted/CreateObjects.png|align=center]]
+[[../../img/GettingStarted/CreateObjects.png|align=center]]
 
 Before proceeding we should take a closer look at what just happened. It was a single dragdrop action to create two Gameobjects from two Pixmaps, but Dualitor did a lot of things in the background to make that possible. First, look at the Project View: You'll notice that there now are six Resources instead of two! The thing is, plain, raw pixel data isn't sufficient for being used during the rendering process. It needs to be configured and transferred to the graphics card, which is what a **Texture** Resource represents. But a single Texture isn't enough either, since one might use multiple textures and additional data to display a single object. Describing how to display a single object is the job of **Material** Resources.
 
-[[/img/GettingStarted/AutoGenResources.png|align=center]]
+[[../../img/GettingStarted/AutoGenResources.png|align=center]]
 
 When you dragged your newly created Pixmaps into the Scene or Camera View, Duality recognized that you were about to create some objects using them - so it quickly provided the appropriate Textures and Materials as well. You could have created them yourself beforehand, but since you didn't, Duality did. 
 
@@ -72,21 +72,21 @@ When you dragged your newly created Pixmaps into the Scene or Camera View, Duali
 
 Now take a look at the Gameobjects that have been created by your dragdrop action. They are displayed as yellow boxes in the Scene View. Expand them and you will see that each of those objects in fact seems to consist of two pieces: Transform and SpriteRenderer. 
 
-[[/img/GettingStarted/AutoGenGameObjects.png|align=center]]
+[[../../img/GettingStarted/AutoGenGameObjects.png|align=center]]
 
 These pieces are called Components and they are what all Gameobjects get their behavior and properties from. Each Component carries one single bit of functionality and cares for nothing else: **Transform** provides Position, Rotation and Scale properties to locate an object in space. **SpriteRenderer** displays an object as a sprite. A Gameobjects job is to take a group of distinct Components and pack them together into one entity, so the resulting objects are both located in space and rendered as a sprite. Since each Gameobject is composed dynamically, adding or removing functionality to existing objects is easy, as it purely depends on what Components it carries.
 
 If you navigate through the current Scene (Remember: Mouse Wheel / Right Mouse Button) you will notice that both ship and background are placed on the same layer: The background doesn't really seem far away and it might even show up in front of the ship! That's not how it should look like, so let's change it. Select the `SpaceBg` Gameobject and the Object Inspector will display its properties, tabbed by Component. Open the Transform tab by clicking the plus sign on its left. Set the **Position** property to (0, 0, 9500). These coordinates describe the object's location in X (left to right), Y (top to bottom) and Z (near to far).
 
-[[/img/GettingStarted/MoveSpaceBg.png|align=center]]
+[[../../img/GettingStarted/MoveSpaceBg.png|align=center]]
 
 When moving the Camera View now, the background has the appropriate distance but is far too small to cover our view. Set the **Scale** property to 25 in order to compensate. Move again to see if it looks good and adjust Position and Scale until you're content.
 
-[[/img/GettingStarted/ScaleSpaceBg.png|align=center]]
+[[../../img/GettingStarted/ScaleSpaceBg.png|align=center]]
 
 To prevent us from accidently selecting, moving or scaling the background object from now on, right-click on it in the Scene View and select `Lock / Hide` object. This is a pure editor setting that will have no effect on the actual game environment. Locked objects will appear greyed out in the Scene View and cannot be selected by hovering or clicking inside the Camera View.
 
-[[/img/GettingStarted/LockSpaceBg.png|align=center]]
+[[../../img/GettingStarted/LockSpaceBg.png|align=center]]
 
 ## Physics and Collision Detection
 
@@ -97,11 +97,11 @@ After configuring the background, we should do the same for the player ship. Rig
 
 For this tutorial, we'll use the second approach. Right-click on the player ship Gameobject and select `New / Physics / RigidBody`. A RigidBody defines an object's shape and other physical properties like mass, friction or restitution. Rigid bodies can collide and interact with each other. Note that Duality physics is purely two-dimensional. An object's Z value is simply ignored during simulation.
 
-[[/img/GettingStarted/AddRigidBody.png|align=center]]
+[[../../img/GettingStarted/AddRigidBody.png|align=center]]
 
 By default, RigidBody Components assume a circular shape. Since our space ship isn't a ball, we should fix that. Click on the Camera View combobox that says `Scene Editor` and switch it to `RigidBody Editor`.
 
-[[/img/GettingStarted/SwitchToRigidBodyEditor.png|align=center]]
+[[../../img/GettingStarted/SwitchToRigidBodyEditor.png|align=center]]
 
 You should see the ship object and an overlay that shows its physical shape - a circle. Select and delete it to make way for a more accurate representation. Now use the shape tools in the toolbar above to define a new shape. (Keep in mind that you can always zoom in using the Mouse Wheel.) It doesn't matter how many primitives you add or how you configure them - as long as they belong to a single RigidBody, they will act as one physical object.
 
@@ -110,47 +110,47 @@ However, there are two things to keep in mind:
 1. By default, an object's mass is calculated based on the total area occupied by all of the primitive shapes. Overlapping shapes might make an object appear unusually heavy - you might want to avoid (or use) that. If you aren't content with the automatic mass calculation, you can always enter an explicit value in the respective RigidBody property.
 2. Each shape adds a little complexity to the physical simulation. For performance reasons, you should always use the simplest shape that you can get away with. When defining polygons, each edge adds complexity. Circles are generally easiest to calculate but aren't always suitable.
 
-[[/img/GettingStarted/DefineShipShape.png|align=center]]
+[[../../img/GettingStarted/DefineShipShape.png|align=center]]
 
 ## Testing the Scene Setup
 
 After defining the ship's shape, be sure to switch back to the Scene Editor mode. Let's see what happens when we run the game. In Duality, you don't need to actually run the game to see that: The editing environment has a built-in testing mode called **Sandbox**, which allows you to see the game in action while at the same time being able to use full editing functionality. The current Scene's state is saved when entering the Sandbox and restored after exiting it. However, the current Scene has never been saved anywhere, so we better do it now. Click on the `Save Scene` button in the Scene View and a new Scene Resource will appear in the Project View. Enter a suitable name and hit return to accept.
 
-[[/img/GettingStarted/SaveScene.png|align=center]]
+[[../../img/GettingStarted/SaveScene.png|align=center]]
 
 The current Scene is now safely stored in the Resource file that you've just named. A **Scene** Resource represents a single level or stage of your game. When double-clicking a Scene Resource in the Project View, it will be opened for editing. You don't need to do that now, because the Scene you just saved is still open. Let's see what happens when entering the Sandbox. Click `Enter Sandbox mode` in the toolbar and watch. _Here's a hint: Zoom out a little before you do it._
 
-[[/img/GettingStarted/EnterSandboxMode.png|align=center]]
+[[../../img/GettingStarted/EnterSandboxMode.png|align=center]]
 
 As you will notice, the ship falls down. Why? Because by default, Duality applies gravity to all physical objects. In space, however, there shouldn't be any gravity. To fix that, exit the Sandbox mode (This is important - otherwise, your changes will be reset after doing so later on), select the Scene Resource in the Project View and adjust its **GlobalGravity** property to (0, 0). When you hit Play again, the space ship will no longer fall down. 
 
 The Sandbox is a good way to test how certain things behave when running the game, and you can use all of Dualitor's editing functionality during debug sessions. You can even go one step further and actually play the game inside the editor. The Camera View has a special mode for that. It's called `Game View` and can be selected the same way you selected the `RigidBody Editor` before. However, we don't want to lose the Scene Editor so it'll be best to open a second Camera View. Click on `View / Camera`. 
 
-[[/img/GettingStarted/CreateCamView.png|align=center]]
+[[../../img/GettingStarted/CreateCamView.png|align=center]]
 
 A new Camera View will open tabbed to the existing one. Grab the tab and and drag it onto the bottom of the screen to lay them out next to each other.
 
-[[/img/GettingStarted/LayoutCamView.png|align=center]]
+[[../../img/GettingStarted/LayoutCamView.png|align=center]]
 
 Now that we have both views aligned vertically, switch the new one from `Scene Editor` to `Game View`. It will now show you the current Scene view the same way it would when running the game. But why is it _all black?_ Did we miss something?
 
 Yes, we actually did: While each Camera View provides its own internal Camera object to observe the Scene for editing purposes, we never created an actual Camera object for the game itself. When using the `Game View` mode, we see the Scene through the eyes of its observer - but there is none! Only the two Gameobjects for player ship and background, but neither of them carries a Camera Component. So let's create a Camera object for our Scene.
 
-[[/img/GettingStarted/CreateCamera.png|align=center]]
+[[../../img/GettingStarted/CreateCamera.png|align=center]]
 
 Right-click on an empty spot in the Scene View and select `New / Graphics / Camera`. You will notice that the Game View now shows our background image, but not the space ship. That's because it is too near to be seen. Select the newly created Camera object and set its Position to (0, 0, -500). You should now see both background and space ship in the Game View. 
 
-[[/img/GettingStarted/GameViewWithCamera.png|align=center]]
+[[../../img/GettingStarted/GameViewWithCamera.png|align=center]]
 
 To be complete, right-click on the Camera Gameobject in the Scene View and select `New / Sound / SoundListener`. This will allow our Camera object to not only receive visuals, but also audio of any kind. 
 
-[[/img/GettingStarted/CreateSoundListener.png|align=center]]
+[[../../img/GettingStarted/CreateSoundListener.png|align=center]]
 
 # Writing Code
 
 Enough with all the preparations. Time to write some code! Click on the `Open Sourcecode` button in the upper left to bring up Visual Studio with the game plugin project open. While other game frameworks are referenced and used by your own code, Duality does the reverse: In a Duality game, it's not your code that is using the engine - the engine is using your code! Every custom Component, each and every feature you implement is compiled to a Plugin .dll file, which Duality will load and use as it sees fit. The Visual Studio solution that is opened using that button contains a new project that is a fully configured Duality Plugin - ready to be filled with your code.
 
-[[/img/GettingStarted/OpenSourcecode.png|align=center]]
+[[../../img/GettingStarted/OpenSourcecode.png|align=center]]
 
 In the Solution Explorer you will see two code files are already part of the project: `CorePlugin.cs` and `YourCustomComponentType.cs`. The first one identifies your Duality plugin and provides an interface for global logic. For now, leave it alone. Instead, rename `YourCustomComponentType.cs` to `Player.cs` and do the same to the class that is defined within this file. Open it and you should see the following code:
 
@@ -225,17 +225,17 @@ That's all we need for now. Right-click on the `CorePlugin` project (not the .cs
 
 Running your game in the editor is fine as a first test - but sooner or later, you'll want to publish your game, or run it as a standalone application. That application is called **`DualityLauncher.exe`** and is also available through the editor UI. Click on the `Run Game` button in the toolbar.
 
-[[/img/GettingStarted/RunGameButton.png|align=center]]
+[[../../img/GettingStarted/RunGameButton.png|align=center]]
 
 You will see a Console window popping up (this won't show up when running outside the editor), followed by your game (it runs windowed). After a few moments of tense anticipation, you will see.. nothing. Black emptiness. Why doesn't it show the Scene we just tested in the editor? Easy: Because we never told it to do so. In general, Duality applications can be configured in various ways: While `UserData` holds anything you'd expect to appear in a games Options or Setup menu, there is also the so called `AppData` which carries everything else: Version numbers, author names, universal constants - and the starting Scene. To assign our new Scene as starting Scene, click on `Settings / Application Data`.
 
-[[/img/GettingStarted/EditAppData.png|align=center]]
+[[../../img/GettingStarted/EditAppData.png|align=center]]
 
 Then, grab our test Scene Resource from the Project View and drag it onto the `StartScene` property in the Object Inspector. When clicking `Run Game` again (or running `DualityLauncher.exe` manually), you should see the test Scene and be able to fly around using your space ship. In case you want to do it in fullscreen mode, click on `Settings / Default User Data` and set the `GfxMode` property to `Native`. _Beware: We didn't yet implement any way to end the game, so you'll probably need the task manager to shut down the game from fullscreen._
 
 There is also a third way to run the game and it is especially useful for debugging: Switch to Visual Studio and click `Start Debugging` or press `F5`. Not only will it run the game as standalone application, it will also attach the debugger. Try it! Set a breakpoint in your custom Player Component code and step through it.
 
-[[/img/GettingStarted/DebugGameBreak.png|align=center]]
+[[../../img/GettingStarted/DebugGameBreak.png|align=center]]
 
 If you use the Professional or Community version of Visual Studio, you can also attach the debugger manually - to both the standalone app and the editor.
 
