@@ -235,7 +235,7 @@ Then, grab our test Scene Resource from the Project View and drag it onto the `S
 
 There is also a third way to run the game and it is especially useful for debugging: Switch to Visual Studio and click `Start Debugging` or press `F5`. Not only will it run the game as standalone application, it will also attach the debugger. Try it! Set a breakpoint in your custom Player Component code and step through it.
 
-![Debug Game Break](../../img/GettingStarted/DebugGameBreak.png)
+![Debug Game Break][DebugGameBreak]
 
 If you use the Professional or Community version of Visual Studio, you can also attach the debugger manually - to both the standalone app and the editor.
 
@@ -248,3 +248,5 @@ Although it might be tempting to hide both source code and game Resources from p
 If you're reading this, you've probably completed this tutorial. So far so good - but what you've got is hardly a game. There may be a lot of open questions, more than a quick intro article like this can cover. How to proceed? First of all, there is the integrated help system (called "Advisor", as you may recall) and the API reference you can invoke via F1 or by opening `DDoc.chm` from the Duality installation package. It explains a lot of vital concepts and may prove to be a helpful source of information. When encountering problems that you can't seem to solve by yourself or just want to ask some questions, a visit to the [Duality forums](http://forum.adamslair.net/) might pay off, especially the [tutorial section](http://forum.adamslair.net/viewforum.php?f=17) where you can find a lot of other sources for learning.
 
 Other than that - learning by doing is a really powerful concept and Duality does its best to nudge you in the right direction. Explore the possibilities. Click all the buttons and use all the API methods. Create a game prototype. Even better: Create a lot of game prototypes. And most importantly: Have fun! :)
+
+[DebugGameBreak]: ../../img/GettingStarted/DebugGameBreak.png
