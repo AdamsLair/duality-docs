@@ -249,4 +249,4 @@ If you're reading this, you've probably completed this tutorial. So far so good 
 
 Other than that - learning by doing is a really powerful concept and Duality does its best to nudge you in the right direction. Explore the possibilities. Click all the buttons and use all the API methods. Create a game prototype. Even better: Create a lot of game prototypes. And most importantly: Have fun! :)
 
-[DebugGameBreak]: ../../img/GettingStarted/DebugGameBreak.png
+[DebugGameBreak]: {{ site.baseurl }}/img/GettingStarted/DebugGameBreak.png
