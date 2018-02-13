@@ -235,7 +235,7 @@ Then, grab our test Scene Resource from the Project View and drag it onto the `S
 
 There is also a third way to run the game and it is especially useful for debugging: Switch to Visual Studio and click `Start Debugging` or press `F5`. Not only will it run the game as standalone application, it will also attach the debugger. Try it! Set a breakpoint in your custom Player Component code and step through it.
 
-![Debug Game Break]({{ site.baseurl }}/img/GettingStarted/DebugGameBreak.png)
+![Debug Game Break](../../img/GettingStarted/DebugGameBreak.png)
 
 If you use the Professional or Community version of Visual Studio, you can also attach the debugger manually - to both the standalone app and the editor.
 
