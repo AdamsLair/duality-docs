@@ -225,11 +225,11 @@ That's all we need for now. Right-click on the `CorePlugin` project (not the .cs
 
 Running your game in the editor is fine as a first test - but sooner or later, you'll want to publish your game, or run it as a standalone application. That application is called **`DualityLauncher.exe`** and is also available through the editor UI. Click on the `Run Game` button in the toolbar.
 
-<center><img src="../../img/GettingStarted/RunGameButton.png" /></center>
+![Run Game Button][RunGameButton]
 
 You will see a Console window popping up (this won't show up when running outside the editor), followed by your game (it runs windowed). After a few moments of tense anticipation, you will see.. nothing. Black emptiness. Why doesn't it show the Scene we just tested in the editor? Easy: Because we never told it to do so. In general, Duality applications can be configured in various ways: While `UserData` holds anything you'd expect to appear in a games Options or Setup menu, there is also the so called `AppData` which carries everything else: Version numbers, author names, universal constants - and the starting Scene. To assign our new Scene as starting Scene, click on `Settings / Application Data`.
 
-<center><img src="../../img/GettingStarted/EditAppData.png" /></center>
+![Edit App Data][EditAppData]
 
 Then, grab our test Scene Resource from the Project View and drag it onto the `StartScene` property in the Object Inspector. When clicking `Run Game` again (or running `DualityLauncher.exe` manually), you should see the test Scene and be able to fly around using your space ship. In case you want to do it in fullscreen mode, click on `Settings / Default User Data` and set the `GfxMode` property to `Native`. _Beware: We didn't yet implement any way to end the game, so you'll probably need the task manager to shut down the game from fullscreen._
 
@@ -245,8 +245,13 @@ Although it might be tempting to hide both source code and game Resources from p
 
 # What next?
 
-If you're reading this, you've probably completed this tutorial. So far so good - but what you've got is hardly a game. There may be a lot of open questions, more than a quick intro article like this can cover. How to proceed? First of all, there is the integrated help system (called "Advisor", as you may recall) and the API reference you can invoke via F1 or by opening `DDoc.chm` from the Duality installation package. It explains a lot of vital concepts and may prove to be a helpful source of information. When encountering problems that you can't seem to solve by yourself or just want to ask some questions, a visit to the [Duality forums](http://forum.adamslair.net/) might pay off, especially the [tutorial section](http://forum.adamslair.net/viewforum.php?f=17) where you can find a lot of other sources for learning.
+If you're reading this, you've probably completed this tutorial. So far so good - but what you've got is hardly a game. There may be a lot of open questions, more than a quick intro article like this can cover. How to proceed? First of all, there is the integrated help system (called "Advisor", as you may recall) and the API reference you can invoke via F1 or by opening `DDoc.chm` from the Duality installation package. It explains a lot of vital concepts and may prove to be a helpful source of information. When encountering problems that you can't seem to solve by yourself or just want to ask some questions, a visit to the [Duality forums][DualityForums] might pay off, especially the [tutorial section][TutorialSection] where you can find a lot of other sources for learning.
 
 Other than that - learning by doing is a really powerful concept and Duality does its best to nudge you in the right direction. Explore the possibilities. Click all the buttons and use all the API methods. Create a game prototype. Even better: Create a lot of game prototypes. And most importantly: Have fun! :)
 
+[RunGameButton]: ../../img/GettingStarted/RunGameButton.png
+[EditAppData]: ../../img/GettingStarted/EditAppData.png
 [DebugGameBreak]: ../../img/GettingStarted/DebugGameBreak.png
+
+[DualityForums]: http://forum.adamslair.net/
+[TutorialSection]: http://forum.adamslair.net/viewforum.php?f=17
