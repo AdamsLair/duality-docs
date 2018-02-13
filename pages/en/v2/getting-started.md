@@ -23,7 +23,7 @@ Your first step should be to check whether your system meets all the requirement
 
 That's it! You have successfully installed Duality.
 
-[[../../img/GettingStarted/DualitorSplash.png|align=center]]
+<center><img src="../../img/GettingStarted/DualitorSplash.png" /></center>
 
 # Setting up a Project
 
