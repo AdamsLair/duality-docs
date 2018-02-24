@@ -192,6 +192,8 @@ main {
     border: 1px solid #ccc;
   }
 
+  /* Markdown tables will be displayed so that 
+   * each column has the same width. Faster and cleaner. */
   table {
     table-layout: fixed;
   }
@@ -228,6 +230,12 @@ footer {
   width: 100%;
   nav.sidebar, main {
     display: table-cell;
+  }
+  @media (max-width: 1120px) {
+    .nav.sidebar, main {
+        display: block;
+        width: 100%;
+    }
   }
 }
 
