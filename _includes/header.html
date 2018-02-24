@@ -22,17 +22,19 @@
 <header>
   <div class="wrapper">
     <div class="site-title">
-      <a href="{{ site.baseurl }}/">{{ site.title }}</a>
-      <span>{{ site.description }}</span>
+      <a href="{{ site.baseurl }}/">{{ site.title | default: site.github.repository_name }}</a>
+      <span>{{ site.description | default: site.github.project_tagline }}</span>
     </div>
 	</div>
     <nav class="site-nav">
       {% for page in site.pages %}
+        <span style="visibility:hidden;">Page: {{ page.title }}</span>
         {% if page.title and page.public %}
         <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
         {% endif %}
       {% endfor %}
       {% for link in site.links %}
+        <span style="visibility:hidden;">Link: {{ link.title }}</span>
         {% if link.title %}
         <a class="external-link" href="{{ link.url }}">{{ link.title }}</a>
         {% endif %}

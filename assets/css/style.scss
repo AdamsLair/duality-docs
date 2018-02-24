@@ -5,11 +5,12 @@
 
 /* Reset default theme settings where needed */
 
-header {
+header, footer, section {
   width: initial;
   float: initial;
   position: initial;
-
+}
+header {
   ul {
     list-style: initial;
     height: initial;
@@ -48,10 +49,15 @@ header {
     border-radius: initial;
   }
 }
+footer {
+  bottom: initial;
+}
 
 /* Override style values we care about */
 
 body {
+  margin: 0;
+  padding: 0;
   font-size: 15px;
   line-height: 1.4;
 }

@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<html lang="{{ site.lang | default: " en-US " }}">
   {% include head.html %}
-  <body>
-  
-    {% include header.html %}
-    
-    <div class="wrapper">
-      <section>
-        {{ content }}
-      </section>
-    </div>
-	
-    {% include footer.html %}
-      
-    <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
-    {% include analytics.html %}
 
+  <body>
+    {% include header.html %}
+
+    <main>
+      <div class="wrapper">
+        <section>
+          {{ content }}
+        </section>
+      </div>
+    </main>
+
+    {% include footer.html %}
+    <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script> {% include analytics.html %}
   </body>
 </html>
