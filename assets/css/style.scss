@@ -207,6 +207,14 @@ footer {
   }
 }
 
+nav.sidebar {
+  display: block;
+  float: left;
+  width: 300px;
+  background: #eee;
+  padding: 20px;
+}
+
 div.wrapper {
   margin: 0 auto;
   width: auto;
