@@ -92,6 +92,9 @@ header {
   margin: 0;
   font-family: "Source Sans Pro", Helvetica, Arial;
   font-size: 15.4px;
+  @media (max-width: 600px) {
+    text-align:center;
+  }
   
   &:after {
     clear: both;
@@ -102,6 +105,9 @@ header {
   .site-title {
     float: left;
     line-height: 28px;
+    @media (max-width: 600px) {
+      float: none;
+    }
     
     a {
       color: #FFF;
@@ -113,19 +119,18 @@ header {
     span {
       color: rgba( #FFF, 0.5);
       font-size: 13px;
-    }
-    @media (max-width: 1120px) {
-      a {
-        margin-right: inherit;
-      }
-      span {
+      @media (max-width: 1120px) {
         display: none;
       }
     }
   }
+
   .site-nav {
     text-align:right;
     padding: 0px 20px;
+    @media (max-width: 600px) {
+      text-align:center;
+    }
     
     a {
       text-decoration: none;
