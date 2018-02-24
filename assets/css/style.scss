@@ -100,8 +100,16 @@ body {
   line-height: 1.4;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0;
+}
+
 p, ul, ol, th, td {
   text-align: justify;
+}
+
+p {
+  margin: 10px 0;
 }
 
 header ul a strong {
@@ -180,6 +188,12 @@ main {
     margin-bottom: 5px;
     margin-left: auto;
     margin-right: auto;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+  }
+
+  table {
+    table-layout: fixed;
   }
 }
 
@@ -189,7 +203,7 @@ footer {
   padding: 20px 0;
 
   p {
-    margin: 0 0 10px;
+    margin: 5px 0;
   }
 
   a {
@@ -210,6 +224,7 @@ footer {
 /* Side-by-side layout of sidebar and main content */
 .main-container {
   display: table;
+  table-layout: fixed;
   width: 100%;
   nav.sidebar, main {
     display: table-cell;
@@ -217,7 +232,7 @@ footer {
 }
 
 nav.sidebar {
-  width: 300px;
+  width: 275px;
   background: #eee;
   padding: 20px;
 }
