@@ -3,6 +3,54 @@
 
 @import "{{ site.theme }}";
 
+/* Reset default theme settings where needed */
+
+header {
+  width: initial;
+  float: initial;
+  position: initial;
+
+  ul {
+    list-style: initial;
+    height: initial;
+    padding: initial;
+    background: initial;
+    border-radius: initial;
+    border: initial;
+    width: initial;
+    a {
+      line-height: initial;
+      font-size: initial;
+      color: initial;
+      display: initial;
+      text-align: initial;
+      padding-top: initial;
+      height: initial;
+    }
+    a:hover, header ul a:focus {
+      color: initial;
+      font-weight: initial;
+    }
+    a:active {
+      background-color: initial;
+    }
+  }
+  li {
+    width: initial;
+    float: initial;
+    border-right: initial;
+    height: initial;
+  }
+  li:first-child a {
+    border-radius: initial;
+  }
+  li:last-child a {
+    border-radius: initial;
+  }
+}
+
+/* Override style values we care about */
+
 body {
   font-size: 15px;
   line-height: 1.4;
@@ -10,4 +58,70 @@ body {
 
 header ul a strong {
   font-size:15px;
+}
+
+header {
+	line-height: 30px;
+	background-color: #000;
+	padding: 10px;
+	margin: 0;
+	font-family: "Source Sans Pro", Helvetica, Arial;
+	font-size: 15px;
+	
+	&:after {
+		clear: both;
+		content: ' ';
+		display: block;
+	}
+	
+	.site-title {
+		float: left;
+		line-height: $base-font-size * 2;
+		
+		a {
+			color: $header-fg;
+			text-decoration: none;
+			margin-right: 10px;
+			margin-left: 20px;
+			font-weight: 600;
+		}
+		span {
+			color: rgba( $header-fg, 0.5);
+			font-size: $small-font-size;
+		}
+		@media (max-width: 1120px) {
+			a {
+				margin-right: inherit;
+			}
+			span {
+				display: none;
+			}
+		}
+	}
+	.site-nav {
+		text-align:right;
+		padding: 0px 20px;
+		
+		a {
+			text-decoration: none;
+			padding: 10px 10px;
+			color: $header-link;
+			white-space: nowrap;
+			font-weight: 600;
+		
+			&:hover, &:focus {
+				background: $header-bg-hover;
+			}
+		}
+	}
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 1100px;
+}
+@media (max-width: 1120px) {
+	.wrapper {
+		max-width: 800px;
+	}
 }
