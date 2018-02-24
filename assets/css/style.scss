@@ -180,11 +180,8 @@ header {
 main {
   padding: 20px;
   margin: 0;
-  border-color: #eee;
-  border-left: 1px solid;
-  @media (max-width: 1120px) {
-    border-right: 1px solid;
-  }
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
 
   img {
     display: block;
@@ -235,6 +232,7 @@ footer {
   width: 100%;
   nav.sidebar, main {
     display: table-cell;
+    box-sizing: border-box;
     @media (max-width: 1120px) {
       display: block;
       width: 100%;
