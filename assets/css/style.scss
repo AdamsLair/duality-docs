@@ -66,6 +66,29 @@ section {
   border: none;
 }
 
+a {
+  color:#267CB9;
+  font-weight: normal;
+  text-decoration: none;
+
+  small {
+    font-size:11px;
+    color:#267CB9;
+    margin-top: 0;
+    display: inline;
+  }
+}
+
+a:hover, a:focus {
+  color:#069;
+  font-weight: normal;
+  text-decoration: underline;
+  
+  small {
+    color:#069;
+  }
+}
+
 /*
  * Override theme with custom values
  */
@@ -155,6 +178,19 @@ footer {
   background-color: #2d2d2d;
   color: #cccccc;
   padding: 15px 0;
+
+  a {
+    color: #cccccc;
+    small {
+      color:#cccccc;
+    }
+  }
+  a:hover {
+    color: #ffffff;
+    small {
+      color:#ffffff;
+    }
+  }
 }
 
 div.wrapper {
