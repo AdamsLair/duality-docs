@@ -100,7 +100,11 @@ body {
   line-height: 1.4;
 }
 
-p {
+img {
+  text-align: center;
+}
+
+p, ul, ol, table {
   text-align: justify;
 }
 
@@ -177,7 +181,11 @@ section {
 footer {
   background-color: #2d2d2d;
   color: #cccccc;
-  padding: 15px 0;
+  padding: 20px 0;
+
+  p {
+    margin: 0 0 10px;
+  }
 
   a {
     color: #cccccc;
