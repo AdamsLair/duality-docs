@@ -1,7 +1,14 @@
+# Blog config
 theme: jekyll-theme-minimal
-
-header_pages:
-  - about.md
-  - portfolio.md
-
+title: "Duality Docs"
+description: "Developer manual for the Duality game engine"
 google_analytics: UA-39997821-2
+
+# Custom Variables
+links:
+  - title: 'Duality'
+    url: 'https://duality.adamslair.net'
+  - title: 'Forum'
+    url: 'https://forum.adamslair.net'
+  - title: 'Chat'
+    url: 'http://chat.adamslair.net'
