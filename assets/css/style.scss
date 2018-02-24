@@ -8,58 +8,62 @@
  */
 
 .wrapper, div.wrapper {
-	margin: initial;
-  width: initial;
-	max-width: initial;
+  margin: 0;
+  width: auto;
+  max-width: none;
 }
 header, footer, section {
-  width: initial;
-  float: initial;
-  position: initial;
-  padding: initial;
-  margin: initial;
+  width: auto;
+  float: none;
+  position: static;
+  padding: 0;
+  margin: 0;
 }
 header {
   ul {
-    list-style: initial;
-    height: initial;
-    padding: initial;
-    background: initial;
-    border-radius: initial;
-    border: initial;
-    width: initial;
+    list-style: disc;
+    width: auto;
+    height: auto;
+    padding: 0;
+    padding-left: 40px;
+    background: transparent;
+    border-radius: 0;
+    border: none;
     a {
-      line-height: initial;
-      font-size: initial;
-      color: initial;
-      display: initial;
-      text-align: initial;
-      padding-top: initial;
-      height: initial;
+      line-height: normal;
+      font-size: medium;
+      color: blue;
+      display: inline;
+      text-align: left;
+      padding-top: 0;
+      height: auto;
     }
     a:hover, header ul a:focus {
-      color: initial;
-      font-weight: initial;
+      color: blue;
+      font-weight: normal;
     }
     a:active {
-      background-color: initial;
+      background: transparent;
     }
   }
   li {
-    width: initial;
-    float: initial;
-    border-right: initial;
-    height: initial;
+    width: auto;
+    height: auto;
+    float: none;
+    border: none;
   }
   li:first-child a {
-    border-radius: initial;
+    border-radius: 0;
   }
   li:last-child a {
-    border-radius: initial;
+    border-radius: 0;
   }
 }
 footer {
-  bottom: initial;
+  bottom: auto;
+}
+section {
+  border: none;
 }
 
 /*
@@ -82,59 +86,59 @@ header ul a strong {
 }
 
 header {
-	line-height: 28px;
-	background-color: #000;
-	padding: 10px;
-	margin: 0;
-	font-family: "Source Sans Pro", Helvetica, Arial;
-	font-size: 15.4px;
-	
-	&:after {
-		clear: both;
-		content: ' ';
-		display: block;
-	}
-	
-	.site-title {
-		float: left;
-		line-height: 28px;
-		
-		a {
-			color: #FFF;
-			text-decoration: none;
-			margin-right: 10px;
-			margin-left: 20px;
-			font-weight: 600;
-		}
-		span {
-			color: rgba( #FFF, 0.5);
-			font-size: 13px;
-		}
-		@media (max-width: 1120px) {
-			a {
-				margin-right: inherit;
-			}
-			span {
-				display: none;
-			}
-		}
-	}
-	.site-nav {
-		text-align:right;
-		padding: 0px 20px;
-		
-		a {
-			text-decoration: none;
-			padding: 10px 10px;
-			color: #BBB;
-			white-space: nowrap;
-			font-weight: 600;
-		
-			&:hover, &:focus {
-				background: #333;
-			}
-		}
-	}
+  line-height: 28px;
+  background-color: #000;
+  padding: 10px;
+  margin: 0;
+  font-family: "Source Sans Pro", Helvetica, Arial;
+  font-size: 15.4px;
+  
+  &:after {
+    clear: both;
+    content: ' ';
+    display: block;
+  }
+  
+  .site-title {
+    float: left;
+    line-height: 28px;
+    
+    a {
+      color: #FFF;
+      text-decoration: none;
+      margin-right: 10px;
+      margin-left: 20px;
+      font-weight: 600;
+    }
+    span {
+      color: rgba( #FFF, 0.5);
+      font-size: 13px;
+    }
+    @media (max-width: 1120px) {
+      a {
+        margin-right: inherit;
+      }
+      span {
+        display: none;
+      }
+    }
+  }
+  .site-nav {
+    text-align:right;
+    padding: 0px 20px;
+    
+    a {
+      text-decoration: none;
+      padding: 10px 10px;
+      color: #BBB;
+      white-space: nowrap;
+      font-weight: 600;
+    
+      &:hover, &:focus {
+        background: #333;
+      }
+    }
+  }
 }
 
 section {
@@ -145,10 +149,10 @@ section {
 div.wrapper {
   margin: 0 auto;
   width: auto;
-	max-width: 1100px;
+  max-width: 1100px;
 }
 @media (max-width: 1120px) {
-	div.wrapper {
-		max-width: 800px;
-	}
+  div.wrapper {
+    max-width: 800px;
+  }
 }
