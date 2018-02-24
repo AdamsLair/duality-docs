@@ -9,6 +9,8 @@ header, footer, section {
   width: initial;
   float: initial;
   position: initial;
+  padding: initial;
+  margin: initial;
 }
 header {
   ul {
@@ -60,6 +62,10 @@ body {
   padding: 0;
   font-size: 15px;
   line-height: 1.4;
+}
+
+p {
+  text-align: justify;
 }
 
 header ul a strong {
@@ -120,6 +126,11 @@ header {
 			}
 		}
 	}
+}
+
+section {
+  padding: 20px 0;
+  margin: 0;
 }
 
 .wrapper {

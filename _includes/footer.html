@@ -1,11 +1,22 @@
 <footer>
-  {% if site.github.is_project_page %}
-  <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
-  {% endif %}
-  
-  <a href="http://duality.adamslair.net/">Info Page</a> | <a href="http://forum.adamslair.net/">Forum</a> | <a href="http://chat.adamslair.net/">Chat</a>
-  
-  This documentation has been written for Duality v2.x and above. If you're using an older version, some details may not be accurate. Please review older Wiki page revisions to find a version that matches yours.
-  
-  <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+  <div class="wrapper">
+    {% if site.github.is_project_page %}
+    <p>This project is maintained by
+      <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>
+    </p>
+    {% endif %}
+
+    <a href="http://duality.adamslair.net/">Info Page</a> |
+    <a href="http://forum.adamslair.net/">Forum</a> |
+    <a href="http://chat.adamslair.net/">Chat</a>
+
+    This documentation has been written for Duality v2.x and above. If you're using an older version, some details may not be
+    accurate. Please review older Wiki page revisions to find a version that matches yours.
+
+    <p>
+      <small>Hosted on GitHub Pages &mdash; Theme by
+        <a href="https://github.com/orderedlist">orderedlist</a>
+      </small>
+    </p>
+  </div>
 </footer>
