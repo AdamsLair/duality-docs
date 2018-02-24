@@ -4,15 +4,13 @@
 
   <body>
     {% include header.html %}
-    {% include sidebar.html %}
 
-    <main>
-      <div class="wrapper">
-        <section>
-          {{ content }}
-        </section>
-      </div>
-    </main>
+    <div class="wrapper">
+      {% include sidebar.html %}
+      <main>
+        {{ content }}
+      </main>
+    </div>
 
     {% include footer.html %}
     <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script> {% include analytics.html %}
