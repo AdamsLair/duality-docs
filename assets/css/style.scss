@@ -76,18 +76,18 @@ header {
 	
 	.site-title {
 		float: left;
-		line-height: $base-font-size * 2;
+		line-height: 30px;
 		
 		a {
-			color: $header-fg;
+			color: #FFF;
 			text-decoration: none;
 			margin-right: 10px;
 			margin-left: 20px;
 			font-weight: 600;
 		}
 		span {
-			color: rgba( $header-fg, 0.5);
-			font-size: $small-font-size;
+			color: rgba( #FFF, 0.5);
+			font-size: 13px;
 		}
 		@media (max-width: 1120px) {
 			a {
@@ -105,12 +105,12 @@ header {
 		a {
 			text-decoration: none;
 			padding: 10px 10px;
-			color: $header-link;
+			color: #BBB;
 			white-space: nowrap;
 			font-weight: 600;
 		
 			&:hover, &:focus {
-				background: $header-bg-hover;
+				background: #333;
 			}
 		}
 	}
