@@ -6,10 +6,12 @@
     {% include header.html %}
 
     <div class="wrapper">
-      {% include sidebar.html %}
-      <main>
-        {{ content }}
-      </main>
+      <div class="main-container">
+          {% include sidebar.html %}
+          <main>
+            {{ content }}
+          </main>
+      </div>
     </div>
 
     {% include footer.html %}

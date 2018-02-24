@@ -169,7 +169,7 @@ header {
   }
 }
 
-section {
+main {
   padding: 20px 0;
   margin: 0;
 
@@ -207,6 +207,15 @@ footer {
   }
 }
 
+/* Side-by-side layout of sidebar and main content */
+.main-container {
+  display: table;
+  width: 100%;
+  nav.sidebar, main {
+    display: table-cell;
+  }
+}
+
 nav.sidebar {
   display: block;
   float: left;
@@ -215,6 +224,7 @@ nav.sidebar {
   padding: 20px;
 }
 
+/* Responsive width page layout content wrapper */
 div.wrapper {
   margin: 0 auto;
   width: auto;
