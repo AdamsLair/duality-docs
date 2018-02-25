@@ -18,16 +18,6 @@
     </ul>
     <a href="{{ site.baseurl }}{{ parentPage.url }}">&lt; Back to Parent</a>
     <h4>{{ page.title }}</h4>
-
-    {% assign pageUrlWithoutExt = page.url | split: '.html' | first %}
-    {% assign childPages = site.pages | where: 'url', pageUrlWithoutExt %}
-    <ul class="debug">
-      <li>Page URL Without Ext: {{ pageUrlWithoutExt | jsonify }}</li>
-      {% for item in childPages %}
-        <li>Child Page URL: {{ item.url | jsonify }}</li>
-        <li>Child Page Title: {{ item.title | jsonify }}</li>
-      {% endfor %}
-    </ul>
   <!-- If we are at any other page, display top-level manual pages grouped by category. -->
   {% else %}
     {% assign sortedPages = site.pages | sort: 'displayOrder' %}
