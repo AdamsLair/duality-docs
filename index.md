@@ -1,3 +1,8 @@
+---
+category: null
+title: "Home"
+---
+
 Welcome to the Duality project Wiki! If you're looking for a **developer manual**, check the side bar to your left. 
 
 ## Quick Navigation

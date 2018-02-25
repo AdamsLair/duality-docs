@@ -1,9 +1,10 @@
 <nav class="sidebar">
-  <ul>
-    {% for page in site.pages %}
-      {% if page.title %}
-        <li><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
-      {% endif %}
-    {% endfor %}
-  </ul>
+  {% for category in site.categories %}
+    <h4>{{ category }}</h4>
+    <ul>
+      {% for page in category %}
+        <li><a href="{{ site.baseurl }}{{ page.url }}">{{ page.id }}</a></li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
 </nav>

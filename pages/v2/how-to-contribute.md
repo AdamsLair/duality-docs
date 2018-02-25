@@ -1,3 +1,8 @@
+---
+category: "Contributing"
+title: "How to Contribute"
+---
+
 # Introduction
 
 First of all: Thanks for your willingness to contribute to Duality. It has grown to be a big project and one developer alone can't possibly handle all the issues at once. 
