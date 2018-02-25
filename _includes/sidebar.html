@@ -11,10 +11,11 @@
   {% if page.children or page.parent %}
   <!-- If we are at any other page, display top-level manual pages grouped by category. -->
   {% else %}
+    {% assign sortedPages = site.pages | sort: 'displayOrder' %}
     {% for category in site.topLevelCategories %}
       <h4>{{ category.title }}</h4>
       <ul>
-        {% for pageItem in site.pages %}
+        {% for pageItem in sortedPages %}
           {% if pageItem.category and pageItem.category == category.id %}
             <li><a href="{{ site.baseurl }}{{ pageItem.url }}">{{ pageItem.title }}</a></li>
           {% endif %}
