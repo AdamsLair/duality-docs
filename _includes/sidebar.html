@@ -1,13 +1,13 @@
 <nav class="sidebar">
   <div>
-    {{ page.id }}
-    {{ page.path }}
-    {{ page.url }}
-    {{ page.category }}
-    {{ page.date }}
+    {{ page.id | jsonify }}
+    {{ page.path | jsonify }}
+    {{ page.url | jsonify }}
+    {{ page.categories | jsonify }}
+    {{ page.date | jsonify }}
   </div>
   <div>
-    {% assign items_grouped = site.items | group_by: 'category' | sort: 'name' | reverse %}
+    {% assign items_grouped = site.pages | group_by: 'category' | sort: 'name' | reverse %}
     <ul>
       {% for group in items_grouped %}
         {% assign items = item.items | sort: 'date' | reverse %}
@@ -22,13 +22,4 @@
       {% endfor %}
     </ul>
   </div>
-
-  {% for category in site.categories %}
-    <h4>{{ category.label }}</h4>
-    <ul>
-      {% for page in site.categories[category.label] %}
-        <li><a href="{{ site.baseurl }}{{ page.url }}">{{ page.id }}</a></li>
-      {% endfor %}
-    </ul>
-  {% endfor %}
 </nav>
