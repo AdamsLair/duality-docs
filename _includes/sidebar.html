@@ -1,15 +1,15 @@
 <nav class="sidebar">
+  <ul>
+    <li>ID: '{{ page.id }}'</li>
+    <li>Path: '{{ page.path }}'</li>
+    <li>URL: '{{ page.url }}'</li>
+    <li>Category: '{{ page.category }}'</li>
+    <li>Category: '{% if page.category == null %} null {% else %} not null {% endif %}'</li>
+    <li>Category: '{% if page.category == blank %} blank {% else %} not blank {% endif %}'</li>
+    <li>Category: '{% if page.category and page.category != blank %} DISPLAY {% else %} HIDE {% endif %}'</li>
+  </ul>
   <!-- If we are at category page, display parent and sub pages -->
   {% if page.category %}
-    <ul>
-      <li>ID: '{{ page.id }}'</li>
-      <li>Path: '{{ page.path }}'</li>
-      <li>URL: '{{ page.url }}'</li>
-      <li>Category: '{{ page.category }}'</li>
-      <li>Category: '{{ page.category == blank }}'</li>
-      <li>Category: '{{ page.category == null }}'</li>
-      <li>Category: '{% if page.category and page.category != blank %} DISPLAY {% else %} HIDE {% endif %}'</li>
-    </ul>
   <!-- If we are at a top-level page, display other top-level pages grouped by category. -->
   {% else %}
     {% assign pagesByCategory = site.pages | group_by: 'category' | sort: 'name' | reverse %}
