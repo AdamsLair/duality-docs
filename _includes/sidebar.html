@@ -2,6 +2,12 @@
   <div>
     {{ site.categories | jsonify }}
   </div>
+  <div>
+    {{ site | jsonify }}
+  </div>
+  <div>
+    {{ page | jsonify }}
+  </div>
   {% for category in site.categories %}
     <h4>{{ category.label }}</h4>
     <ul>
