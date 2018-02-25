@@ -1,20 +1,26 @@
 <nav class="sidebar">
-  <div>
-    ID: '{{ page.id | jsonify }}'
-    Path: '{{ page.path | jsonify }}'
-    URL: '{{ page.url | jsonify }}'
-  </div>
-  <div>
+  <!-- If we are at category page, display parent and sub pages -->
+  {% if page.category %}
+    <ul>
+      <li>ID: '{{ page.id | jsonify }}'</li>
+      <li>Path: '{{ page.path | jsonify }}'</li>
+      <li>URL: '{{ page.url | jsonify }}'</li>
+      <li>Category: '{{ page.category | jsonify }}'</li>
+    </ul>
+  <!-- If we are at a top-level page, display other top-level pages grouped by category. -->
+  {% else %}
     {% assign pagesByCategory = site.pages | group_by: 'category' | sort: 'name' | reverse %}
     {% for group in pagesByCategory %}
       {% assign category = group.name %}
-      {% assign pages = group.items | sort: 'date' | reverse %}
-      <h5>{{ category }}</h5>
-      <ul>
-        {% for item in pages  %}
-          <li><a href="{{ item.url }}">{{ item.title }}</a></li>
-        {% endfor %}
-      </ul>
+      {% if category %}
+        <h4>{{ category }}</h4>
+        <ul>
+          {% assign pages = group.items | sort: 'priority' | reverse %}
+          {% for item in pages  %}
+            <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
     {% endfor %}
-  </div>
+  {% endif %}
 </nav>
