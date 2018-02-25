@@ -127,12 +127,29 @@ p, ul, ol, table, pre, dl {
 
 a.button {
   display: block;
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  color: #666;
+  text-decoration: none;
+  font-size: 13px;
 
   &:hover {
-
+    border-color: #888;
+    background-color: #eee;
+    color: #000;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
   }
   &:active {
+    background-color: #ddd;
+    border-color: #666;
+  }
+}
 
+@media (max-width: 720px) {
+  body, pre, code {
+    word-wrap:break-word;
   }
 }
 
@@ -276,7 +293,7 @@ footer {
 nav.sidebar {
   width: 275px;
   background: #eee;
-  padding: 20px;
+  padding: 20px 30px;
   vertical-align: top;
 
   ul {
