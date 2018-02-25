@@ -8,6 +8,16 @@
     <li>Children: {{ page.children | jsonify }}</li>
     <li>Parent: {{ page.parent | jsonify }}</li>
   </ul>
+  <ul class="debug" id="pages">
+    {% for page in site.pages %}
+      <li>Title: {{ page.title | jsonify }}, Category: {{ page.category | jsonify }}</li>
+    {% endfor %}
+  </ul>
+  <ul class="debug" id="categories">
+    {% for category in site.categories %}
+      <li>Id: {{ category.id | jsonify }}, Title: {{ category.title | jsonify }}</li>
+    {% endfor %}
+  </ul>
   <!-- If we are at a manual page, display parent and sub pages -->
   {% if page.children or page.parent %}
   <!-- If we are at any other page, display top-level manual pages grouped by category. -->
