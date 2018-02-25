@@ -1,6 +1,7 @@
 ---
-category: "Contributing"
 title: "How to Contribute"
+category: "Contributing"
+priority: 100
 ---
 
 # Introduction

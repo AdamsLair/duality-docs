@@ -1,28 +1,21 @@
 <nav class="sidebar">
   <ul>
-    <li>ID: '{{ page.id }}'</li>
-    <li>Path: '{{ page.path }}'</li>
-    <li>URL: '{{ page.url }}'</li>
-    <li>Category: '{{ page.category }}'</li>
-    <li>Category: '{% if page.category == null %} null {% else %} not null {% endif %}'</li>
-    <li>Category: '{% if page.category == blank %} blank {% else %} not blank {% endif %}'</li>
-    <li>Category: '{% if page.category == "" %} empty {% else %} not empty {% endif %}'</li>
+    <li>ID: {{ page.id | jsonify }}</li>
+    <li>Path: {{ page.path | jsonify }}</li>
+    <li>URL: {{ page.url | jsonify }}</li>
+    <li>Category: {{ page.category | jsonify }}</li>
+    <li>Children: {{ page.children | jsonify }}</li>
+    <li>Parent: {{ page.parent | jsonify }}</li>
   </ul>
-  <!-- If we are at category page, display parent and sub pages -->
-  {% if page.category %}
-  <!-- If we are at a top-level page, display other top-level pages grouped by category. -->
+  <!-- If we are at a manual page, display parent and sub pages -->
+  {% if page.children or page.parent %}
+  <!-- If we are at any other page, display top-level manual pages grouped by category. -->
   {% else %}
     {% assign pagesByCategory = site.pages | group_by: 'category' | sort: 'name' | reverse %}
     {% for group in pagesByCategory %}
       {% assign category = group.name %}
-      <ul>
-        <li>Category: '{{ category }}'</li>
-        <li>Category: '{% if category == null %} null {% else %} not null {% endif %}'</li>
-        <li>Category: '{% if category == blank %} blank {% else %} not blank {% endif %}'</li>
-        <li>Category: '{% if category == "" %} empty {% else %} not empty {% endif %}'</li>
-        <li>Category: '{% if category and category != "" %} DISPLAY {% else %} HIDE {% endif %}'</li>
-      </ul>
-      {% if category and category != blank %}
+      <!-- Only display non-empty categories -->
+      {% if category and category != "" %}
         <h4>{{ category }}</h4>
         <ul>
           {% assign pages = group.items | sort: 'priority' | reverse %}
