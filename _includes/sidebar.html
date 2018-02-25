@@ -15,6 +15,12 @@
     {% assign pagesByCategory = site.pages | group_by: 'category' | sort: 'name' | reverse %}
     {% for group in pagesByCategory %}
       {% assign category = group.name %}
+      <ul>
+        <li>Category: '{{ category }}'</li>
+        <li>Category: '{% if category == null %} null {% else %} not null {% endif %}'</li>
+        <li>Category: '{% if category == blank %} blank {% else %} not blank {% endif %}'</li>
+        <li>Category: '{% if category and category != blank %} DISPLAY {% else %} HIDE {% endif %}'</li>
+      </ul>
       {% if category and category != blank %}
         <h4>{{ category }}</h4>
         <ul>
