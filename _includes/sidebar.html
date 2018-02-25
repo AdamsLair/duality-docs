@@ -1,22 +1,24 @@
 <nav class="sidebar">
+  <!-- Determine parent and child pages -->
+  {% assign parentUrl = page.parent | append: '.html' %}
+  {% assign parentPage = site.pages | where: 'url', parentUrl | first %}
+  {% assign pageUrlWithoutExt = page.url | split: '.html' | first %}
+  {% assign childPages = site.pages | where: 'url', pageUrlWithoutExt %}
   <!-- Debug Output -->
   <ul class="debug">
     <li>Path: {{ page.path | jsonify }}</li>
     <li>URL: {{ page.url | jsonify }}</li>
+    <li>URL (no ext): {{ pageUrlWithoutExt | jsonify }}</li>
     <li>Category: {{ page.category | jsonify }}</li>
-    <li>Children: {{ page.children | jsonify }}</li>
-    <li>Parent: {{ page.parent | jsonify }}</li>
+    <li>Children: {{ childPages.size | jsonify }}</li>
+    <li>Parent: {% if parentPage %} {{ parentPage.url | jsonify }} {% else %} null {% endif %}</li>
   </ul>
   <a id="addPage" class="button" href="{{ site.github.repository_url }}">Add Page</a>
   <!-- If we are at a manual page, display parent and sub pages -->
-  {% if page.parent %}
-    {% assign parentUrl = page.parent | append: '.html' %}
-    {% assign parentPage = site.pages | where: 'url', parentUrl | first %}
-    <ul class="debug">
-      <li>Parent Page Path: {{ parentPage.path | jsonify }}</li>
-      <li>Parent Page URL: {{ parentPage.url | jsonify }}</li>
-    </ul>
-    <a href="{{ site.baseurl }}{{ parentPage.url }}">&lt; Back to Parent</a>
+  {% if parentPage or childPages.size > 0 %}
+    {% if parentPage %}
+      <a href="{{ site.baseurl }}{{ parentPage.url }}">&lt; Go Back</a>
+    {% endif %}
     <h4>{{ page.title }}</h4>
   <!-- If we are at any other page, display top-level manual pages grouped by category. -->
   {% else %}
