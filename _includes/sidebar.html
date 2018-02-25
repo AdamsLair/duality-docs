@@ -19,7 +19,7 @@
       {% if category and category != "" %}
         <h4>{{ category }}</h4>
         <ul>
-          {% assign pages = group.items | sort: 'priority' | reverse %}
+          {% assign pages = group.items | sort: 'displayOrder' %}
           {% for item in pages  %}
             <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
           {% endfor %}

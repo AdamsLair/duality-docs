@@ -1,4 +1,10 @@
-This Wiki page provides a basic overview on the Duality framework.
+---
+title: "Framework Structure"
+category: "Advanced Topics"
+displayOrder: 0
+---
+
+This page provides a basic overview on the Duality framework.
 
 # General
 

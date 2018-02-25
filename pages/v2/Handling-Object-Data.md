@@ -1,3 +1,9 @@
+---
+title: "Handling Object Data"
+category: "Advanced Topics"
+displayOrder: 0
+---
+
 This article will provide a quick overview on the different ways in which object data interacts with Duality.
 
 # Introduction

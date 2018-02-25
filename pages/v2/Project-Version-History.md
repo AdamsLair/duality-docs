@@ -1,13 +1,21 @@
-  * **2009-??-??**: Finished the [ZweiDe](http://zweide.fetzenet.de) engine, a 2D game development framework that could be considered a sketchy predecessor to Duality.
+---
+title: "History of Duality"
+category: "Contributing"
+displayOrder: 1000
+---
+
+This page provides a rough overview on the pre-GitHub history of the Duality project.
+
+  * **2009-??-??**: Finished the [ZweiDe](http://zweide.adamslair.de) engine, a 2D game development framework that could be considered a sketchy predecessor to Duality.
 
   [[/img/ProjectVersionHistory/ZweiDePreview.jpg|align=center|width=300px]]
 
-  * **2010-10-11**: Finished the [Nullpunkt](http://www.indiedb.com/games/nullpunkt-point-zero) project. Its engine and specialized editor system were based on [ZweiDe](http://zweide.fetzenet.de). The decision was made to keep future engines and editor systems more flexible.
+  * **2010-10-11**: Finished the [Nullpunkt](http://www.indiedb.com/games/nullpunkt-point-zero) project. Its engine and specialized editor system were based on [ZweiDe](http://zweide.adamslair.de). The decision was made to keep future engines and editor systems more flexible.
   
   [[/img/ProjectVersionHistory/Nullpunkt.jpg|align=center|width=300px]]
 
   * **2010-11-01**: Engine prototyping
-  * **2010-11-20**: Launch of the [developer blog](http://blog.fetzenet.de).
+  * **2010-11-20**: Launch of the [developer blog](http://blog.adamslair.de).
   * **2010-11-21**: First public appearance of the Duality project - yet without a name.
   
   [[/img/ProjectVersionHistory/Duality1.jpg|align=center|width=300px]]
@@ -40,7 +48,7 @@
 
   * **2011-05-03**: Moved the project to [google code](https://code.google.com/archive/p/duality/) and made it open source.
   * **2011-05-25**: First public demonstration of Dualtiy via [video blog](http://www.youtube.com/watch?v=g3FmwBSEy-U).
-  * **2011-06-04**: Implemented an audio subsystem based on OpenAL. Mostly a refined version of the one that was implemented in [ZweiDe](http://zweide.fetzenet.de) and [Nullpunkt]([http://www.indiedb.com/games/nullpunkt-point-zero).
+  * **2011-06-04**: Implemented an audio subsystem based on OpenAL. Mostly a refined version of the one that was implemented in [ZweiDe](http://zweide.adamslair.de) and [Nullpunkt]([http://www.indiedb.com/games/nullpunkt-point-zero).
   
   [[/img/ProjectVersionHistory/Duality8.jpg|align=center|width=300px]]
 
@@ -55,7 +63,7 @@
   * **2012-03-21**: Rewrote the custom Property Grid, introduced intelligent drag drop and a complete editor redesign.
   [[/img/ProjectVersionHistory/Duality10.jpg|width=200px]][[/img/ProjectVersionHistory/Duality11.jpg|width=200px]][[/img/ProjectVersionHistory/Duality12.jpg|width=200px]][[/img/ProjectVersionHistory/Duality13.jpg|width=200px]]
 
-  * **2012-03-26**: Implemented custom Visual Studio [debugger visualizers](http://www.fetzenet.de/blog/?p=616) for Duality.
+  * **2012-03-26**: Implemented custom Visual Studio [debugger visualizers](http://www.adamslair.de/blog/?p=616) for Duality.
   
   [[/img/ProjectVersionHistory/DebugVisualizer.jpg|align=center|width=300px]]
 

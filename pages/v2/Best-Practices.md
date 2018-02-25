@@ -1,8 +1,14 @@
+---
+title: "Best Practices"
+category: "Basic Topics"
+displayOrder: 100
+---
+
 Ways to keep your code and workflow as clean, error-free and forward-compatible as possible.
 
 # Coding
 
-### Use `Time.TimeMult` where appropriate
+## Use `Time.TimeMult` where appropriate
 
 Depending on how its configured, Duality might run your game at different frame rates. They may be fixed, or change dynamically. Since your game logic is updated once a frame, but a frame may represent different amounts of passed time, your code will need to account for this.
 
@@ -12,11 +18,11 @@ If anything in your simulation moves, ticks, charges, or is otherwise dependent 
 
 When properly accounting for variable time steps, your game will be able to run at a constant speed regardless of its current framerate. As a bonus for sticking to this rule, you'll get to control the overall game simulation speed by setting `Time.TimeScale` easily, or pause the game using `Time.Freeze()`
 
-### Getting references to other objects
+## Getting references to other objects
 
 Say, you're developing the `FooComponent` and need to access a `GameObject` that is not its parent. But how do you get a reference to your target object? Here are some basic options; know their merits and flaws and use them wisely:
 
-##### Finding objects by name
+### Finding objects by name
 
 An easy, but fragile way that **should be avoided** in almost all cases. 
 
@@ -30,7 +36,7 @@ obj.DoSomething();
 * :x: Not reusable. You will need to change your code on a case-by-case basis.
 * :x: Object is searched for in each call, which may or may not affect performance.
 
-##### Finding objects using hierarchical relations
+### Finding objects using hierarchical relations
 
 Asking for the current object's parent's second child's child. This approach **should be avoided** unless you know exactly what you're doing and why you're doing it. Not recommended in general.
 
@@ -44,7 +50,7 @@ obj.DoSomething();
 * :x: Not reusable, unless the same hierarchy is recreated.
 * :x: Object graph is queried in each call, which may or may not affect performance.
 
-##### Finding objects by Component
+### Finding objects by Component
 
 Find an object based on the Components that are attached to it. Either use a semantically matching existing Component, or create a new, empty "tag" Component you can attach to the object(s) in question.
 
@@ -60,7 +66,7 @@ obj.DoSomething();
 * :x: Doesn't really work for a single, specific object.
 * :x: Object is searched for in each call, which may or may not affect performance.
 
-##### Assigning objects in the editor
+### Assigning objects in the editor
 
 Defining a public property in your source Component, which can be assigned by the user in the editor.
 
@@ -82,15 +88,15 @@ public class FooComponent
 * :four_leaf_clover: Really good reusability, the user can assign what is needed and adapt.
 * :x: Not a good match in dynamic situations where the target object(s) isn't known until the game runs.
 
-### Use `ContentRef<T>` properly
+## Use `ContentRef<T>` properly
 
 This is already described [[in the article about Resources|Resource]], but it's mirrored here because it's so important.
 
-### Deal with null
+## Deal with null
 
 When retrieving other GameObjects, external or non-required Components, Resources and object instances in general, always assume that they may be `null` and deal with the case gracefully. Letting a null reference Exception occur may be a viable option when a value being `null` is actually considered a fault! However, simply failing to address a viable case of a value genuinely being `null` is something to look out for and fix.
 
-### Mind what you serialize
+## Mind what you serialize
 
 When you define a custom Component or Resource in Duality, you should ask yourself what kind of information needs to be saved with its Scene or Prefab, or copied with its parent object when cloning it. In many cases, all information is viable for serialization and you don't have to worry about it. However, there are cases where you might want to exclude a field from serialization:
 
@@ -102,7 +108,7 @@ In these cases, simply add a `[DontSerialize]` attribute before the field in que
 
 # Workflow
 
-### Learn to use your Debugger
+## Learn to use your Debugger
 
 This might be obvious for some of you, but if you are new to programming and learn it with Duality, this might be the single most important lesson to learn when trying to figure out why something isn't working as expected: Use your debugger. This section can only provide a very limited introduction, but you'll quickly figure out the rest by yourself once you've passed that initial threshold.
 

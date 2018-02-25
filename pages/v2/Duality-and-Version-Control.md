@@ -1,3 +1,9 @@
+---
+title: "Version Control"
+category: "Advanced Topics"
+displayOrder: 0
+---
+
 This article will outline how to use version control systems such as git or Subversion with a Duality project. It does not cover how to use any specific version control system in general, as there is extensive documentation for each of them out there on the web.
 
 # Introduction

@@ -1,3 +1,9 @@
+---
+title: "Development Cycle"
+category: "Contributing"
+displayOrder: 0
+---
+
 This page will give you an overview on the development cycle of Duality, including when (and for what) to create branches and when to merge them in which way. For more information about specific existing branches, please refer to the [[Branch Descriptions]] page.
 
 # Ongoing Development

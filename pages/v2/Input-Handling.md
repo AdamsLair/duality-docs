@@ -1,3 +1,9 @@
+---
+title: "Input Handling"
+category: "Basic Topics"
+displayOrder: 20
+---
+
 This article will provide a quick overview on how to manage user input in Duality.
 
 # Getting User Input

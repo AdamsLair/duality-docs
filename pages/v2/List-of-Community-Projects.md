@@ -1,3 +1,9 @@
+---
+title: "List of Community Projects"
+category: "Contributing"
+displayOrder: 0
+---
+
 The following is a list of projects that are maintained and published by the community. Feel free to add your own if you think that it could be useful to others!
 
 Name | Description | Package? / Source Code? | Info Page / Discussion | Date Added

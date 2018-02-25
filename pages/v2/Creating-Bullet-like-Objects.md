@@ -1,14 +1,16 @@
-**DISCLAIMER:** *This tutorial was written by the members of the Duality community and hasn't been reviewed by a core developer yet.*
-
-# **Introduction**
+---
+title: "Creating Bullet-like Objects"
+category: "Tutorials"
+displayOrder: 0
+---
 
 Creating and handling bullet like objects is a common game requirement that often causes people trouble. It can be done in a variety of ways, and which way is best depends on your specific game, performance concerns, and style. This is simply one way of approaching this problem.
 
-# **Project Setup**
+# Project Setup
 
 This tutorial's examples are going to expand upon the Getting Started tutorial [here](https://github.com/AdamsLair/duality/wiki/Getting-Started). Nothing will prevent you from starting with your own project, but it will be easier to follow along if you start with that tutorial. If you are starting from your own project, all you will need is a GameObject to act as your shooter.
 
-# **Creating the Bullet**
+# Creating the Bullet
 
 First, lets get a sprite into Duality to use for our bullet:
 
@@ -22,7 +24,7 @@ Now drag the Pixmap created in the project view into the scene editor to automat
 
 [[https://github.com/deanljohnson/duality-CreatingBullets-Tutorial/blob/master/BulletOneInitialComponents.PNG|align=center]]
 
-### Rigidbody
+## Rigidbody
 
 Add a Rigidbody component to the BulletOne GameObject (Right Click -> New -> Physics -> Rigidbody). Now enter the Rigidbody editor, select the BulletOne's Rigidbody, and replace it's default circle shape with a rectangle surrounding the image. 
 Select the rectangle shape you just made and in the Object Inspector window check the "IsSensor" box. What this does is make the physics system notify us when the bullet collides with another rigidbody, but without resolving collisions. What this means is the bullet will not affect the movement of the object it hits, or end up ricocheting. Now we obviously don't want bullets to just pass through the objects they hit, but we will handle this later.
@@ -102,7 +104,7 @@ public void OnUpdate()
 
 Now let's test it. First, rebuild your solution (in Visual Studio click Build -> Rebuild Solution) and then switch back to the Duality editor. Add a BulletController Component to the BulletOne GameObject (Right Click -> New -> "Your Project Name" -> BulletController). Now you should be able to enter Sandbox Mode and see your bullet zooming away. Look at it go.... forever.... lets fix that.
 
-### Bullet Lifetime
+## Bullet Lifetime
 
 We don't want our bullet to fly forever, just sufficiently long enough to hit anything relevant. To do this, we need two more variables in our BulletController Component:
 
@@ -132,7 +134,7 @@ Now rebuild your solution, switch to the Duality editor, and enter the Sandbox. 
 
 Now we need to look into how to shoot these bullets with user input.
 
-### Firing a Bullet
+# Firing a Bullet
 
 Having one bullet flying through our scene is fine and dandy, but we need to shoot these things on demand! How will we do this. First, we need to make a Prefab. What is a Prefab? Think of it as a blueprint from which we can create or **instantiate** multiple GameObjects. To create one, go to your Project View in the Duality editor then Right Click -> New -> Prefab:
 
@@ -214,7 +216,7 @@ void ICmpUpdatable.OnUpdate()
 
 Rebuild, go to Dualitor, enter Sandbox, and test. Play with the FiringDelay until it's something you like.
 
-### Bullet Collisions
+# Bullet Collisions
 
 We've made it pretty far. The last major feature we need is bullet collisions. Before we start, here are some common problems people run in to when implementing bullets:
 
@@ -308,7 +310,7 @@ FiringOffset is a vector relative to the Player itself, so we call transform.Get
 
 If you rebuild and go to the sandbox.... you'll still have collision issues. Don't worry. This is an issue with the accuracy of the Physics when ran from the Duality Editor. If you run the Game from Visual Studio with Ctrl+F5, you will have no issues.
 
-### Sound/Visual Effects
+# Sound/Visual Effects
 
 And now to briefly touch on Sound/Visual effects.
 

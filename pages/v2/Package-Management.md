@@ -1,20 +1,26 @@
+---
+title: "Package Management"
+category: "Advanced Topics"
+displayOrder: 0
+---
+
 If you’re a C# developer, there’s a good chance that you already know what [NuGet](https://www.nuget.org/) is, or at least have overheard someone talking about it. The main idea is to stop delivering precompiled dependencies along with source code, and instead provide a central repository where all these binary packages are stored. Whenever someone needs one of them, it can be downloaded automatically, and whenever a new version is available, upgrading is only a mouse click away. Package Management is just incredibly convenient – and by now, Duality is able to make use of it. Let’s take a quick look at how it works.
 
-## Package Management Basics
+# Package Management Basics
 
 This chapter describes some concepts behind Package Management in Duality, and how to use it in your development cycle.
 
-### What is a Package?
+## What is a Package?
 
 Duality has been built with a modular architecture in mind, which means it can be split up into a lot of distinct parts - like the Scene View, Help Advisor, Steering, Dynamic Lighting and many more. Because most of these parts don't interact directly with each other, it's easy to add, remove or switch each part individually, without breaking the whole system. This is modular design. Now, in order to make those modules more conveniently accessible, all the files of a single module can be packed into a single one and annotated with a description of what's inside. This is what's called a Package.
 
-### What can it do for me?
+## What can it do for me?
 
 The main feat of Package Management is added convenience. Because all of the Packages are stored in a central online repository to which Duality can connect, you don't even need to leave the editor in order to install or uninstall new Packages. Updating is just a mouse click away and is similarly automated. 
 
 To access Package Management functionality, open the `File` menu and click `Manage Packages...`. A user dialog will appear to guide you through everything else.
 
-### Updating Packages
+## Updating Packages
 
 Unlike installing or uninstalling Packages, updating a Package always involves the danger to introduce breaking changes. As a general guideline, you can take a close look at the version number of the update. Version numbers always have the following format:
 
@@ -26,7 +32,7 @@ When assuming that the author of the Package obeys semantic versioning rules or 
 
 Depending on the kind of changes that have been introduced with a Package update, you may need to recompile and potentially fix your custom game plugin, and the safest way to do so is before touching any game content.
 
-### Packages? Online? Can I opt-out?
+## Packages? Online? Can I opt-out?
 
 Yes. Duality is fully functional without any kind of Package Management and doesn't require it in any way. Removing it entirely from Duality requires a few steps:
 
@@ -37,7 +43,7 @@ Yes. Duality is fully functional without any kind of Package Management and does
 If you're proficient with NuGet, you can also use a custom Package repository instead of the default one. Open 
 `PackageConfig.xml` and replace the appropriate URL with the one you want to use. You can also enter a relative folder path on your local disk.
 
-## Publishing Packages
+# Publishing Packages
 
 Another cool thing about Package Management is, that everyone is free to introduce new Packages into the mix - and they will be available to all Duality users just like the official ones. Here's a quick overview on how to get started:
 

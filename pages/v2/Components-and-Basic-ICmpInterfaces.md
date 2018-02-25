@@ -1,5 +1,10 @@
-# The Beginning
-A **`Component`** is how one would primarily drive logic in a Duality-based game. But what is a Component?
+---
+title: "Components"
+category: "Basic Topics"
+displayOrder: 0
+---
+
+A **Component** is how game logic is defined in Duality. But what exactly is a Component?
 
 # Building Blocks
 Components are the basic building blocks of your game: Each of them has a certain purpose and they interact with each other in order to produce complex behavior. One Component might provide a position in space, another might use that to draw a sprite. You can define your own Components to introduce your own code and logic into the engine.
@@ -19,16 +24,16 @@ namespace MyNamespace
 ```
 There! Now we have a shiny new custom component, ready for action!
 
-# The Component Base Class
+## Sidenote: The Component Base Class
 Every Component has a few properties and functions that you might find handy when writing a game in Duality:
 
-##### Properties:
+**Properties:**
 * `bool Active`: Whether the component and all of its ancestors / parent objects are currently active in the scene.
 * `bool Disposed`: Whether the component has been "deleted" or removed. It's not something you usually have to be aware of, but when you store a reference to some component, this is how you know whether it's still around. If this is false, you can treat it the same as a `null` reference.
 * `bool ActiveSingle`: Whether the component is currently active in the scene; ignores the parent GameObject's activation status.
 * `GameObject GameObj`: The GameObject this Component belongs to; its parent.
 
-##### Functions:
+**Methods:**
 * `void DisposeLater()`: Schedule the Component for disposal (deletion/removal) at the end of the current update cycle. To reiterate: this function will only dispose of the Component itself, not its parent GameObject or any other sibling Components.
 * `Component Clone()`: Create a deep copy of the Component. *Note: you probably won't really be using this frequently, though. It doesn't really come up much in a regular workflow.*
 
@@ -79,7 +84,7 @@ So, what did we just change? If you add this component to an object and run the 
 
 In general, anything implementing ICmpInitializable interface must implement two functions, `OnInit(InitContext)` and `OnShutdown(ShutdownContext)`. The context provided to each function will be different based on where and when it is called by Duality. Let's look at these contexts and what they mean:
 
-#### InitContexts
+## InitContexts
 * `Activate`: The Component is being activated, which can be the result of activating it, its parent GameObject, or adding it or its parent GameObject to the current Scene, *or* entering a Scene where this Component is registered.
 * `AddToGameObject`: The Component has just been added to a GameObject.
 * `Loaded`: The Component has been fully loaded.
@@ -87,7 +92,7 @@ In general, anything implementing ICmpInitializable interface must implement two
 
 Out of these, the one you are most likely to be using most frequently is `Activate`, since it is where most initialization logic makes sense to be in.
 
-#### ShutdownContexts
+## ShutdownContexts
 * `Deactivate`: The flip side of `Activate`. The Component is being deactivated, which can be a result of deactivating it, its parent GameObject, or removing it or its parent GameObject from the current Scene, *or* leaving a Scene where this Component is registered.
 * `RemovingFromGameObject`: The Component is being removed from its parent GameObject.
 * `Saving`: The saving process for this Component is about to start.

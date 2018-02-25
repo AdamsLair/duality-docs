@@ -1,3 +1,9 @@
+---
+title: "Custom Renderers"
+category: "Advanced Topics"
+displayOrder: 0
+---
+
 This article will introduce you to writing custom renderer Components.
 
 # What is a "Renderer Component"?

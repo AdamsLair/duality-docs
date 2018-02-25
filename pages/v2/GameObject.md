@@ -1,8 +1,12 @@
-#Introduction
+---
+title: "GameObjects"
+category: "Basic Topics"
+displayOrder: 0
+---
 
 In a component-based gameobject system like the one used in Duality, most objects are represented by a multitude of Components. GameObjects are what glues them together, providing a context and mutual base for each of them. This article should explain the basic principles behind the system.
 
-#Overview
+# Overview
 
 So, what is a component-based gameobject system? It's easier to begin with what it's _not_: A "classic" approach on modelling object classes and behaviours is some kind of inheritance tree that might look like this:
 

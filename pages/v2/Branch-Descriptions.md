@@ -1,3 +1,9 @@
+---
+title: "Branch Descriptions"
+category: "Contributing"
+displayOrder: 0
+---
+
 This page gives an overview on the most important branches of the Duality repository.
 
 # master

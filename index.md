@@ -1,5 +1,7 @@
 ---
 title: "Home"
+category: "Introduction"
+displayOrder: -100
 ---
 
 Welcome to the Duality project Wiki! If you're looking for a **developer manual**, check the side bar to your left. 

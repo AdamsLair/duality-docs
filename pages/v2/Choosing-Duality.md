@@ -1,3 +1,9 @@
+---
+title: "Should You Use Duality?"
+category: "Introduction"
+displayOrder: 10
+---
+
 Someone once said: "Every game engine sucks - but each in its own, unique way". Choosing an engine is not about going through a shopping list of billboard features, it's not even about deciding which one is "better". It's about setting priorities and identifying requirements: What does your game need, and what do _you_ need, as a developer? What do you value? This guide is here to help you decide whether your next project should be made with Duality.
 
 _If you haven't read the info page yet, [head over here](http://duality.adamslair.net) first._
