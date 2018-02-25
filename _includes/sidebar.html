@@ -13,8 +13,8 @@
       <li>Title: {{ page.title | jsonify }}, Category: {{ page.category | jsonify }}</li>
     {% endfor %}
   </ul>
-  <ul class="debug" id="categories">
-    {% for category in site.categories %}
+  <ul class="debug" id="topLevelCategories">
+    {% for category in site.topLevelCategories %}
       <li>Id: {{ category.id | jsonify }}, Title: {{ category.title | jsonify }}</li>
     {% endfor %}
   </ul>
@@ -22,7 +22,7 @@
   {% if page.children or page.parent %}
   <!-- If we are at any other page, display top-level manual pages grouped by category. -->
   {% else %}
-    {% for category in site.categories %}
+    {% for category in site.topLevelCategories %}
       {% for page in site.pages %}
         {% if page.category and page.category == category.id %}
           <h4>{{ category.title }}</h4>
