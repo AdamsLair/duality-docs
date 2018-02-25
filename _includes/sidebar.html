@@ -18,6 +18,8 @@
   {% if parentPage or childPages.size > 0 %}
     {% if parentPage %}
       <a href="{{ site.baseurl }}{{ parentPage.url }}">&lt; Go Back</a>
+    {% else %}
+      <a href="{{ site.baseurl }}/">&lt; Go Back</a>
     {% endif %}
     <h4>{{ page.title }}</h4>
     {% if childPages.size > 0 %}
