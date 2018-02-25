@@ -101,8 +101,16 @@ body {
   background-color: #e0e0e3;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3 {
   margin: 20px 0;
+}
+
+h2, h3 {
+  margin: 15px 0;
+}
+
+h4, h5, h6 {
+  margin: 10px 0;
 }
 
 p, ul, ol, th, td {

@@ -12,7 +12,7 @@
   {% if page.children or page.parent %}
   <!-- If we are at any other page, display top-level manual pages grouped by category. -->
   {% else %}
-    {% assign pagesByCategory = site.pages | group_by: 'category' | sort: 'name' | reverse %}
+    {% assign pagesByCategory = site.pages | group_by: 'category' | sort: 'name' %}
     {% for group in pagesByCategory %}
       {% assign category = group.name %}
       <!-- Only display non-empty categories -->
