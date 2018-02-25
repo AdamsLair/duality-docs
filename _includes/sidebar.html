@@ -23,17 +23,14 @@
   <!-- If we are at any other page, display top-level manual pages grouped by category. -->
   {% else %}
     {% for category in site.topLevelCategories %}
-      {% for page in site.pages %}
-        {% if page.category and page.category == category.id %}
-          <h4>{{ category.title }}</h4>
-          <ul>
-            {% assign pages = group.items | sort: 'displayOrder' %}
-            {% for item in pages  %}
-              <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-      {% endfor %}
+      <h4>{{ category.title }}</h4>
+      <ul>
+        {% for page in site.pages %}
+          {% if page.category and page.category == category.id %}
+            <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
     {% endfor %}
   {% endif %}
 </nav>
