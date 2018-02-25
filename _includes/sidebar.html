@@ -1,7 +1,28 @@
 <nav class="sidebar">
   <div>
-    {{ site.categories | jsonify }}
+    {{ page.id }}
+    {{ page.path }}
+    {{ page.url }}
+    {{ page.category }}
+    {{ page.date }}
   </div>
+  <div>
+    {% assign items_grouped = site.items | group_by: 'category' | sort: 'name' | reverse %}
+    <ul>
+      {% for group in items_grouped %}
+        {% assign items = item.items | sort: 'date' | reverse %}
+        <li>
+          {{ group.name }}
+          <ul>
+            {% for item in items  %}
+              <li>{{ item.title }}</li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
   {% for category in site.categories %}
     <h4>{{ category.label }}</h4>
     <ul>
