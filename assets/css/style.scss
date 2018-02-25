@@ -125,8 +125,15 @@ p, ul, ol, table, pre, dl {
   display: none;
 }
 
-header ul a strong {
-  font-size:15px;
+a.button {
+  display: block;
+
+  &:hover {
+
+  }
+  &:active {
+
+  }
 }
 
 header {
@@ -139,7 +146,11 @@ header {
   @media (max-width: 600px) {
     text-align:center;
   }
-  
+
+  ul a strong {
+    font-size:15px;
+  }
+
   &:after {
     clear: both;
     content: ' ';
@@ -196,6 +207,10 @@ main {
   border-left: 1px solid #eee;
   border-right: 1px solid #eee;
 
+  a#editPage {
+    float: right;
+  }
+
   img {
     display: block;
     padding: 5px;
@@ -217,10 +232,11 @@ main {
 footer {
   background-color: #2d2d2d;
   color: #cccccc;
-  padding: 20px 0;
+  padding: 20px 30px;
 
   p {
     margin: 5px 0;
+    text-align: left;
   }
 
   a {
@@ -261,10 +277,19 @@ nav.sidebar {
   width: 275px;
   background: #eee;
   padding: 20px;
+  vertical-align: top;
+
+  ul {
+    padding-left: 20px;
+  }
+  p, ul, ol, th, td {
+    text-align: left;
+  }
 
   @media (max-width: 1120px) {
     columns: 200px;
     column-rule: 1px solid rgba(0, 0, 0, 0.1);
+    column-gap: 40px;
     ul {
       margin: 0;
     }
