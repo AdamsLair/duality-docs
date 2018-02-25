@@ -20,6 +20,13 @@
       <a href="{{ site.baseurl }}{{ parentPage.url }}">&lt; Go Back</a>
     {% endif %}
     <h4>{{ page.title }}</h4>
+    {% if childPages.size > 0 %}
+      <ul>
+        {% for pageItem in childPages %}
+          <li><a href="{{ site.baseurl }}{{ pageItem.url }}">{{ pageItem.title }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
   <!-- If we are at any other page, display top-level manual pages grouped by category. -->
   {% else %}
     {% assign sortedPages = site.pages | sort: 'displayOrder' %}
