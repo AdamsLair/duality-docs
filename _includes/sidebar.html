@@ -7,6 +7,7 @@
     <li>Children: {{ page.children | jsonify }}</li>
     <li>Parent: {{ page.parent | jsonify }}</li>
   </ul>
+  <a id="addPage" class="button" href="{{ site.github.repository_url }}">Add Page</a>
   <!-- If we are at a manual page, display parent and sub pages -->
   {% if page.children or page.parent %}
   <!-- If we are at any other page, display top-level manual pages grouped by category. -->
