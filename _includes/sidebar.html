@@ -1,22 +1,11 @@
 <nav class="sidebar">
   <!-- Debug Output -->
   <ul class="debug">
-    <li>ID: {{ page.id | jsonify }}</li>
     <li>Path: {{ page.path | jsonify }}</li>
     <li>URL: {{ page.url | jsonify }}</li>
     <li>Category: {{ page.category | jsonify }}</li>
     <li>Children: {{ page.children | jsonify }}</li>
     <li>Parent: {{ page.parent | jsonify }}</li>
-  </ul>
-  <ul class="debug" id="pages">
-    {% for page in site.pages %}
-      <li>Title: {{ page.title | jsonify }}, Category: {{ page.category | jsonify }}</li>
-    {% endfor %}
-  </ul>
-  <ul class="debug" id="topLevelCategories">
-    {% for category in site.topLevelCategories %}
-      <li>Id: {{ category.id | jsonify }}, Title: {{ category.title | jsonify }}</li>
-    {% endfor %}
   </ul>
   <!-- If we are at a manual page, display parent and sub pages -->
   {% if page.children or page.parent %}
@@ -25,9 +14,9 @@
     {% for category in site.topLevelCategories %}
       <h4>{{ category.title }}</h4>
       <ul>
-        {% for page in site.pages %}
-          {% if page.category and page.category == category.id %}
-            <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
+        {% for pageItem in site.pages %}
+          {% if pageItem.category and pageItem.category == category.id %}
+            <li><a href="{{ site.baseurl }}{{ pageItem.url }}">{{ pageItem.title }}</a></li>
           {% endif %}
         {% endfor %}
       </ul>
