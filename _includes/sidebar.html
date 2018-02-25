@@ -10,7 +10,7 @@
     {% assign items_grouped = site.pages | group_by: 'category' | sort: 'name' | reverse %}
     <ul>
       {% for group in items_grouped %}
-        {% assign items = item.items | sort: 'date' | reverse %}
+        {% assign items = group.items | sort: 'date' | reverse %}
         <li>
           {{ group.name }}
           <ul>
