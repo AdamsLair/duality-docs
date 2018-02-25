@@ -6,7 +6,7 @@
     <li>Category: '{{ page.category }}'</li>
     <li>Category: '{% if page.category == null %} null {% else %} not null {% endif %}'</li>
     <li>Category: '{% if page.category == blank %} blank {% else %} not blank {% endif %}'</li>
-    <li>Category: '{% if page.category and page.category != blank %} DISPLAY {% else %} HIDE {% endif %}'</li>
+    <li>Category: '{% if page.category == "" %} empty {% else %} not empty {% endif %}'</li>
   </ul>
   <!-- If we are at category page, display parent and sub pages -->
   {% if page.category %}
@@ -19,7 +19,8 @@
         <li>Category: '{{ category }}'</li>
         <li>Category: '{% if category == null %} null {% else %} not null {% endif %}'</li>
         <li>Category: '{% if category == blank %} blank {% else %} not blank {% endif %}'</li>
-        <li>Category: '{% if category and category != blank %} DISPLAY {% else %} HIDE {% endif %}'</li>
+        <li>Category: '{% if category == "" %} empty {% else %} not empty {% endif %}'</li>
+        <li>Category: '{% if category and category != "" %} DISPLAY {% else %} HIDE {% endif %}'</li>
       </ul>
       {% if category and category != blank %}
         <h4>{{ category }}</h4>
