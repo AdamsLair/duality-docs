@@ -1,6 +1,6 @@
 ---
 title: "Package Management"
-category: "Advanced Topics"
+category: "advanced"
 displayOrder: 0
 ---
 

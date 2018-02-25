@@ -1,6 +1,6 @@
 ---
 title: "Working with Animations"
-category: "Tutorials"
+category: "tutorials"
 displayOrder: 10
 ---
 

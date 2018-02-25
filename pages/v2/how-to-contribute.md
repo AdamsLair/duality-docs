@@ -1,6 +1,6 @@
 ---
 title: "How to Contribute"
-category: "Contributing"
+category: "contributing"
 displayOrder: -100
 ---
 

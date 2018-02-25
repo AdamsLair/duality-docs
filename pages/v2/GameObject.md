@@ -1,6 +1,6 @@
 ---
 title: "GameObjects"
-category: "Basic Topics"
+category: "basics"
 displayOrder: 0
 ---
 

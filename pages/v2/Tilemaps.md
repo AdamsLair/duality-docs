@@ -1,6 +1,6 @@
 ---
 title: "Using Tilemaps"
-category: "Tutorials"
+category: "tutorials"
 displayOrder: 20
 ---
 

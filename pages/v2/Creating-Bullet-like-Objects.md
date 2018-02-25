@@ -1,6 +1,6 @@
 ---
 title: "Creating Bullet-like Objects"
-category: "Tutorials"
+category: "tutorials"
 displayOrder: 0
 ---
 

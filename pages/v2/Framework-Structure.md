@@ -1,6 +1,6 @@
 ---
 title: "Framework Structure"
-category: "Advanced Topics"
+category: "advanced"
 displayOrder: 0
 ---
 

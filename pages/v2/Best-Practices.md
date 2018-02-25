@@ -1,6 +1,6 @@
 ---
 title: "Best Practices"
-category: "Basic Topics"
+category: "basics"
 displayOrder: 100
 ---
 

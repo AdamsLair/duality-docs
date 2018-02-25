@@ -12,19 +12,18 @@
   {% if page.children or page.parent %}
   <!-- If we are at any other page, display top-level manual pages grouped by category. -->
   {% else %}
-    {% assign pagesByCategory = site.pages | group_by: 'category' | sort: 'name' %}
-    {% for group in pagesByCategory %}
-      {% assign category = group.name %}
-      <!-- Only display non-empty categories -->
-      {% if category and category != "" %}
-        <h4>{{ category }}</h4>
-        <ul>
-          {% assign pages = group.items | sort: 'displayOrder' %}
-          {% for item in pages  %}
-            <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
-          {% endfor %}
-        </ul>
-      {% endif %}
+    {% for category in site.categories %}
+      {% for page in site.pages %}
+        {% if page.category and page.category == category.id %}
+          <h4>{{ category.title }}</h4>
+          <ul>
+            {% assign pages = group.items | sort: 'displayOrder' %}
+            {% for item in pages  %}
+              <li><a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endfor %}
     {% endfor %}
   {% endif %}
 </nav>

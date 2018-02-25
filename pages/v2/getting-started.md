@@ -1,6 +1,6 @@
 ---
 title: "Getting Started"
-category: "Tutorials"
+category: "tutorials"
 displayOrder: -100
 ---
 

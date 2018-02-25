@@ -1,6 +1,6 @@
 ---
 title: "Common Pitfalls"
-category: "Basic Topics"
+category: "basics"
 displayOrder: 101
 ---
 

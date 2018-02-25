@@ -1,6 +1,6 @@
 ---
 title: "Resources"
-category: "Basic Topics"
+category: "basics"
 displayOrder: 10
 ---
 

@@ -4,7 +4,7 @@ title: "Duality Docs"
 description: "Developer manual for the Duality game engine"
 google_analytics: UA-39997821-2
 
-# Custom Variables
+# External links, to be displayed in the top
 links:
   - title: 'Project'
     url: 'https://duality.adamslair.net'
@@ -12,3 +12,16 @@ links:
     url: 'https://forum.adamslair.net'
   - title: 'Chat'
     url: 'http://chat.adamslair.net'
+
+# Top-Level categories, to be displayed in the nav overview
+categories:
+  - id: 'introduction'
+    title: 'Introduction'
+  - id: 'tutorials'
+    title: 'Tutorials'
+  - id: 'basics'
+    title: 'Basic Topics'
+  - id: 'advanced'
+    title: 'Advanced Topics'
+  - id: 'contributing'
+    title: 'Contributing'

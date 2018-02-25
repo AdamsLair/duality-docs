@@ -1,6 +1,6 @@
 ---
 title: "List of Community Projects"
-category: "Contributing"
+category: "contributing"
 displayOrder: 0
 ---
 

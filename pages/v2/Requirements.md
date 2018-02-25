@@ -1,6 +1,6 @@
 ---
 title: "Requirements"
-category: "Introduction"
+category: "introduction"
 displayOrder: 0
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Components"
-category: "Basic Topics"
+category: "basics"
 displayOrder: 0
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Handling Object Data"
-category: "Advanced Topics"
+category: "advanced"
 displayOrder: 0
 ---
 

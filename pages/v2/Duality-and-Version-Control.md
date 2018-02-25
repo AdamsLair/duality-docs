@@ -1,6 +1,6 @@
 ---
 title: "Version Control"
-category: "Advanced Topics"
+category: "advanced"
 displayOrder: 0
 ---
 

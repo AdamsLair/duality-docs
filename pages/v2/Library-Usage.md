@@ -1,6 +1,6 @@
 ---
 title: "Using External Libraries"
-category: "Advanced Topics"
+category: "advanced"
 displayOrder: 0
 ---
 

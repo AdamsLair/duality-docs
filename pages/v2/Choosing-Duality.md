@@ -1,6 +1,6 @@
 ---
 title: "Should You Use Duality?"
-category: "Introduction"
+category: "introduction"
 displayOrder: 10
 ---
 

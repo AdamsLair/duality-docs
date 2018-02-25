@@ -1,6 +1,6 @@
 ---
 title: "Custom Renderers"
-category: "Advanced Topics"
+category: "advanced"
 displayOrder: 0
 ---
 

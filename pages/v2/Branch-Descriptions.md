@@ -1,6 +1,6 @@
 ---
 title: "Branch Descriptions"
-category: "Contributing"
+category: "contributing"
 displayOrder: 0
 ---
 

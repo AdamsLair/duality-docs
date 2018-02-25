@@ -1,6 +1,6 @@
 ---
 title: "Home"
-category: "Introduction"
+category: "introduction"
 displayOrder: -100
 ---
 

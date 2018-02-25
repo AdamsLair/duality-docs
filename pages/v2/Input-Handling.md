@@ -1,6 +1,6 @@
 ---
 title: "Input Handling"
-category: "Basic Topics"
+category: "basics"
 displayOrder: 20
 ---
 

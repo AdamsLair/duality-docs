@@ -1,6 +1,6 @@
 ---
 title: "History of Duality"
-category: "Contributing"
+category: "contributing"
 displayOrder: 1000
 ---
 
