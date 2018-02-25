@@ -1,5 +1,5 @@
 ---
-category: "Tutorials Multi Word Test"
+category: "Tutorials"
 title: "Getting Started"
 ---
 

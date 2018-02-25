@@ -1,25 +1,20 @@
 <nav class="sidebar">
   <div>
-    {{ page.id | jsonify }}
-    {{ page.path | jsonify }}
-    {{ page.url | jsonify }}
-    {{ page.categories | jsonify }}
-    {{ page.date | jsonify }}
+    ID: '{{ page.id | jsonify }}'
+    Path: '{{ page.path | jsonify }}'
+    URL: '{{ page.url | jsonify }}'
   </div>
   <div>
-    {% assign items_grouped = site.pages | group_by: 'category' | sort: 'name' | reverse %}
-    <ul>
-      {% for group in items_grouped %}
-        {% assign items = group.items | sort: 'date' | reverse %}
-        <li>
-          {{ group.name }}
-          <ul>
-            {% for item in items  %}
-              <li>{{ item.title }}</li>
-            {% endfor %}
-          </ul>
-        </li>
-      {% endfor %}
-    </ul>
+    {% assign pagesByCategory = site.pages | group_by: 'category' | sort: 'name' | reverse %}
+    {% for group in pagesByCategory %}
+      {% assign category = group.name %}
+      {% assign pages = group.items | sort: 'date' | reverse %}
+      <h5>{{ category }}</h5>
+      <ul>
+        {% for item in pages  %}
+          <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
   </div>
 </nav>
