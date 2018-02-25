@@ -1,7 +1,7 @@
 ---
 title: "Common Pitfalls"
-category: "basics"
-displayOrder: 101
+parent: "/pages/v2/Guidelines"
+displayOrder: 0
 ---
 
 Typical errors that can be easily avoided.

@@ -1,6 +1,6 @@
 ---
 title: "Best Practices"
-category: "basics"
+parent: "/pages/v2/Guidelines"
 displayOrder: 100
 ---
 

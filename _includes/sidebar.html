@@ -9,7 +9,25 @@
   </ul>
   <a id="addPage" class="button" href="{{ site.github.repository_url }}">Add Page</a>
   <!-- If we are at a manual page, display parent and sub pages -->
-  {% if page.children or page.parent %}
+  {% if page.parent %}
+    {% assign parentUrl = page.parent | append '.html' %}
+    {% assign parentPage = site.pages | where: 'url', parentUrl | first %}
+    <ul class="debug">
+      <li>Parent Page Path: {{ parentPage.path | jsonify }}</li>
+      <li>Parent Page URL: {{ parentPage.url | jsonify }}</li>
+    </ul>
+    <a href="{{ site.baseurl }}{{ parentPage.url }}">&lt; Back to Parent</a>
+    <h4>{{ page.title }}</h4>
+
+    {% assign pageUrlWithoutExt = page.url | split: '.html' | first %}
+    {% assign childPages = site.pages | where: 'url', pageUrlWithoutExt %}
+    <ul class="debug">
+      <li>Page URL Without Ext: {{ pageUrlWithoutExt | jsonify }}</li>
+      {% for item in childPages %}
+        <li>Child Page URL: {{ item.url | jsonify }}</li>
+        <li>Child Page Title: {{ item.title | jsonify }}</li>
+      {% endfor %}
+    </ul>
   <!-- If we are at any other page, display top-level manual pages grouped by category. -->
   {% else %}
     {% assign sortedPages = site.pages | sort: 'displayOrder' %}
