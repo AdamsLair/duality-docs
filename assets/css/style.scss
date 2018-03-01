@@ -318,18 +318,18 @@ nav.sidebar {
 
   div.versionList {
     margin-top: 15px;
-    
+
+    h4 {
+      font-weight: normal;
+      margin-bottom: 5px;
+      margin-top: 5px;
+    }
     ul {
       list-style-type: none;
       display: inline;
       margin: 0;
       padding: 0;
 
-      h4 {
-        font-weight: normal;
-        margin-bottom: 5px;
-        margin-top: 5px;
-      }
       li {
         display: inline-block;
       }
