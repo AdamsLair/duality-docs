@@ -64,7 +64,7 @@
     {% assign itemVersionPath = pageItem.version | prepend: '/' %}
     {% assign itemUrlAfterVersion = pageItem.url | split: itemVersionPath | last %}
     {% if itemUrlAfterVersion == urlAfterVersion %}
-      {% assign versionPages = versionPages | push: host %}
+      {% assign versionPages = versionPages | push: pageItem %}
     {% endif %}
   {% endfor %}
   <ul class="versionList">
