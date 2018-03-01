@@ -1,5 +1,5 @@
 <nav class="sidebar">
-  <!-- Determine parent and child pages -->
+  <!-- Determine parent, child and sibling pages -->
   {% assign targetVersion = page.version %}
   {% assign parentUrl = page.parent | append: '.html' %}
   {% assign parentPage = site.pages | where: 'version', targetVersion | where: 'url', parentUrl | first %}
@@ -56,4 +56,25 @@
       </ul>
     {% endfor %}
   {% endif %}
+  <!-- Display available versions of this page -->
+  {% assign versionPath = page.version | prepend: '/' %}
+  {% assign urlAfterVersion = page.url | split: versionPath | last %}
+  {% assign versionPages = "" | split: "" %}
+  <!-- Debug Output -->
+  <ul class="debug">
+    <li>Version Path: {{ versionPath | jsonify }}</li>
+    <li>URL After Version: {{ urlAfterVersion | jsonify }}</li>
+  </ul>
+  <!-- Debug Output -->
+  <ul class="debug">
+  {% for pageItem in site.pages %}
+    {% assign itemVersionPath = pageItem.version | prepend: '/' %}
+    {% assign itemUrlAfterVersion = pageItem.url | split: itemVersionPath | last %}
+    <li>Item Version Path: {{ itemVersionPath | jsonify }}</li>
+    <li>Item URL After Version: {{ itemUrlAfterVersion | jsonify }}</li>
+    {% if itemUrlAfterVersion == urlAfterVersion %}
+      {% assign versionPages = versionPages | push: host %}
+    {% endif %}
+  {% endfor %}
+  </ul>
 </nav>
