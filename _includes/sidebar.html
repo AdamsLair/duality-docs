@@ -67,14 +67,16 @@
       {% assign versionPages = versionPages | push: pageItem %}
     {% endif %}
   {% endfor %}
-  Versions:
-  <ul class="versionList">
-    {% for pageItem in versionPages %}
-      {% if pageItem.version == targetVersion %}
-        <li id="activeVersion">{{ pageItem.version }}</li>
-      {% else %}
-        <li><a href="{{ site.baseurl }}{{ pageItem.url }}">{{ pageItem.version }}</a></li>
-      {% endif %}
-    {% endfor %}
-  </ul>
+  <div class="versionList">
+    Versions:
+    <ul>
+      {% for pageItem in versionPages %}
+        {% if pageItem.version == targetVersion %}
+          <li id="activeVersion">{{ pageItem.version }}</li>
+        {% else %}
+          <li><a href="{{ site.baseurl }}{{ pageItem.url }}">{{ pageItem.version }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
 </nav>

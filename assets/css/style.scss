@@ -316,7 +316,7 @@ nav.sidebar {
     text-align: left;
   }
 
-  ul.versionList {
+  div.versionList ul {
     list-style-type: none;
     display: inline;
     margin: 0;
@@ -329,12 +329,14 @@ nav.sidebar {
       font-weight: bold;
     }
     li:before {
-      display: inline;
       content: "/";
+      display: inline;
+      margin-left: 2px;
+      margin-right: 5px;
     }
     li:first-child:before {
-      display: none;
       content: "";
+      display: none;
     }
   }
 
