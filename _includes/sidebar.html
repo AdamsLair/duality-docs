@@ -11,6 +11,7 @@
     <li>Path: {{ page.path | jsonify }}</li>
     <li>URL: {{ page.url | jsonify }}</li>
     <li>URL (no ext): {{ pageUrlWithoutExt | jsonify }}</li>
+    <li>Version: {{ page.version | jsonify }}</li>
     <li>Category: {{ page.category | jsonify }}</li>
     <li>Children: {{ childPages.size | jsonify }}</li>
     <li>Siblings: {{ siblingPages.size | jsonify }}</li>
@@ -43,7 +44,7 @@
     {% endif %}
   <!-- Otherwise, display top-level manual pages grouped by category. -->
   {% else %}
-    {% assign sortedPages = site.pages | sort: 'displayOrder' %}
+    {% assign sortedPages = site.pages | where: 'version', targetVersion | sort: 'displayOrder' %}
     {% for category in site.topLevelCategories %}
       <h4>{{ category.title }}</h4>
       <ul>
