@@ -60,21 +60,20 @@
   {% assign versionPath = page.version | prepend: '/' %}
   {% assign urlAfterVersion = page.url | split: versionPath | last %}
   {% assign versionPages = "" | split: "" %}
-  <!-- Debug Output -->
-  <ul class="debug">
-    <li>Version Path: {{ versionPath | jsonify }}</li>
-    <li>URL After Version: {{ urlAfterVersion | jsonify }}</li>
-  </ul>
-  <!-- Debug Output -->
-  <ul class="debug">
   {% for pageItem in site.pages %}
     {% assign itemVersionPath = pageItem.version | prepend: '/' %}
     {% assign itemUrlAfterVersion = pageItem.url | split: itemVersionPath | last %}
-    <li>Item Version Path: {{ itemVersionPath | jsonify }}</li>
-    <li>Item URL After Version: {{ itemUrlAfterVersion | jsonify }}</li>
     {% if itemUrlAfterVersion == urlAfterVersion %}
       {% assign versionPages = versionPages | push: host %}
     {% endif %}
   {% endfor %}
+  <ul class="versionList">
+    {% for pageItem in versionPages %}
+      {% if pageItem.version == targetVersion %}
+        <li>{{ pageItem.title }}</li>
+      {% else %}
+        <li><a href="{{ site.baseurl }}{{ pageItem.url }}">{{ pageItem.title }}</a></li>
+      {% endif %}
+    {% endfor %}
   </ul>
 </nav>

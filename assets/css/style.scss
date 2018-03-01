@@ -316,6 +316,14 @@ nav.sidebar {
     text-align: left;
   }
 
+  ul.versionList {
+    list-style-type: none;
+
+    li {
+      display: inline-block;
+    }
+  }
+
   @media (max-width: 1120px) {
     columns: 200px;
     column-rule: 1px solid rgba(0, 0, 0, 0.1);
