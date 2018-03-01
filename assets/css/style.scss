@@ -318,10 +318,13 @@ nav.sidebar {
 
   div.versionList {
     margin-top: 15px;
+    padding-top: 5px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 75%;
 
     h4 {
       font-weight: normal;
-      margin-bottom: 5px;
+      margin-bottom: 0px;
       margin-top: 5px;
     }
     ul {
