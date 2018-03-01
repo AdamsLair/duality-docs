@@ -2,6 +2,7 @@
 title: "Components"
 category: "basics"
 displayOrder: 0
+version: "v2"
 ---
 
 A **Component** is how game logic is defined in Duality. But what exactly is a Component?

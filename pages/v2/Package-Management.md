@@ -2,6 +2,7 @@
 title: "Package Management"
 category: "advanced"
 displayOrder: 0
+version: "v2"
 ---
 
 If you’re a C# developer, there’s a good chance that you already know what [NuGet](https://www.nuget.org/) is, or at least have overheard someone talking about it. The main idea is to stop delivering precompiled dependencies along with source code, and instead provide a central repository where all these binary packages are stored. Whenever someone needs one of them, it can be downloaded automatically, and whenever a new version is available, upgrading is only a mouse click away. Package Management is just incredibly convenient – and by now, Duality is able to make use of it. Let’s take a quick look at how it works.

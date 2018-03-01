@@ -2,6 +2,7 @@
 title: "Home"
 category: "introduction"
 displayOrder: -100
+version: "v2"
 ---
 
 Welcome to the Duality project Wiki! If you're looking for a **developer manual**, check the side bar to your left. 

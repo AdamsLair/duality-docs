@@ -2,6 +2,7 @@
 title: "Framework Structure"
 category: "advanced"
 displayOrder: 0
+version: "v2"
 ---
 
 This page provides a basic overview on the Duality framework.

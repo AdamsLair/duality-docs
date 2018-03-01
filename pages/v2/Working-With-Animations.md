@@ -2,6 +2,7 @@
 title: "Working with Animations"
 category: "tutorials"
 displayOrder: 10
+version: "v2"
 ---
 
 Very few games are made that don't need animations. Duality supports animations through a dedicated Component that quickly allows the creation of animations through spritesheets.

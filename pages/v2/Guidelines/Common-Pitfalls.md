@@ -2,6 +2,7 @@
 title: "Common Pitfalls"
 parent: "/pages/v2/Guidelines"
 displayOrder: 0
+version: "v2"
 ---
 
 Typical errors that can be easily avoided.

@@ -2,6 +2,7 @@
 title: "Custom Renderers"
 category: "advanced"
 displayOrder: 0
+version: "v2"
 ---
 
 This article will introduce you to writing custom renderer Components.

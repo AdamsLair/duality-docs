@@ -2,6 +2,7 @@
 title: "Handling Object Data"
 category: "advanced"
 displayOrder: 0
+version: "v2"
 ---
 
 This article will provide a quick overview on the different ways in which object data interacts with Duality.

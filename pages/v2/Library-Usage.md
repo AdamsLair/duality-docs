@@ -2,6 +2,7 @@
 title: "Using External Libraries"
 category: "advanced"
 displayOrder: 0
+version: "v2"
 ---
 
 This article will outline how to use both internal and external libraries in your Duality game or editor plugin, as well as the details of what works and doesn't work.

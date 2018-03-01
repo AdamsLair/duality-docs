@@ -2,6 +2,7 @@
 title: "History of Duality"
 category: "contributing"
 displayOrder: 1000
+version: "v2"
 ---
 
 This page provides a rough overview on the pre-GitHub history of the Duality project.

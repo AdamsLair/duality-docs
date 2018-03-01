@@ -2,6 +2,7 @@
 title: "Branch Descriptions"
 category: "contributing"
 displayOrder: 0
+version: "v2"
 ---
 
 This page gives an overview on the most important branches of the Duality repository.
