@@ -71,7 +71,7 @@
   <ul class="versionList">
     {% for pageItem in versionPages %}
       {% if pageItem.version == targetVersion %}
-        <li>{{ pageItem.version }}</li>
+        <li id="activeVersion">{{ pageItem.version }}</li>
       {% else %}
         <li><a href="{{ site.baseurl }}{{ pageItem.url }}">{{ pageItem.version }}</a></li>
       {% endif %}
