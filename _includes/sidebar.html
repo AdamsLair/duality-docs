@@ -1,10 +1,11 @@
 <nav class="sidebar">
   <!-- Determine parent and child pages -->
+  {% assign targetVersion = page.version %}
   {% assign parentUrl = page.parent | append: '.html' %}
-  {% assign parentPage = site.pages | where: 'url', parentUrl | first %}
+  {% assign parentPage = site.pages | where: 'version', targetVersion | where: 'url', parentUrl | first %}
   {% assign pageUrlWithoutExt = page.url | split: '.html' | first %}
-  {% assign childPages = site.pages | where: 'parent', pageUrlWithoutExt %}
-  {% assign siblingPages = site.pages | where: 'parent', page.parent %}
+  {% assign childPages = site.pages | where: 'version', targetVersion | where: 'parent', pageUrlWithoutExt %}
+  {% assign siblingPages = site.pages | where: 'version', targetVersion | where: 'parent', page.parent %}
   <!-- Debug Output -->
   <ul class="debug">
     <li>Path: {{ page.path | jsonify }}</li>
