@@ -316,27 +316,38 @@ nav.sidebar {
     text-align: left;
   }
 
-  div.versionList ul {
-    list-style-type: none;
-    display: inline;
-    margin: 0;
-    padding: 0;
-
-    li {
-      display: inline-block;
-    }
-    li#activeVersion {
-      font-weight: bold;
-    }
-    li:before {
-      content: "/";
+  div.versionList {
+    margin-top: 15px;
+    
+    ul {
+      list-style-type: none;
       display: inline;
-      margin-left: 2px;
-      margin-right: 5px;
-    }
-    li:first-child:before {
-      content: "";
-      display: none;
+      margin: 0;
+      padding: 0;
+
+      h4 {
+        font-weight: normal;
+        margin-bottom: 5px;
+        margin-top: 5px;
+      }
+      li {
+        display: inline-block;
+      }
+      li#activeVersion {
+        font-weight: bold;
+      }
+      li:before {
+        content: "/";
+        display: inline;
+        margin-left: 2px;
+        margin-right: 5px;
+        font-weight: normal;
+        color: rgba(0, 0, 0, 0.5);
+      }
+      li:first-child:before {
+        content: "";
+        display: none;
+      }
     }
   }
 
