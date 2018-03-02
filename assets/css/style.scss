@@ -191,7 +191,7 @@ header {
     }
     
     a {
-      color: #FFF;
+      color: #ffb56e;
       text-decoration: none;
       margin-right: 10px;
       margin-left: 20px;
@@ -311,6 +311,10 @@ nav.sidebar {
   }
   ul {
     padding-left: 20px;
+    li {
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
   }
   p, ul, ol, th, td {
     text-align: left;
