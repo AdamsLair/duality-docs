@@ -129,6 +129,25 @@ p, ul, ol, table, pre, dl {
   margin: 10px 0;
 }
 
+code, pre {
+  font-family: "Droid Sans Mono", "DroidSansMonoRegular", Menlo, Monaco, Consolas, DejaVu Sans Mono, "Liberation Mono", "文泉驿等宽微米黑", "Courier New", Courier, SimSun, monospace;
+  font-size: 13px;
+  background: #eee;
+  border:1px solid rgba(0, 0, 0, 0.1);
+}
+
+pre {
+  border-radius: 2px;
+  padding: 15px 20px;
+  line-height: 1.2;
+  overflow-x: auto;
+}
+
+code {
+  border-radius: 5px;
+  padding: 2px 5px;
+}
+
 .debug {
   display: none;
 }
