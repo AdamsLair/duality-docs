@@ -272,11 +272,14 @@ main {
   ol {
     padding-left: 25px;
     @media (max-width: 600px) {
-      padding-left: 15px;
+      padding-left: 17px;
     }
 
     li {
       padding-left: 5px;
+      @media (max-width: 600px) {
+        padding-left: 3px;
+      }
     }
   }
 
