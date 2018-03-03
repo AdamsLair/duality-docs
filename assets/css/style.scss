@@ -274,12 +274,18 @@ main {
     @media (max-width: 600px) {
       padding-left: 17px;
     }
-
     li {
       padding-left: 5px;
       @media (max-width: 600px) {
         padding-left: 3px;
       }
+    }
+  }
+
+  th, td {
+    @media (max-width: 600px) {
+      font-size: 75%;
+      padding: 4px 2px;
     }
   }
 
