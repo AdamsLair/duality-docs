@@ -21,7 +21,8 @@
   <!-- If we have either, only display parent and child pages -->
   {% if parentPage or childPages.size > 0 %}
     {% if parentPage %}
-      <a href="{{ site.baseurl }}{{ parentPage.url }}">&lt; Go Back</a>
+      <a class="contentLink" href="{{ site.baseurl }}{{ parentPage.url }}#mainContent">&lt; Go Back</a>
+      <a class="pageLink" href="{{ site.baseurl }}{{ parentPage.url }}">&lt; Go Back</a>
     {% else %}
       <a href="{{ site.baseurl }}/">&lt; Go Back</a>
     {% endif %}
@@ -29,14 +30,20 @@
       <h4>{{ page.title }}</h4>
       <ul>
         {% for pageItem in childPages %}
-          <li><a href="{{ site.baseurl }}{{ pageItem.url }}">{{ pageItem.title }}</a></li>
+          <li>
+            <a class="contentLink" href="{{ site.baseurl }}{{ pageItem.url }}#mainContent">{{ pageItem.title }}</a>
+            <a class="pageLink" href="{{ site.baseurl }}{{ pageItem.url }}">{{ pageItem.title }}</a>
+          </li>
         {% endfor %}
       </ul>
     {% elsif siblingPages.size > 0 %}
       <h4>{{ parentPage.title }}</h4>
       <ul>
         {% for pageItem in siblingPages %}
-          <li><a href="{{ site.baseurl }}{{ pageItem.url }}">{{ pageItem.title }}</a></li>
+          <li>
+            <a class="contentLink" href="{{ site.baseurl }}{{ pageItem.url }}#mainContent">{{ pageItem.title }}</a>
+            <a class="pageLink" href="{{ site.baseurl }}{{ pageItem.url }}">{{ pageItem.title }}</a>
+          </li>
         {% endfor %}
       </ul>
     {% else %}
@@ -50,7 +57,10 @@
       <ul>
         {% for pageItem in sortedPages %}
           {% if pageItem.category and pageItem.category == category.id %}
-            <li><a href="{{ site.baseurl }}{{ pageItem.url }}">{{ pageItem.title }}</a></li>
+            <li>
+              <a class="contentLink" href="{{ site.baseurl }}{{ pageItem.url }}#mainContent">{{ pageItem.title }}</a>
+              <a class="pageLink" href="{{ site.baseurl }}{{ pageItem.url }}">{{ pageItem.title }}</a>
+            </li>
           {% endif %}
         {% endfor %}
       </ul>

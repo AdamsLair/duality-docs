@@ -345,6 +345,19 @@ nav.sidebar {
     text-align: left;
   }
 
+  a.contentLink {
+    display: none;
+    @media (max-width: 1120px) {
+      display: inline;
+    }
+  }
+  a.pageLink {
+    display: inline;
+    @media (max-width: 1120px) {
+      display: none;
+    }
+  }
+
   div.versionList {
     margin-top: 15px;
     padding-top: 5px;
