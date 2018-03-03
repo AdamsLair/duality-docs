@@ -7,6 +7,7 @@ version: "v2"
 
 All beginnings are difficult. Taking first steps in the realms of a new software library can be pretty rough, especially when you're new to programming or your development environment. This tutorial is here to make things a little bit easier and guide you through your first project setup using the Duality framework.
 
+* TOC
 {:toc}
 
 # What is Duality?
