@@ -258,6 +258,16 @@ main {
   border-left: 1px solid #eee;
   border-right: 1px solid #eee;
 
+  @media (max-width: 600px) {
+    padding: 20px 20px;
+  }
+
+  ul {
+    @media (max-width: 600px) {
+      padding-left: 20px;
+    }
+  }
+
   a#editPage {
     float: right;
   }
