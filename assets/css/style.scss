@@ -284,6 +284,7 @@ main {
 
   ul#markdown-toc {
     border: 1px solid rgba(0,0,0,0.1);
+    padding-left: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
     background: #fbfbfb;
@@ -291,7 +292,7 @@ main {
 
     ul, ol {
       margin: 0;
-      padding-left: 30px;
+      padding-left: 20px;
       li {
         padding-left: 0px;
       }
