@@ -263,17 +263,20 @@ main {
     padding: 20px 20px;
   }
 
-  ul, ol {
+  ul {
     padding-left: 30px;
     @media (max-width: 600px) {
       padding-left: 20px;
     }
+  }
+  ol {
+    padding-left: 25px;
+    @media (max-width: 600px) {
+      padding-left: 15px;
+    }
 
     li {
       padding-left: 5px;
-      @media (max-width: 600px) {
-        padding-left: 0px;
-      }
     }
   }
 
