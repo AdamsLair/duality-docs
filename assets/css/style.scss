@@ -282,6 +282,22 @@ main {
     }
   }
 
+  ul#markdown-toc {
+    border: 1px solid rgba(0,0,0,0.1);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #fbfbfb;
+    margin: 10px 0;
+
+    ul, ol {
+      margin: 0;
+      padding-left: 30px;
+      li {
+        padding-left: 0px;
+      }
+    }
+  }
+
   th, td {
     @media (max-width: 600px) {
       font-size: 75%;
