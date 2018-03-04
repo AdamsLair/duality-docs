@@ -131,10 +131,9 @@ p, ul, ol, table, pre, dl {
 
 code, pre {
   font-family: "Droid Sans Mono", "DroidSansMonoRegular", Menlo, Monaco, Consolas, DejaVu Sans Mono, "Liberation Mono", "文泉驿等宽微米黑", "Courier New", Courier, SimSun, monospace;
-  font-size: 13px;
+  font-size: inherit;
   border:1px solid rgba(0, 0, 0, 0.1);
   background: #f8f8f8;
-  border-radius: 2px;
 }
 
 code {
@@ -143,6 +142,7 @@ code {
 }
 
 pre {
+  border-radius: 2px;
   padding: 15px 20px;
   line-height: 1.2;
   overflow-x: auto;
@@ -302,6 +302,7 @@ main {
   }
 
   th, td {
+    padding: 5px 5px;
     @media (max-width: 600px) {
       font-size: 75%;
       padding: 4px 2px;
