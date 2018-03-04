@@ -340,6 +340,18 @@ footer {
     text-align: left;
   }
 
+  img.logo {
+    display: block;
+    width: 300px;
+    float: right;
+    margin: 5px 5px;
+
+    @media (max-width: 500px) {
+      float: none;
+      margin: 5px auto;
+    }
+  }
+
   a {
     color: #cccccc;
     text-decoration: underline;
