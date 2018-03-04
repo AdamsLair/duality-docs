@@ -121,7 +121,7 @@ h4, h5, h6 {
   margin: 10px 0;
 }
 
-p, ul, ol, th, td {
+p, ul, ol {
   text-align: justify;
 }
 
@@ -302,6 +302,7 @@ main {
   }
 
   th, td {
+    font-size: 85%;
     padding: 5px 5px;
     @media (max-width: 600px) {
       font-size: 75%;
