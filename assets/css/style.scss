@@ -324,6 +324,14 @@ main {
     box-sizing: border-box;
     border: 1px solid #ccc;
   }
+
+  /* Remove borders around images in tables, as we can assume
+   * that a table already provides some sort of framing. */
+  table {
+    img {
+      border: none;
+    }
+  }
 }
 
 footer {
