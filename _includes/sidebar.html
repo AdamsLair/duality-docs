@@ -1,46 +1,92 @@
 <nav class="sidebar">
-  <!-- Determine parent and child pages -->
+  <!-- Determine parent, child and sibling pages -->
+  {% assign targetVersion = page.version %}
   {% assign parentUrl = page.parent | append: '.html' %}
-  {% assign parentPage = site.pages | where: 'url', parentUrl | first %}
+  {% assign parentPage = site.pages | where: 'version', targetVersion | where: 'url', parentUrl | first %}
   {% assign pageUrlWithoutExt = page.url | split: '.html' | first %}
-  {% assign childPages = site.pages | where: 'parent', pageUrlWithoutExt %}
+  {% assign childPages = site.pages | where: 'version', targetVersion | where: 'parent', pageUrlWithoutExt %}
+  {% assign siblingPages = site.pages | where: 'version', targetVersion | where: 'parent', page.parent %}
   <!-- Debug Output -->
   <ul class="debug">
     <li>Path: {{ page.path | jsonify }}</li>
     <li>URL: {{ page.url | jsonify }}</li>
     <li>URL (no ext): {{ pageUrlWithoutExt | jsonify }}</li>
+    <li>Version: {{ page.version | jsonify }}</li>
     <li>Category: {{ page.category | jsonify }}</li>
     <li>Children: {{ childPages.size | jsonify }}</li>
+    <li>Siblings: {{ siblingPages.size | jsonify }}</li>
     <li>Parent: {% if parentPage %} {{ parentPage.url | jsonify }} {% else %} null {% endif %}</li>
   </ul>
   <a id="addPage" class="button" href="{{ site.github.repository_url }}">Add Page</a>
   <!-- If we have either, only display parent and child pages -->
   {% if parentPage or childPages.size > 0 %}
     {% if parentPage %}
-      <a href="{{ site.baseurl }}{{ parentPage.url }}">&lt; Go Back</a>
+      <a class="contentLink" href="{{ site.baseurl }}{{ parentPage.url }}#mainContent">&lt; Go Back</a>
+      <a class="pageLink" href="{{ site.baseurl }}{{ parentPage.url }}">&lt; Go Back</a>
     {% else %}
       <a href="{{ site.baseurl }}/">&lt; Go Back</a>
     {% endif %}
-    <h4>{{ page.title }}</h4>
     {% if childPages.size > 0 %}
+      <h4>{{ page.title }}</h4>
       <ul>
         {% for pageItem in childPages %}
-          <li><a href="{{ site.baseurl }}{{ pageItem.url }}">{{ pageItem.title }}</a></li>
+          <li>
+            <a class="contentLink" href="{{ site.baseurl }}{{ pageItem.url }}#mainContent">{{ pageItem.title }}</a>
+            <a class="pageLink" href="{{ site.baseurl }}{{ pageItem.url }}">{{ pageItem.title }}</a>
+          </li>
         {% endfor %}
       </ul>
+    {% elsif siblingPages.size > 0 %}
+      <h4>{{ parentPage.title }}</h4>
+      <ul>
+        {% for pageItem in siblingPages %}
+          <li>
+            <a class="contentLink" href="{{ site.baseurl }}{{ pageItem.url }}#mainContent">{{ pageItem.title }}</a>
+            <a class="pageLink" href="{{ site.baseurl }}{{ pageItem.url }}">{{ pageItem.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <h4>{{ page.title }}</h4>
     {% endif %}
   <!-- Otherwise, display top-level manual pages grouped by category. -->
   {% else %}
-    {% assign sortedPages = site.pages | sort: 'displayOrder' %}
+    {% assign sortedPages = site.pages | where: 'version', targetVersion | sort: 'displayOrder' %}
     {% for category in site.topLevelCategories %}
       <h4>{{ category.title }}</h4>
       <ul>
         {% for pageItem in sortedPages %}
           {% if pageItem.category and pageItem.category == category.id %}
-            <li><a href="{{ site.baseurl }}{{ pageItem.url }}">{{ pageItem.title }}</a></li>
+            <li>
+              <a class="contentLink" href="{{ site.baseurl }}{{ pageItem.url }}#mainContent">{{ pageItem.title }}</a>
+              <a class="pageLink" href="{{ site.baseurl }}{{ pageItem.url }}">{{ pageItem.title }}</a>
+            </li>
           {% endif %}
         {% endfor %}
       </ul>
     {% endfor %}
   {% endif %}
+  <!-- Display available versions of this page -->
+  {% assign versionPath = page.version | prepend: '/' %}
+  {% assign urlAfterVersion = page.url | split: versionPath | last %}
+  {% assign versionPages = "" | split: "" %}
+  {% for pageItem in site.pages %}
+    {% assign itemVersionPath = pageItem.version | prepend: '/' %}
+    {% assign itemUrlAfterVersion = pageItem.url | split: itemVersionPath | last %}
+    {% if itemUrlAfterVersion == urlAfterVersion %}
+      {% assign versionPages = versionPages | push: pageItem %}
+    {% endif %}
+  {% endfor %}
+  <div class="versionList">
+    <h4>Versions:</h4>
+    <ul>
+      {% for pageItem in versionPages %}
+        {% if pageItem.version == targetVersion %}
+          <li id="activeVersion">{{ pageItem.version }}</li>
+        {% else %}
+          <li><a href="{{ site.baseurl }}{{ pageItem.url }}">{{ pageItem.version }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
 </nav>

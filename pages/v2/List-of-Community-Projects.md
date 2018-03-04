@@ -2,6 +2,7 @@
 title: "List of Community Projects"
 category: "contributing"
 displayOrder: 0
+version: "v2"
 ---
 
 The following is a list of projects that are maintained and published by the community. Feel free to add your own if you think that it could be useful to others!

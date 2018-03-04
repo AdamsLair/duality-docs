@@ -2,6 +2,7 @@
 title: "Using Tilemaps"
 category: "tutorials"
 displayOrder: 20
+version: "v2"
 ---
 
 This short article will give you a quick intro to using Tilemaps in Duality. It is assumed that you already know the basics. If not, head over to the [[Getting Started]] tutorial first!

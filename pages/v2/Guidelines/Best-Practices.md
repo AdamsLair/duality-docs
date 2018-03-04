@@ -2,6 +2,7 @@
 title: "Best Practices"
 parent: "/pages/v2/Guidelines"
 displayOrder: 100
+version: "v2"
 ---
 
 Ways to keep your code and workflow as clean, error-free and forward-compatible as possible.

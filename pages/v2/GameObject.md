@@ -2,6 +2,7 @@
 title: "GameObjects"
 category: "basics"
 displayOrder: 0
+version: "v2"
 ---
 
 In a component-based gameobject system like the one used in Duality, most objects are represented by a multitude of Components. GameObjects are what glues them together, providing a context and mutual base for each of them. This article should explain the basic principles behind the system.

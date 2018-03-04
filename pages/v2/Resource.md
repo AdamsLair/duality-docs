@@ -2,6 +2,7 @@
 title: "Resources"
 category: "basics"
 displayOrder: 10
+version: "v2"
 ---
 
 Whenever you need to store, modify or access game content, Resources are the way to go. There are a lot of different Resource types and each of them encapsules a different kind of data. This article is here to clarify some of the concepts behind Dualitys Resource system and show you how to use it most effectively.

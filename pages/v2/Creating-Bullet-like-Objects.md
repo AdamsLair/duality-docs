@@ -2,6 +2,7 @@
 title: "Creating Bullet-like Objects"
 category: "tutorials"
 displayOrder: 0
+version: "v2"
 ---
 
 Creating and handling bullet like objects is a common game requirement that often causes people trouble. It can be done in a variety of ways, and which way is best depends on your specific game, performance concerns, and style. This is simply one way of approaching this problem.

@@ -2,6 +2,7 @@
 title: "Input Handling"
 category: "basics"
 displayOrder: 20
+version: "v2"
 ---
 
 This article will provide a quick overview on how to manage user input in Duality.
