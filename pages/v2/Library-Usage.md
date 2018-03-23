@@ -11,7 +11,7 @@ This article will outline how to use both internal and external libraries in you
 
 In general, when you want to use a (managed) library in your game plugin, you will have to add a reference to it in Visual Studio. To do that, open the Solution Explorer, expand your project item and right-click on the References child item in order to select "Add Reference". In the dialog, click "Browse" and select the library you want to reference.
 
-[[/img/LibraryUsage/AddReference.png]]
+![](../img/LibraryUsage/AddReference.png)
 
 If you're familiar with it, you can also use the Visual Studio integrated version of NuGet and add your dependency as a package - though it is advised not to do that for Duality plugin packages specifically, since they are already handled by Duality itself.
 

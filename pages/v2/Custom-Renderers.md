@@ -23,7 +23,7 @@ In both cases, you will have to talk to the `IDrawDevice` interface - it's the A
 
 Choosing the bottom line approach, implementing the `ICmpRenderer` interface means you will have to provide the code for three members:
 
-```C#
+```csharp
 // A getter-only property that will tell Duality approximately how big the 
 // object is, so it knows when the Camera is far enough to just skip rendering 
 // this object entirely.
@@ -44,7 +44,7 @@ void Draw(IDrawDevice device);
 
 Let's say you're implementing a very simple renderer that draws a circle object with a fixed radius. It would look something like this:
 
-```C#
+```csharp
 public class SimpleCircleRenderer : Component, ICmpRenderer
 {
 	private const float SampleCircleRadius = 50.0f;
@@ -82,7 +82,7 @@ First of all, it is important to keep in mind that any renderer could get drawn 
 
 Every Camera and rendering pass has a bitmask that specifies which groups of objects it can see. These groups are for the most part user-defined and by default, all the objects belong to the first group and all Cameras and passes can see all groups. Each group has its own `VisibilityFlag` item that is set or not set in the `device.VisibilityMask` bitmask, depending on whether a Camera or rendering pass can see it.
 
-```C#
+```csharp
 bool anyGroupFlag = 
 	(device.VisibilityMask & VisibilityFlag.AllGroups)
 	!= VisibilityFlag.None;
@@ -92,7 +92,7 @@ if (!anyGroupFlag) return false;
 
 There are up to 31 visibility groups and for our sample above, our renderer doesn't really care and thus will assume to belong to all of them. As a result, it will be fine with any of the group flags being set, but return `false` if the drawing device can't see _any_ of the existing visibility groups.
 
-```C#
+```csharp
 bool screenOverlayFlag = 
 	(device.VisibilityMask & VisibilityFlag.ScreenOverlay) 
 	!= VisibilityFlag.None;
@@ -104,7 +104,7 @@ One of those flags is not a group flag and has a special role though. In Duality
 
 By default, a Camera has two rendering passes: One that draws all world space objects and one that draws all screen space objects on top of them. Since Duality doesn't know which object belongs to which, it will ask all renderers whether they are visible in each pass. Depending on what you want, `IsVisible` needs to return `true` for one of them and `false` for the other. The `VisiblityFlag.ScreenOverlay` is dedicated to identifying a rendering pass that renders in screen space: Your renderer can simply check if the flag is either set or not set and decide in which of the two cases to be visible.
 
-```C#
+```csharp
 Vector3 myWorldPos = this.gameobj.Transform.Pos;
 return device.IsCoordInView(myWorldPos, SampleCircleRadius);
 ```
@@ -115,7 +115,7 @@ Last, there is a simple visibility check: Assuming a circle with our bounding ra
 
 When writing a custom renderer that does the usual and simply renders a world space object, we can avoid duplicating some of the code that you saw in the `ICmpRenderer` version above. Instead of implementing the interface directly, derive your Component class from the abstract `Renderer` Component that [does some of the boilerplate things](https://github.com/AdamsLair/duality/blob/master/Source/Core/Duality/Components/Renderer.cs) for you. Our simplified implementation of the circle renderer would look like this:
 
-```C#
+```csharp
 public class SimpleCircleRenderer : Renderer
 {
 	private const float SampleCircleRadius = 50.0f;
@@ -142,7 +142,7 @@ In a somewhat similar way, we have two approaches for implementing our drawing c
 
 The `Canvas` class allows us to draw geometric shapes easily without worrying too much about the details. Our circle renderer could look like this:
 
-```C#
+```csharp
 public override void Draw(IDrawDevice device)
 {
 	// Prepare a Canvas object to make drawing easier
@@ -165,7 +165,7 @@ If you have a great deal of things to render (like particles in a particle effec
 
 Each drawing batch consists of a set of vertices that define _which_ geometry to draw, as well as a Material that represents _how_ that geometry will be rendered. The vertices you submit need to be expressed relative to the Camera position and already scaled to apply the parallax effect based on Z distance - which you'll have to take care of manually.
 
-```C#
+```csharp
 public override void Draw(IDrawDevice device)
 {
 	// Determine relative position and scale of the object based on
@@ -201,7 +201,7 @@ For a more complex and versatile implementation sample of a renderer Component t
 
 The following example simply renders the mouse cursor and its position as part of a HUD. Note that, unlike the previous renderer samples, it operates in screen space and uses screen coordinates.
 
-```C#
+```csharp
 public class HudRenderer : Component, ICmpRenderer
 {
 	private ContentRef<Font> font = null;

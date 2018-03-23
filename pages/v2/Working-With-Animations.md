@@ -12,7 +12,7 @@ Very few games are made that don't need animations. Duality supports animations 
 So, what is needed for an animation?
 A spritesheet. A spritesheet is nothing more than a sequence of images that when shown in sequence form an animation.
 So, let's just use this one (Downloaded from OpenGameArt, character created by Bevouliin):
-[[/img/Animation/Animation1.png|align=center]]
+![](../img/Animation/Animation1.png)
 
 Save it somewhere on your computer...
 
@@ -21,17 +21,17 @@ And open Duality.
 Drag and drop the spritesheet to the project view.
 
 Looking to the right you see a few fields that relate to animation. In our example, you see Billy six times doing different things.
-[[/img/Animation/Animation2.png|align=center]]
+![](../img/Animation/Animation2.png)
 Insert 3 in the AnimCols and 2 in the AnimRows. AnimFrameBorder is only if you have borders between the frames.
 
 Create a new GameObject by right-clicking in the scene view and give it a name: Billy (I call it that)
 In Billy, add a new AnimSpriteRenderer Component.
 
-[[/img/Animation/Animation3.png|align=center]]
+![](../img/Animation/Animation3.png)
 
 You will Duality's logo appearing. That's ok. Drag Billy's Pixmap over AnimSpriteRenderer and you'll see Billy in your scene.
 
-[[/img/Animation/Animation4.png|align=center]]
+![](../img/Animation/Animation4.png)
 
 Pressing play, you will see the full animation running, slowly.
 

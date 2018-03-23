@@ -13,7 +13,7 @@ Components are the basic building blocks of your game: Each of them has a certai
 A Component can be attached to a GameObject, it can run code, you can get query the active Scene for instances of it, and so on. It is not possible to add more than one Component of the same type to a GameObject, in order to avoid ambiguity, and a single Component may not belong to multiple GameObjects. Components can also require another Component of a specified type to be present in its parent GameObject, which will be enforced by the editor.
 
 To make a custom component, you must derive (inherit) from it:
-```cs
+```csharp
 using Duality;
 
 namespace MyNamespace
@@ -53,7 +53,7 @@ As the name suggests, ICmpInitializable is the interface to implement if you wan
 There are a few "contexts" in which a Duality component can be initialized or shut down in. Your code must check for the context and act accordingly.
 
 Let's extend our earlier example:
-```cs
+```csharp
 using Duality;
 using Duality.Resources;
 
@@ -104,7 +104,7 @@ So, with that out of the way, the earlier example hopefully makes a little bit m
 
 # ICmpUpdatable
 This is probably the interface you will be seeing the most of when working with Duality. Any Component implementing this interface will be able to run its own per-frame logic. It's also the easiest one to implement; no parameters to check, no bureaucracy. Just a function and its code:
-```cs
+```csharp
 using Duality;
 
 namespace MyNamespace
@@ -127,7 +127,7 @@ That's the gist of `ICmpUpdatable`, even though you probably want to do somethin
 Just as formerly mentioned, a Component can require that another Component of a specified type has to be present in the same GameObject. The Duality editor will then enforce this requirement by adding all required Components when adding this Component. Think of a sprite that can only render itself if there is also a `Transform` providing a location in space - or an actor that can only animate if there is a `SpriteRenderer` that displays the current frame.
 
 You can accomplish the above by adding the `RequiredComponent` attribute to your Component class:
-```cs
+```csharp
 using Duality;
 using Duality.Components.Renderers;
 
