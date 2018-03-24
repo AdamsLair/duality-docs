@@ -138,7 +138,15 @@ code, pre {
 
 code {
   border-radius: 5px;
-  padding: 2px 5px;
+  padding: 2px 3px;
+  margin: 0px -1px;
+  font-size: 85%;
+  color: #265973;
+  word-break: break-all;
+
+  @media (max-width: 600px) {
+    font-size: 75%;
+  }
 }
 
 pre {
@@ -146,12 +154,19 @@ pre {
   padding: 15px 20px;
   line-height: 1.2;
   overflow-x: auto;
+  tab-size: 4;
+
+  @media (max-width: 600px) {
+  tab-size: 2;
+  }
 
   code {
     background: transparent;
     border: none;
     border-radius: 0px;
     padding: 0;
+    margin: 0;
+    color: #333;
   }
 }
 
