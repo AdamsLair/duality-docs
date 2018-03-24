@@ -11,15 +11,15 @@ Whenever you need to store, modify or access game content, Resources are the way
 
 In Dualitys editing environment, the Project View is where you'll find all currently existing Resources. When starting a new project, it is typically empty and you'll fill it during development. Any kind of game content is stored as Resource file in Dualitys Data folder and is either created directly in the editor (Scene, Prefab, etc.) or imported from external source files (Pixmap, AudioData, etc.). You can easily create new Resources by right-clicking on an empty spot in the Project View and selecting the appropriate entry from the New menu. 
 
-[[/img/Resource/CreateResources.png|align=center]]
+![](../img/Resource/CreateResources.png)
 
 Of course, those Resources will be more or less empty. While some Resource types are perfectly editable using the Object Inspector, others might need to be edited using external programs. To open a Resource for editing, simply double-click it. This will extract its data to the Source/Media directory and then open it with the respective file formats default application. Duality will keep an eye on those files - as soon as you edit and save them, it will automatically reload their associated Resources and you can directly see your changes inside the editor.
 
-[[/img/Resource/OpenResourcesExternal.png|align=center]]
+![](../img/Resource/OpenResourcesExternal.png)
 
 Instead of creating game content in Duality, you can also import Resources from external source files: Simply dragdrop them onto the Project View. Not all image, sound or font formats are supported, but .png, .ogg and .ttf should always work. When in doubt, just try it and see if Duality does something useful. The worst that could happen is an error message.
 
-[[/img/Resource/ImportResources.png|align=center]]
+![](../img/Resource/ImportResources.png)
 
 # Accessing Resources
 
@@ -158,8 +158,8 @@ On referencing Resources:
     }
 ```
 
-  * Accessing `ContentRef<T>.Res` is very cheap - except when the Resource hasn't been loaded before and loading is triggered on-demand. To manually trigger loading, use `ContentRef<T>.MakeAvailable()`.
-  * Always assume that content may be unavailable and `ContentRef<T>.Res` might return null.
+  * Accessing `Res` is very cheap - except when the Resource hasn't been loaded before and loading is triggered on-demand. To manually trigger loading, use `MakeAvailable()`.
+  * Always assume that content may be unavailable and `Res` might return null.
   
 On other topics:
 

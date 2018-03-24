@@ -15,7 +15,7 @@ When defining a new custom object type such as Components or Resources, chances 
 
 There are two different language constructs in C# that are closely related to data storage: Fields and properties. They may look similar at first, but they serve very different purposes. In a custom Component or class, you can define them like this:
 
-```C#
+```csharp
 public class Foo : Component
 {
     // Field
@@ -32,13 +32,13 @@ public class Foo : Component
 
 **A field defines a slot** in your object that can hold a value. It's a variable that belongs to an object and it's purpose is to store data, like the `health` field storing a floating point number that represents how well the object is. This is pure data that can be read and written without causing much of a stir. Usually, fields are also declared as `private`, so no other object is allowed to access it - it's none of anyone's business, except for the object it belongs to.
 
-```C#
+```csharp
 private float health = 100.0f;
 ```
 
 On the other hand, **a property defines an access point** to retrieve or modify a value. In most cases, a property will act a `public` surface for an object's private data, gracefully allowing the object to react to changes from the outside, or transform its internal data before handing it to anyone else.
 
-```C#
+```csharp
 public float Health
 {
     get { return this.health; }

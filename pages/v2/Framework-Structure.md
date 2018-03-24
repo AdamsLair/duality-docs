@@ -29,7 +29,7 @@ In order to achieve this level of portability, all platform-dependent backend co
 * Implement a Launcher on your target platform.
 * Implement a Backend Plugins on your target platform.
 
-[[/img/FrameworkStructure/PortabilityOverview.png|align=center]]
+![](../img/FrameworkStructure/PortabilityOverview.png)
 
 Here's the deal you get with Backend Plugins and a custom Launcher:
 

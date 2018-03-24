@@ -9,21 +9,21 @@ Creating and handling bullet like objects is a common game requirement that ofte
 
 # Project Setup
 
-This tutorial's examples are going to expand upon the Getting Started tutorial [here](https://github.com/AdamsLair/duality/wiki/Getting-Started). Nothing will prevent you from starting with your own project, but it will be easier to follow along if you start with that tutorial. If you are starting from your own project, all you will need is a GameObject to act as your shooter.
+This tutorial's examples are going to expand upon the Getting Started tutorial [here](getting-started.md). Nothing will prevent you from starting with your own project, but it will be easier to follow along if you start with that tutorial. If you are starting from your own project, all you will need is a GameObject to act as your shooter.
 
 # Creating the Bullet
 
 First, lets get a sprite into Duality to use for our bullet:
 
-[[https://github.com/deanljohnson/duality-CreatingBullets-Tutorial/blob/master/bulletOne.png|align=center]]
+![](../img/CreatingBulletLikeObjects/bulletOne.png)
 
 Save this image and then drag it onto the project view in the Duality editor:
 
-[[https://github.com/deanljohnson/duality-CreatingBullets-Tutorial/blob/master/BulletOneDrag.PNG|align=center]]
+![](../img/CreatingBulletLikeObjects/BulletOneDrag.png)
 
 Now drag the Pixmap created in the project view into the scene editor to automatically create a GameObject in the scene. This GameObject will automatically have a SpriteRenderer and Transform component:
 
-[[https://github.com/deanljohnson/duality-CreatingBullets-Tutorial/blob/master/BulletOneInitialComponents.PNG|align=center]]
+![](../img/CreatingBulletLikeObjects/BulletOneInitialComponents.png)
 
 ## Rigidbody
 
@@ -31,7 +31,7 @@ Add a Rigidbody component to the BulletOne GameObject (Right Click -> New -> Phy
 Select the rectangle shape you just made and in the Object Inspector window check the "IsSensor" box. What this does is make the physics system notify us when the bullet collides with another rigidbody, but without resolving collisions. What this means is the bullet will not affect the movement of the object it hits, or end up ricocheting. Now we obviously don't want bullets to just pass through the objects they hit, but we will handle this later.
 Checking the "IsSensor" box turns the shape in the Rigidbody editor an orange color. In the end, things should look like this:
 
-[[https://github.com/deanljohnson/duality-CreatingBullets-Tutorial/blob/master/BulletRigidbodyEdit.PNG|align=center]]
+![](../img/CreatingBulletLikeObjects/BulletRigidbodyEdit.png)
 
 ## BulletController Component
 
@@ -139,19 +139,19 @@ Now we need to look into how to shoot these bullets with user input.
 
 Having one bullet flying through our scene is fine and dandy, but we need to shoot these things on demand! How will we do this. First, we need to make a Prefab. What is a Prefab? Think of it as a blueprint from which we can create or **instantiate** multiple GameObjects. To create one, go to your Project View in the Duality editor then Right Click -> New -> Prefab:
 
-[[https://github.com/deanljohnson/duality-CreatingBullets-Tutorial/blob/master/PrefabContextMenu.PNG|align=center]]
+![](../img/CreatingBulletLikeObjects/PrefabContextMenu.png)
 
 **_Before continuing, verify that the BulletOne Transform has Pos (0,0,0)_**
 
 Name it Bullet. Now go to your Scene View and drag-and-drop your BulletOne GameObject onto the Prefab in the Project View:
 
-[[https://github.com/deanljohnson/duality-CreatingBullets-Tutorial/blob/master/SettingBulletPrefab.PNG|align=center]]
+![](../img/CreatingBulletLikeObjects/SettingBulletPrefab.png)
 
 After doing so, you should see the BulletOne GameObject turn blue in the Scene View. This is your reminder that the GameObject is **linked** to a Prefab.
 
 A note about Prefabs before we continue. Although GameObjects made from Prefabs are instances of the Prefab, edits made to the GameObject instance are not automatically made to the Prefab. In order to change a prefab, you must edit an instance in the Scene View and then click the "Apply" button in the Object Inspector:
 
-[[https://github.com/deanljohnson/duality-CreatingBullets-Tutorial/blob/master/PrefabApply.PNG|align=center]]
+![](../img/CreatingBulletLikeObjects/PrefabApply.png)
 
 Now we are going to have to edit our Player Component from the Getting Started tutorial. If you using your own project rather than the one from the tutorial, no worries. All the Component does right now is move a ship around, and that code is irrelevant to us right now. Just apply these edits to some kind controller Component on the objects you want to be able to shoot.
 
@@ -226,7 +226,7 @@ We've made it pretty far. The last major feature we need is bullet collisions. B
 
 Before we can implement collisions, we need something for our bullets to collide with. If you're using the project from the Getting Started tutorial just right click on the player ship in the Scene View and hit clone. Rename the clone to "Enemy" and delete the Player Component. Edit the Enemy's Transform until it is a good distance from the Player ship. Your Scene View should look something like this:
 
-[[https://github.com/deanljohnson/duality-CreatingBullets-Tutorial/blob/master/SceneViewWithEnemy.PNG|align=center]]
+![](../img/CreatingBulletLikeObjects/SceneViewWithEnemy.png)
 
 Now to deal with issue (1) from above, we will do two things. Technically, either one of these is sufficient to solve the problem, but doing them both gives us more control and has other uses.
 

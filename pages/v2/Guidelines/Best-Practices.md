@@ -27,7 +27,7 @@ Say, you're developing the `FooComponent` and need to access a `GameObject` that
 
 An easy, but fragile way that **should be avoided** in almost all cases. 
 
-```C# 
+```csharp 
 GameObject obj = this.GameObj.ParentScene.FindGameObject("TheObjectImLookingFor");
 obj.DoSomething();
 ```
@@ -41,7 +41,7 @@ obj.DoSomething();
 
 Asking for the current object's parent's second child's child. This approach **should be avoided** unless you know exactly what you're doing and why you're doing it. Not recommended in general.
 
-```C# 
+```csharp 
 GameObject obj = this.GameObj.Parent.ChildAtIndex(1).ChildAtIndex(0);
 obj.DoSomething();
 ```
@@ -55,7 +55,7 @@ obj.DoSomething();
 
 Find an object based on the Components that are attached to it. Either use a semantically matching existing Component, or create a new, empty "tag" Component you can attach to the object(s) in question.
 
-```C# 
+```csharp 
 GameObject obj = this.GameObj.ParentScene.FindGameObject<BarComponent>();
 obj.DoSomething();
 ```
@@ -71,7 +71,7 @@ obj.DoSomething();
 
 Defining a public property in your source Component, which can be assigned by the user in the editor.
 
-```C# 
+```csharp 
 public class FooComponent
 {
     // Also works fine with Components of any type, or lists of objects.
@@ -91,7 +91,7 @@ public class FooComponent
 
 ## Use `ContentRef<T>` properly
 
-This is already described [[in the article about Resources|Resource]], but it's mirrored here because it's so important.
+This is already described [in the article about Resources](../Resource.md), but it's mirrored here because it's so important.
 
 ## Deal with null
 

@@ -17,7 +17,7 @@ To get a quick overview, you can also check out the **Input Handling sample** in
 
 Mouse input is available via `DualityApp.Mouse` and provides the usual information with its `X`, `Y` and `Wheel` properties. For each of them, you can also query a `*Speed` value that represents the difference of the value since last frame. For position, there is also `Pos` and `Vel` as a vector-based shorthand.
 
-```C#
+```csharp
 // Drawing the cursor using a screen space renderer Component
 Vector2 cursorPos = DualityApp.Mouse.Pos;
 canvas.DrawCircle(cursorPos.X, cursorPos.Y, 3);
@@ -27,11 +27,11 @@ All positions that are provided are relative to the game window, so `(0, 0)` wil
 
 To check whether a mouse button is currently pressed, either use the `MouseButton` indexer, or the `ButtonPressed` method. When you're interested in a one-time hit of a button, use the `ButtonHit` method instead.
 
-```C#
+```csharp
 bool isPressed = DualityApp.Mouse[MouseButton.Left];
 ```
 
-```C#
+```csharp
 bool isPressed = DualityApp.Mouse.ButtonPressed(MouseButton.Left);
 bool justHit   = DualityApp.Mouse.ButtonHit(MouseButton.Left);
 ```
@@ -44,11 +44,11 @@ Keyboard input is available via `DualityApp.Keyboard` and it provides informatio
 
 Checking whether a certain key is pressed works the same as with retrieving mouse button input:
 
-```C#
+```csharp
 bool isPressed = DualityApp.Keyboard[Key.Escape];
 ```
 
-```C#
+```csharp
 bool isPressed = DualityApp.Keyboard.KeyPressed(Key.Escape);
 bool justHit   = DualityApp.Keyboard.KeyHit(Key.Escape);
 ```
@@ -65,7 +65,7 @@ Like the mouse input, keyboard input can become available and unavailable based 
 
 Gamepad input retrieval works very similar to keyboard and mouse and doesn't really require much more explanation. They provide API for retrieving both buttons and continuous axes, as well as lots of specialized properties and methods to access thumbsticks, triggers and DPad explicitly. The biggest difference to the previously described input methods is that there can be any number of gamepads, which you can select via index or description string.
 
-```C#
+```csharp
 Vector2 leftStick = DualityApp.Gamepads[0].LeftThumbstick;
 ```
 
