@@ -33,7 +33,7 @@ You can reference managed libraries that are not Duality plugins as well, same p
 
 ### Portability and (non-) Portable Class Libraries
 
-By default, Duality game plugins are [[Portable Class Libraries|Framework Structure]], which means that they limit themselves to a subset of the .Net Framework that is known to be portable across a range of platforms. To keep this contract intact, you can only reference libraries that use a similar or smaller subset of .Net, thus retaining portability.
+By default, Duality game plugins are [Portable Class Libraries](Framework-Structure.md), which means that they limit themselves to a subset of the .Net Framework that is known to be portable across a range of platforms. To keep this contract intact, you can only reference libraries that use a similar or smaller subset of .Net, thus retaining portability.
 
 There may be cases where this gets in the way, or you simply don't care about other platforms. In this case, just [convert](http://stackoverflow.com/q/20094075/2015377) your game plugin project to be a non-portable / regular C# class library and reference your dependency as usual. Duality is fine with either one.
 

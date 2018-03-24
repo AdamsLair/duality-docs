@@ -5,7 +5,7 @@ displayOrder: 0
 version: "v2"
 ---
 
-This page will give you an overview on the development cycle of Duality, including when (and for what) to create branches and when to merge them in which way. For more information about specific existing branches, please refer to the [[Branch Descriptions]] page.
+This page will give you an overview on the development cycle of Duality, including when (and for what) to create branches and when to merge them in which way. For more information about specific existing branches, please refer to the [Branch Descriptions](Branch-Descriptions.md) page.
 
 # Ongoing Development
 
@@ -33,7 +33,7 @@ As an additional counter-measure to broken binary releases, it is always a good 
 
 # Pull Requests
 
-If you're planning to do a pull request and are not a Duality core developer, please also read [[How to Contribute]]. In general, **Pull Requests are always done in their own feature branch**. This is to ensure that they remain isolated and can be dealt with individually, rather than polluting a contributor's `master` branch and potentially leaking across different Pull Requests. After a PR has been merged back to `master`, its feature branch can be deleted safely.
+If you're planning to do a pull request and are not a Duality core developer, please also read [How to Contribute](how-to-contribute.md). In general, **Pull Requests are always done in their own feature branch**. This is to ensure that they remain isolated and can be dealt with individually, rather than polluting a contributor's `master` branch and potentially leaking across different Pull Requests. After a PR has been merged back to `master`, its feature branch can be deleted safely.
 
 # Major Version Steps
 

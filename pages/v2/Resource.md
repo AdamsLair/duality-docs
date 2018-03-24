@@ -158,8 +158,8 @@ On referencing Resources:
     }
 ```
 
-  * Accessing `ContentRef<T>.Res` is very cheap - except when the Resource hasn't been loaded before and loading is triggered on-demand. To manually trigger loading, use `ContentRef<T>.MakeAvailable()`.
-  * Always assume that content may be unavailable and `ContentRef<T>.Res` might return null.
+  * Accessing `Res` is very cheap - except when the Resource hasn't been loaded before and loading is triggered on-demand. To manually trigger loading, use `MakeAvailable()`.
+  * Always assume that content may be unavailable and `Res` might return null.
   
 On other topics:
 

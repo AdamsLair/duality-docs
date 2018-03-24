@@ -32,11 +32,13 @@ This page provides a rough overview on the pre-GitHub history of the Duality pro
   ![](../img/ProjectVersionHistory/Duality3.jpg)
 
   * **2010-12-20**: Working on the Duality editor: Project View, picking techniques. 
-  ![](../img/ProjectVersionHistory/Duality4.jpg|width=250px]]![](../img/ProjectVersionHistory/Duality5.jpg|width=250px)[[/img/ProjectVersionHistory/Duality6.jpg|width=250px)
+  ![](../img/ProjectVersionHistory/Duality4.jpg)
+  ![](../img/ProjectVersionHistory/Duality5.jpg)
+  ![](../img/ProjectVersionHistory/Duality6.jpg)
 
   * **2011-03-01**: Mostly Minecraft.
   
-  ![](../img/ProjectVersionHistory/Minecraft.jpg|width=300px]][[/img/ProjectVersionHistory/Minecraft2.jpg|width=300px)
+  ![](../img/ProjectVersionHistory/Minecraft.jpg)![](../img/ProjectVersionHistory/Minecraft2.jpg)
 
   * **2011-04-11**: Prefab system design and implementation.
   * **2011-04-16**: First iteration of the custom Property Grid used in the `Object Inspector`
@@ -62,7 +64,10 @@ This page provides a rough overview on the pre-GitHub history of the Duality pro
   * **2011-08-31**: Video blog: [Documentation](http://www.youtube.com/watch?v=5b7oQXf1iQ4)
   * **2012-02-16**: Video blog: [Sandbox, Xml and Physics](http://www.youtube.com/watch?v=QzdCjVX7lVY)
   * **2012-03-21**: Rewrote the custom Property Grid, introduced intelligent drag drop and a complete editor redesign.
-  ![](../img/ProjectVersionHistory/Duality10.jpg|width=200px]]![](../img/ProjectVersionHistory/Duality11.jpg|width=200px]][[/img/ProjectVersionHistory/Duality12.jpg|width=200px)[[/img/ProjectVersionHistory/Duality13.jpg|width=200px)
+  ![](../img/ProjectVersionHistory/Duality10.jpg)
+  ![](../img/ProjectVersionHistory/Duality11.jpg)
+  ![](../img/ProjectVersionHistory/Duality12.jpg)
+  ![](../img/ProjectVersionHistory/Duality13.jpg)
 
   * **2012-03-26**: Implemented custom Visual Studio [debugger visualizers](http://www.adamslair.de/blog/?p=616) for Duality.
   
@@ -71,12 +76,21 @@ This page provides a rough overview on the pre-GitHub history of the Duality pro
   * **2012-04-29**: Ported Farseer Physics to OpenTK and (roughly) added it to the Duality framework. Created a small physics-driven [Tetris demo](https://duality.googlecode.com/svn/trunk/Other/TechDemos/Packages/Tetris.zip).
   * **2012-07-31**: Finished implementing physics and created a small [Physics demo](https://duality.googlecode.com/svn/trunk/Other/TechDemos/Packages/Physics.zip).
 
-  ![](../img/ProjectVersionHistory/Duality14.png|width=250px]]![](../img/ProjectVersionHistory/Duality15.png|width=250px]]![](../img/ProjectVersionHistory/Duality16.png|width=250px]][[/img/ProjectVersionHistory/Duality17.png|width=250px)[[/img/ProjectVersionHistory/Duality18.png|width=250px)[[/img/ProjectVersionHistory/Duality19.png|width=250px)
+  ![](../img/ProjectVersionHistory/Duality14.png)
+  ![](../img/ProjectVersionHistory/Duality15.png)
+  ![](../img/ProjectVersionHistory/Duality16.png)
+  ![](../img/ProjectVersionHistory/Duality17.png)
+  ![](../img/ProjectVersionHistory/Duality18.png)
+  ![](../img/ProjectVersionHistory/Duality19.png)
 
   * **2012-08-13**: Video blog: [Physical Platformer](http://www.youtube.com/watch?v=3rAB2GRJfcc)
   * **2012-08-23**: General usability tweaking in the Duality editor.
 
-  ![](../img/ProjectVersionHistory/Duality20.jpg|width=150px]]![](../img/ProjectVersionHistory/Duality21.jpg|width=150px]]![](../img/ProjectVersionHistory/Duality22.jpg|width=150px)[[/img/ProjectVersionHistory/Duality23.jpg|width=150px)[[/img/ProjectVersionHistory/Duality24.jpg|width=150px)
+  ![](../img/ProjectVersionHistory/Duality20.jpg)
+  ![](../img/ProjectVersionHistory/Duality21.jpg)
+  ![](../img/ProjectVersionHistory/Duality22.jpg)
+  ![](../img/ProjectVersionHistory/Duality23.jpg)
+  ![](../img/ProjectVersionHistory/Duality24.jpg)
 
   * **2013-02-18**: Released a [bachelor thesis](http://bachelorthesis.adamslair.net/) dealing with the internals of Duality to the public.
   * **2013-07-21**: Moved project from [google code](https://code.google.com/p/duality/) to to GitHub.

@@ -91,7 +91,7 @@ public class FooComponent
 
 ## Use `ContentRef<T>` properly
 
-This is already described [[in the article about Resources|Resource]], but it's mirrored here because it's so important.
+This is already described [in the article about Resources](../Resource.md), but it's mirrored here because it's so important.
 
 ## Deal with null
 

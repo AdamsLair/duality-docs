@@ -95,4 +95,4 @@ DualityEditor.pdb
 DualityEditor.xml
 ```
 
-If you're using **git**, you can find a sample `.gitignore` file [[here|Duality-Sample-GitIgnore.txt]].
+If you're using **git**, you can find a sample `.gitignore` file [here](Duality-Sample-GitIgnore.txt).
