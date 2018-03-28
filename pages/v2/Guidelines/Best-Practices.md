@@ -7,6 +7,9 @@ version: "v2"
 
 Ways to keep your code and workflow as clean, error-free and forward-compatible as possible.
 
+* TOC
+{:toc}
+
 # Coding
 
 ## Use `Time.TimeMult` where appropriate

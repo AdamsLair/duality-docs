@@ -9,6 +9,9 @@ Someone once said: "Every game engine sucks - but each in its own, unique way". 
 
 _If you haven't read the info page yet, [head over here](http://duality.adamslair.net) first._
 
+* TOC
+{:toc}
+
 # About Duality
 
 So let's take a close, honest look. If you're with us by the end of this chapter, Duality and you have a solid chance.
