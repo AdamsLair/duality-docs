@@ -102,6 +102,7 @@ body {
   padding: 0;
   font-size: 15px;
   line-height: 1.4;
+  color: #525252;
   background-color: #2d2d2d; /* Same as footer background color */
 }
 
@@ -276,6 +277,11 @@ main {
 
   @media (max-width: 600px) {
     padding: 20px 20px;
+  }
+
+  p, ul, ol {
+    margin: 15px 0;
+    line-height: 1.5;
   }
 
   ul {
