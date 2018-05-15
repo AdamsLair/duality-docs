@@ -99,7 +99,7 @@ If all you want to do is add a context menu to a given object type or process a 
 
 ## Retrieving Editor Actions
 
-Editor actions matching certain paramters can be achieved by calling `DualityEditorApp.GetEditorActions`. For example, the following call gets all editor actions that can operate on objects of type `GameObject`, can be performed on the given set of objects, and can be performed in the context of opening a context menu:
+Editor actions matching certain parameters can be achieved by calling `DualityEditorApp.GetEditorActions`. For example, the following call gets all editor actions that can operate on objects of type `GameObject`, can be performed on the given set of objects, and can be performed in the context of opening a context menu:
 
 ```csharp
 List<GameObject> targetObjects = /* get the objects to perform the actions on*/;
