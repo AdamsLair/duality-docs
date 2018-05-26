@@ -2,7 +2,7 @@
 theme: jekyll-theme-minimal
 title: "Duality Docs"
 description: "Developer manual for the Duality game engine"
-google_analytics: UA-39997821-2
+# google_analytics: UA-39997821-2
 repository: 'AdamsLair/duality-docs'
 
 # External links, to be displayed in the top
