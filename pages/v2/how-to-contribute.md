@@ -1,6 +1,6 @@
 ---
 title: "How to Contribute"
-category: "contributing"
+category: "development"
 displayOrder: -100
 version: "v2"
 ---

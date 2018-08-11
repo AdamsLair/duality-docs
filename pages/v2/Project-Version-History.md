@@ -1,6 +1,6 @@
 ---
 title: "History of Duality"
-category: "contributing"
+category: "development"
 displayOrder: 1000
 version: "v2"
 ---

@@ -1,6 +1,6 @@
 ---
 title: "List of Community Projects"
-category: "contributing"
+category: "development"
 displayOrder: 0
 version: "v2"
 ---

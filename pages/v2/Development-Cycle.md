@@ -1,6 +1,6 @@
 ---
 title: "Development Cycle"
-category: "contributing"
+category: "development"
 displayOrder: 0
 version: "v2"
 ---
