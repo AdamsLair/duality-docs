@@ -77,10 +77,11 @@
       {% assign versionPages = versionPages | push: pageItem %}
     {% endif %}
   {% endfor %}
+  {% assign sortedVersionPages = versionPages | sort:"version" %}
   <div class="versionList">
     <h4>Versions:</h4>
     <ul>
-      {% for pageItem in versionPages %}
+      {% for pageItem in sortedVersionPages %}
         {% if pageItem.version == targetVersion %}
           <li id="activeVersion">{{ pageItem.version }}</li>
         {% else %}
