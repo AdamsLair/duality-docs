@@ -118,7 +118,7 @@ If you want a character to walk around on a deep tilemap, this way of depth inte
 1. **Create a custom updater** Component that will adjust the sprites depth offset value according to its Y value.
 2. **Implement a custom renderer** Component that does the same thing internally, so you don't have to bother anymore and can treat it as a blackbox.
 
-Option #2 is the one that I'd advise for projects using deep tilemaps if you're planning for them to be bigger than a game jam entry or similar. To get a good idea on how to implement one, take a look at the [ActorRenderer](/AdamsLair/duality/blob/master/Source/Plugins/Tilemaps/Sample/RpgLike/ActorRenderer.cs) from the Tilemaps Sample package. You can also use it directly, though you might need or want to adjust the code to fit your project.
+Option #2 is the one that I'd advise for projects using deep tilemaps if you're planning for them to be bigger than a game jam entry or similar. To get a good idea on how to implement one, take a look at the [ActorRenderer](/AdamsLair/duality/blob/fbe55321e65cf8b2cef3635d9b8a56af109657d3/Samples/Tilemaps/RpgLike/ActorRenderer.cs) from the Tilemaps Sample package. You can also use it directly, though you might need or want to adjust the code to fit your project.
 
 # Editing Tilesets
 
