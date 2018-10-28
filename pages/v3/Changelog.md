@@ -22,6 +22,33 @@ The following is a high level overview on the general nature of changes in this 
 
 For more detailed information, check out the "All Changes" section down below.
 
+# Upgrade Guide
+
+Unlike the regular minor updates and patches, a major version step is free to introduce breaking changes to evolve the framework - and there are lots of them in v3! While they do improve API, design and behavior, that also makes it more difficult to update existing projects, and raises the question whether an update is worth the effort.
+
+## Should You Upgrade?
+
+If you're starting a new project, then yes, definitely! The new v3 release brings lots of improvements to Duality, it's been out there in source code form for a while, and already used in projects. There's not really a reason to use an old v2 version for a new project.
+
+If you have an existing project, it depends on the amount of content you have. Source code is the easiest part to upgrade, and while some Resources can be ported via Find / Replace on their text file, others will require a manual re-import and re-integration. The more Resources your project has, the more time it will take to port them all to v3 - so this should be the core part of your decision. Large, half way done projects may be better off staying with v2.
+
+## How to Upgrade
+
+If you do choose to upgrade an existing project, here's a rough guideline on the required steps:
+
+1. If your project uses **third party packages and plugins**, make sure they have a v3 compatible version available. Otherwise, you will have to find a v3 compatible alternative, or you won't be able to upgrade.
+1. **Make a full backup** of your project.
+1. **Run the editor**. If you have a scene open, create a new, empty scene, so we don't run into problems when restarting after the update.
+1. **Switch to XML serialization** in the top right editor menu. Since this is the default serialization method, you only need to apply this step if you consciously switched to binary before.
+1. **Update all packages to the latest v3 version**. You can use the Package Manager UI in the editor to do this. Apply the installed updates and let the editor restart itself.
+1. **Fix and compile your game plugin** and all other custom plugins with the new v3 Duality dependencies. If you are unsure why something that worked before no longer compiles, take a look at the full changelog and especially the new [v3 sample source code](https://github.com/AdamsLair/duality/tree/29a8a9f4e74e2d158fe3dd558f5037e7f53c23b5/Samples) to find out how you need to adapt your code to v3.
+1. **Fix your game resources**. With the editor `Log View` open and clear of errors, select resources in the `Project View` to check if they load correctly. If they don't, errors will be logged. 
+    - The most common error will be unresolved type names, as some Duality types were renamed, or moved to a different namespace. To fix them, you can do a Find / Replace operation over all resource files in the `Data` directory.
+    - The second most common error will be structural changes in Duality resources. In those cases, you will have to recreate the resources manually in the editor. Affected resources are: `Font`, `Material` and `ShaderProgram`, which was merged into `DrawTechnique`.
+1. **Re-Serialize all game resources** using the top right editor menu to ensure all game data is now up-to-date.
+
+Done!
+
 # All Changes
 
 The following is a low level overview on all changes that were introduced between Duality v2.x and Duality v3.0, with the exception of some trivial changes such as renamed private fields, minor implementation improvements or similar.
@@ -55,7 +82,7 @@ The following is a low level overview on all changes that were introduced betwee
 - Added a `ForcedRenderSize` option to appdata settings, allowing games to render with the same view regardless of window or screen size. Differences in aspect ratio can be accounted for either by letterboxing or by displaying additional content. User input is automatically re-mapped from actual window coordinates to forced view coordinates.
 - Reworked `ICmpRenderer` to no longer expose logic-related methods for determining visibility, but instead provide a single `GetCullingInfo` method. The retrieved plain-old-data struct contains all culling relevant information, which is now cached and batch-processed by the scenes visibility strategy implementation.
 - Separated culling updates from culling queries, improving performance by avoiding redundant work for rendering multiple viewports or passes.
-- All vertex transformation now takes place on the GPU, and all renderers now specify vertices in world space, rather than pre-transformed intermediate view space. The `IDrawDevice` interface no longer has a `PreprocessCoords` methods, and there is no need for it anymore either.
+- All vertex transformation now takes place on the GPU, and all renderers now specify vertices in world space, rather than pre-transformed intermediate view space. The `IDrawDevice` interface no longer has a `PreprocessCoords` method, and there is no need for it anymore either.
 - Reimplemented `DrawDevice` to streamline vertex processing and dynamic batching. Vertex storage and rendering are now treated separately and using specialized data structures, allowing more efficient batching, without the overhead of any per-frame allocations. Introduced the new `VertexBatch<T>` / `VertexBatchStore` helper classes for both internal usage and custom dynamic batching implementations.
 - The `DrawBatch` class has been rewritten, is now public API, and can be managed and submitted manually when needed.
 - Removed `IDrawBatch` in favor of direct `DrawBatch` usage, avoiding virtualization and easing compiler optimization. 
