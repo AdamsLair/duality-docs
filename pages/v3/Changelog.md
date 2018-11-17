@@ -44,10 +44,10 @@ If you do choose to upgrade an existing project, here's a rough guideline on the
 1. **Fix and compile your game plugin** and all other custom plugins with the new v3 Duality dependencies. If you are unsure why something that worked before no longer compiles, take a look at the full changelog and especially the new [v3 sample source code](https://github.com/AdamsLair/duality/tree/29a8a9f4e74e2d158fe3dd558f5037e7f53c23b5/Samples) to find out how you need to adapt your code to v3.
 1. **Fix your game resources**. With the editor `Log View` open and clear of errors, select resources in the `Project View` to check if they load correctly. If they don't, errors will be logged. 
     - The most common error will be unresolved type names, as some Duality types were renamed, or moved to a different namespace. To fix them, you can do a Find / Replace operation over all resource files in the `Data` directory.
-    - The second most common error will be structural changes in Duality resources. In those cases, you will have to recreate the resources manually in the editor. Affected resources are: `Font`, `Material` and `ShaderProgram`, which was merged into `DrawTechnique`.
+    - The second most common error will be structural changes in Duality resources. In those cases, you will have to re-import, re-configure or re-create the resources manually in the editor. Affected resources are: `Font`, `Material` and `ShaderProgram`, which was merged into `DrawTechnique`.
 1. **Re-Serialize all game resources** using the top right editor menu to ensure all game data is now up-to-date.
 
-Done!
+After you completed all of the above steps, you project should now be fully ported to v3.
 
 # All Changes
 
