@@ -1,6 +1,6 @@
 # Duality Docs
 
-This repository hosts the online documentation of the [Duality game engine](https://duality.adamslair.net/) using GitHub pages. Contributions are always welcome! If you have questions or just want to say Hi, feel free to join us in the [forum](http://forum.adamslair.net/) or our [chat](http://chat.adamslair.net/).
+This repository hosts the online documentation of the [Duality game engine](https://www.duality2d.net/) using GitHub pages. Contributions are always welcome! If you have questions or just want to say Hi, feel free to join us in the [forum](https://forum.duality2d.net/) or our [chat](https://chat.duality2d.net/).
 
 ## What to Contribute
 

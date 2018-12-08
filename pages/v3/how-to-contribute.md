@@ -22,7 +22,7 @@ This task is probably the one best fitted for new users: If you didn't do anythi
 
 As cool as Duality might be, let's not deceive ourselves here: It's still the new guy in gamedev town and a lot of older inhabitants prefer to curiously look at it from a distance rather than walk over and say hello. Those brave souls who jump right in and use it for their projects are rare, but maybe the most important contributors there are right now. If you're reading this, you are probably one of them, and let me tell you this: Duality needs you.
 
-The most important tools of the trade are [Duality itself](http://duality.adamslair.net), the [Forum](http://forum.adamslair.net), [Chat](http://chat.adamslair.net), or any other means you're personally using to publish things on the internet, say [Twitter](https://twitter.com/search?f=tweets&vertical=default&q=%23duality2d%20lang%3Aen%20-RT), a dev blog or similar. Let's see what you can do:
+The most important tools of the trade are [Duality itself](https://www.duality2d.net), the [Forum](https://forum.duality2d.net), [Chat](https://chat.duality2d.net), or any other means you're personally using to publish things on the internet, say [Twitter](https://twitter.com/search?f=tweets&vertical=default&q=%23duality2d%20lang%3Aen%20-RT), a dev blog or similar. Let's see what you can do:
 
 1. **Learn how to use Duality** and ask clever questions. You may be still new, but you can nevertheless be inspiring to others by showing them what's important to you, or difficult to grasp at first.
 2. **Develop some games** with Duality. Take part in Game Jams. Use it to create awesome stuff. Or silly stuff. Stuff that is just fun to make, nice to look at or even awesome in its own way.
@@ -40,7 +40,7 @@ So, how do you proceed? Well, this is mostly your own choice, because you're wor
 1. Set up a GitHub repository for your module.
 2. Set up a Duality plugin project / solution and push it. In case you need examples on how to do this, you might want to take a look at some minimal examples from the main repository. It's quite easy - just add a reference to the appropriate Duality Assembly and provide an implementation of the matching Plugin class.
 3. Implement a first prototype.
-4. Publish its binaries and [let others know](http://forum.adamslair.net).
+4. Publish its binaries and [let others know](https://forum.duality2d.net).
 
 ## For the Advanced: Develop the Framework
 

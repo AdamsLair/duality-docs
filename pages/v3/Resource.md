@@ -59,7 +59,7 @@ public ContentRef<Texture> MyTexture
 texRef = Texture.Checkerboard256;
 ```
 
-You will notice that the type you're dealing with isn't a Resource object but rather a `ContentRef<Resource>` or `IContentRef`. Its purpose is to reference Resources in an abstract way based on their actual path. It is an indirection layer that simplifies dealing with certain use cases: While actual Resources may be unavailable, not-yet-loaded, disposed or disposed-and-then-reloaded, their ContentRefs always remain comparable and reliable. You can think of it as a smart reference that knows what it _should_ contain and takes care of actually doing so. _Find more information about the design choices behind `ContentRef<T>` [here](http://www.adamslair.net/blog/?p=1037) if you're interested._
+You will notice that the type you're dealing with isn't a Resource object but rather a `ContentRef<Resource>` or `IContentRef`. Its purpose is to reference Resources in an abstract way based on their actual path. It is an indirection layer that simplifies dealing with certain use cases: While actual Resources may be unavailable, not-yet-loaded, disposed or disposed-and-then-reloaded, their ContentRefs always remain comparable and reliable. You can think of it as a smart reference that knows what it _should_ contain and takes care of actually doing so. _Find more information about the design choices behind `ContentRef<T>` [here](https://blog.adamslair.net/posts/2013-03-06/mailbag-civilization-and-contentrefs/) if you're interested._
 
 A ContentRef is able to provide some basic information about its content without actually loading the associated Resource. Other than that, it does its best to assist without getting in the way. The following example is an overview of how to use them:
 

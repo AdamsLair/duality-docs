@@ -8,11 +8,11 @@ repository: 'AdamsLair/duality-docs'
 # External links, to be displayed in the top
 links:
   - title: 'Project'
-    url: 'https://duality.adamslair.net'
+    url: 'https://www.duality2d.net'
   - title: 'Forum'
-    url: 'https://forum.adamslair.net'
+    url: 'https://forum.duality2d.net'
   - title: 'Chat'
-    url: 'http://chat.adamslair.net'
+    url: 'https://chat.duality2d.net'
 
 # Top-Level categories, to be displayed in the nav overview
 topLevelCategories:

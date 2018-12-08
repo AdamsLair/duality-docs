@@ -12,7 +12,7 @@ All beginnings are difficult. Taking first steps in the realms of a new software
 
 # What is Duality?
 
-Answering this question extensively isn't really in the scope of this tutorial - but you probably should know what we're dealing with. You can read all about it on the [project home page](http://duality.adamslair.net/), here's a short version however:
+Answering this question extensively isn't really in the scope of this tutorial - but you probably should know what we're dealing with. You can read all about it on the [project home page](https://www.duality2d.net/), here's a short version however:
 
 * It's an extensible 2D game engine.
 * It comes with a visual editor.
@@ -29,7 +29,7 @@ Your first step should be to check whether your system meets all the requirement
 
 1. Make sure that the **.Net Framework 4.5** (or higher) is installed on your system. It usually is, since it comes with Windows Update and is a requirement for a lot of modern applications. If you're not sure whether to get it or not, you may just [download it](https://www.google.de/#hl=en&q=.net+framework+4.5) and let the installer decide.
 2. Next, you're going to need **Visual Studio** (2013 Update 3 or newer), which will be your main tool for writing source code. If you happen to have a professional version of it laying around, you can use that one. Otherwise, you can get a free version from Microsoft, just look for [Visual Studio Community Edition](http://www.visualstudio.com/). Download it and install it. (_Note:_ Express versions are not supported. Use the Community version instead!)
-3. Now get the [latest binary package](http://dualitybin.adamslair.net/) of Duality. It should be a .zip file. Extract it and run **`DualityEditor.exe`**. You should see a splash screen followed by the Duality environment.
+3. Now get the [latest binary package](https://get.duality2d.net/) of Duality. It should be a .zip file. Extract it and run **`DualityEditor.exe`**. You should see a splash screen followed by the Duality environment.
 
 That's it! You have successfully installed Duality.
 
@@ -360,5 +360,5 @@ Other than that - learning by doing is a really powerful concept and Duality doe
 [EditAppData]: ../img/GettingStarted/EditAppData.png
 [DebugGameBreak]: ../img/GettingStarted/DebugGameBreak.png
 
-[DualityForums]: http://forum.adamslair.net/
-[TutorialSection]: http://forum.adamslair.net/viewforum.php?f=17
+[DualityForums]: https://forum.duality2d.net/
+[TutorialSection]: https://forum.duality2d.net/viewforum.php?f=17

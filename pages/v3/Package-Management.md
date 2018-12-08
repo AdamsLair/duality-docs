@@ -67,5 +67,5 @@ Another cool thing about Package Management is, that everyone is free to introdu
   - As far as dependencies go, Core plugins should at least depend on `AdamsLair.Duality` and Editor plugins should at least depend on `AdamsLair.Duality.Editor`. Feel free to add more dependencies to other (Duality and non-Duality) Packages when required.
     - **Do not** explicitly refer to any of the Assemblies that are already included in Duality itself, e.g. **do not** refer to `AdamsLair.OpenTK`, `AdamsLair.WinForms` or similar. Those are to be considered part of the overall environment.
   - You can find plenty of examples [here](https://github.com/AdamsLair/duality/tree/master/Build/NuGetPackageSpecs).
-  - Also, **do not** use the online editor of the NuGet Gallery to edit any of the properties you've set in the `.nuspec` file, as this [will apparently introduce inconsistencies](http://forum.adamslair.net/viewtopic.php?p=5003#p5003) between the gallery entry and the package.
+  - Also, **do not** use the online editor of the NuGet Gallery to edit any of the properties you've set in the `.nuspec` file, as this [will apparently introduce inconsistencies](https://forum.duality2d.net/viewtopic.php?p=5003#p5003) between the gallery entry and the package.
 5. Let NuGet build the package and push it to the repository. It will be available to everyone in a few minutes.
