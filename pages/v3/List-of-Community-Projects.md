@@ -16,7 +16,8 @@ RockyTV's Git Plugin | (WiP) Editor plugin that integrates the Duality editor wi
 BMFont Importer | (WiP) Editor plugin that allows to import bitmap fonts using the BMFont format. | No / Yes | [GitHub](https://github.com/mika76/duality-bitmapfont-importer) | No
 InputPlugin | Editor and Core plugin which introduces a layer of virtual buttons between the computer keyboard and your game. | Yes / Yes | [GitHub](https://github.com/mfep/Duality.InputPlugin) / [Forum](https://forum.duality2d.net/viewtopic.php?f=18&t=832) | Yes
 Procedural Animation | Animate by code in Duality! | Yes / Yes | [Docs](https://github.com/mfep/Duality.ProceduralAnimation/blob/master/README.md) / [Forum](https://forum.duality2d.net/viewtopic.php?f=18&t=970) | No
-Pathfindax | Pathfinder for Duality. | Yes / Yes | [Github](https://github.com/Barsonax/Pathfindax) / [Forum](https://forum.duality2d.net/viewtopic.php?f=18&t=1061) | Under Development
+Pathfindax | Pathfinder for Duality. | Yes / Yes | [Github](https://github.com/Barsonax/Pathfindax) / [Forum](https://forum.duality2d.net/viewtopic.php?f=18&t=1061) | Yes
+Singularity | Dependency injection for Duality. | Yes / Yes | [Github](https://github.com/Barsonax/Singularity) | Yes
 YAUI | Yet Another UI plugin. | Yes / Yes | [Github](https://github.com/SirePi/duality-ui) / [Forum](https://forum.duality2d.net/viewtopic.php?f=18&t=940) | Yes
 Companion plugin | A collection of utilities and nice-to-have features that could one day be part of the Duality Core. | No / Yes | [Github](https://github.com/AdamsLair/duality-companion) | No
 VS Templates | Visual Studio project templates for core and editor plugins, as well as Component classes. | No / Yes | [Github](https://github.com/Barsonax/DualityVSExtension) | Yes
