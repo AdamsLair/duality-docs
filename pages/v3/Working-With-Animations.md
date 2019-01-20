@@ -40,7 +40,8 @@ Pressing play, you will see the full animation running, slowly.
 
 By tweaking the values in AnimSpriteRenderer, you can control the animation speed, when it starts, when it ends, if it starts automatically, etc.
 
-#Controlling Animations
+# Controlling Animations
+
 So, knowing now how to create an animated character, we need to slice the spritesheet into the various segments, like walking, jumping, running, etc.
 
 Our example has two segments that we must define so that our character doesn't just loop through every frame in the animation nonstop.
