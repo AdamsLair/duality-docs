@@ -420,8 +420,9 @@ nav.sidebar {
   a#addPage {
     float: right;
   }
-  ul {
+  ul, ol {
     padding-left: 20px;
+    margin: 5px 0;
     li {
       margin-top: 1px;
       margin-bottom: 1px;
