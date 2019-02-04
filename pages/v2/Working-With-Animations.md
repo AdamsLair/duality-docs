@@ -7,9 +7,6 @@ version: "v2"
 
 Very few games are made that don't need animations. Duality supports animations through a dedicated Component that quickly allows the creation of animations through spritesheets.
 
-* TOC
-{:toc}
-
 # Overview
 
 So, what is needed for an animation?

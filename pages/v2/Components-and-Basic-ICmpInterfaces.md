@@ -7,9 +7,6 @@ version: "v2"
 
 A **Component** is how game logic is defined in Duality. But what exactly is a Component?
 
-* TOC
-{:toc}
-
 # Building Blocks
 Components are the basic building blocks of your game: Each of them has a certain purpose and they interact with each other in order to produce complex behavior. One Component might provide a position in space, another might use that to draw a sprite. You can define your own Components to introduce your own code and logic into the engine.
 

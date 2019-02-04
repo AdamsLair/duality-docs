@@ -9,9 +9,6 @@ First of all: Thanks for your willingness to contribute to Duality. It has grown
 
 That said, external contributions are always a double-edged sword, as they introduce a little extra work due to their necessity to be reviewed and potentially edited or merged to fit within the existing framework of the project. This guide aims to help you minimize this extra effort and make your contributions as helpful as possible.
 
-* TOC
-{:toc}
-
 # Ways to contribute
 
 There are many ways to contribute, some of them disjoint and others heavily integrated into the project. Here's a quick overview on what you can do, sorted by their difficulty level and the amount of required experience with the project.

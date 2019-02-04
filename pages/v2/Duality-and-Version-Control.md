@@ -7,9 +7,6 @@ version: "v2"
 
 This article will outline how to use version control systems such as git or Subversion with a Duality project. It does not cover how to use any specific version control system in general, as there is extensive documentation for each of them out there on the web.
 
-* TOC
-{:toc}
-
 # Introduction
 
 Let's start this article with some general words of advice, in case you are not familiar with a version control system yet, or have not yet applied one to a game development project.

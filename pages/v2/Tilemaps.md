@@ -7,9 +7,6 @@ version: "v2"
 
 This short article will give you a quick intro to using Tilemaps in Duality. It is assumed that you already know the basics. If not, head over to the [Getting Started](getting-started.md) tutorial first!
 
-* TOC
-{:toc}
-
 # Installation
 
 Tilemaps are great for a lot of reasons, but as neat as they are, not every game needs them and we don't want to clutter everyone's workspace with a feature that only some select people will use. That's why tilemaps are not part of the Duality core, but implemented in a plugin that you can install. As with most plugins, there are two ways to get them.

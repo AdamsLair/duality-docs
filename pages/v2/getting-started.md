@@ -7,9 +7,6 @@ version: "v2"
 
 All beginnings are difficult. Taking first steps in the realms of a new software library can be pretty rough, especially when you're new to programming or your development environment. This tutorial is here to make things a little bit easier and guide you through your first project setup using the Duality framework.
 
-* TOC
-{:toc}
-
 # What is Duality?
 
 Answering this question extensively isn't really in the scope of this tutorial - but you probably should know what we're dealing with. You can read all about it on the [project home page](https://www.duality2d.net/), here's a short version however:

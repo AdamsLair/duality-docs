@@ -7,9 +7,6 @@ version: "v2"
 
 Typical errors that can be easily avoided.
 
-* TOC
-{:toc}
-
 # Coding
 
 ## Not checking `InitContext` in `OnInit`

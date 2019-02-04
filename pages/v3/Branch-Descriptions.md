@@ -7,9 +7,6 @@ version: "v3"
 
 This page gives an overview on the most important branches of the Duality repository.
 
-* TOC
-{:toc}
-
 # master
 
 The main development branch of Duality, where bugs are fixed and new features introduced. For bigger changes, development will be done in a feature branch from the latest master version in order to keep it operational at all times.

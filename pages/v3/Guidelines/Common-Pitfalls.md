@@ -7,9 +7,6 @@ version: "v3"
 
 Typical errors that can be easily avoided.
 
-* TOC
-{:toc}
-
 # Workflow
 
 ## Ignoring Logged Errors

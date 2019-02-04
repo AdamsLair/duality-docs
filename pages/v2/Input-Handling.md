@@ -7,9 +7,6 @@ version: "v2"
 
 This article will provide a quick overview on how to manage user input in Duality.
 
-* TOC
-{:toc}
-
 # Getting User Input
 
 In Duality, user input comes in one of four different forms, depending on the input device you're querying: Mouse, keyboard, gamepad and joystick input are supported. All the input devices are accessible using public, static `DualityApp` API and are identified by a description string that they provide. They may become available or unavailable at runtime.

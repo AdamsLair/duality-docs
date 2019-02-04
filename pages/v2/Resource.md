@@ -7,9 +7,6 @@ version: "v2"
 
 Whenever you need to store, modify or access game content, Resources are the way to go. There are a lot of different Resource types and each of them encapsules a different kind of data. This article is here to clarify some of the concepts behind Dualitys Resource system and show you how to use it most effectively.
 
-* TOC
-{:toc}
-
 # Overview
 
 In Dualitys editing environment, the Project View is where you'll find all currently existing Resources. When starting a new project, it is typically empty and you'll fill it during development. Any kind of game content is stored as Resource file in Dualitys Data folder and is either created directly in the editor (Scene, Prefab, etc.) or imported from external source files (Pixmap, AudioData, etc.). You can easily create new Resources by right-clicking on an empty spot in the Project View and selecting the appropriate entry from the New menu. 

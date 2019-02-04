@@ -7,9 +7,6 @@ version: "v3"
 
 Ways to keep your code and workflow as clean, error-free and forward-compatible as possible.
 
-* TOC
-{:toc}
-
 # Coding
 
 ## Use `Time.DeltaTime` where appropriate

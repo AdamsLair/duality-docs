@@ -7,9 +7,6 @@ version: "v2"
 
 Creating and handling bullet like objects is a common game requirement that often causes people trouble. It can be done in a variety of ways, and which way is best depends on your specific game, performance concerns, and style. This is simply one way of approaching this problem.
 
-* TOC
-{:toc}
-
 # Project Setup
 
 This tutorial's examples are going to expand upon the Getting Started tutorial [here](getting-started.md). Nothing will prevent you from starting with your own project, but it will be easier to follow along if you start with that tutorial. If you are starting from your own project, all you will need is a GameObject to act as your shooter.

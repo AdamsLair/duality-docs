@@ -7,9 +7,6 @@ version: "v2"
 
 This article will introduce you to writing custom renderer Components.
 
-* TOC
-{:toc}
-
 # What is a "Renderer Component"?
 
 When you run your game, the things you see on screen are a visual representation of the objects you defined and created both in the editor and code. While Duality provides the facilities to talk to the render pipeline and ultimately draw things on the screen, it is the job of a renderer Component to _use_ those facilities and actually draw something. 

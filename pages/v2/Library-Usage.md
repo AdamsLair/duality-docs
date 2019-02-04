@@ -7,9 +7,6 @@ version: "v2"
 
 This article will outline how to use both internal and external libraries in your Duality game or editor plugin, as well as the details of what works and doesn't work.
 
-* TOC
-{:toc}
-
 # Adding a Reference
 
 In general, when you want to use a (managed) library in your game plugin, you will have to add a reference to it in Visual Studio. To do that, open the Solution Explorer, expand your project item and right-click on the References child item in order to select "Add Reference". In the dialog, click "Browse" and select the library you want to reference.

@@ -7,9 +7,6 @@ version: "v3"
 
 This page provides an overview of changes that were introduced in the major version change between Duality v2.x and Duality v3.0. Any further changes will be documented in the release notes of the individual packages, or on the changelog page of the next major version change.
 
-* TOC
-{:toc}
-
 # Highlights
 
 The following is a high level overview on the general nature of changes in this major version step. 

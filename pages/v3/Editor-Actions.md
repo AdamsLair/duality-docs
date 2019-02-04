@@ -7,9 +7,6 @@ version: "v3"
 
 This page describes how to extend the editor with custom Editor Actions.
 
-* TOC
-{:toc}
-
 # What is an Editor Action?
 
 An Editor Action is a generic action that can be taken within the editor. These most often correspond to context menu actions but can also be invoked upon opening a resource or preparing an object for editing. When defining an Editor Action you implement the logic that determines whether or not your action can be performed in a given context. Simply defining the Editor Action is enough to integrate them with Duality. The editor will automatically populate context menus and execute your defined actions as needed.

@@ -7,9 +7,6 @@ version: "v2"
 
 This page will give you an overview on the development cycle of Duality, including when (and for what) to create branches and when to merge them in which way. For more information about specific existing branches, please refer to the [Branch Descriptions](Branch-Descriptions.md) page.
 
-* TOC
-{:toc}
-
 # Ongoing Development
 
 Bugfixes and minor features are developed in the `master` branch. **Breaking changes are not allowed** and the head of the branch is required to always represent a complete, running, non-WiP version of Duality. Until a feature or bugfix is complete, do not push to `master`, as this would put the head into a WiP state. If a task is too big to be completed in a single run, your options are to either work locally or create a feature branch to work on. 

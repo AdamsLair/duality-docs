@@ -7,9 +7,6 @@ version: "v3"
 
 This page provides a basic overview on the Duality framework.
 
-* TOC
-{:toc}
-
 # General
 
 _**ToDo:** Provide a basic overview on the Core / Launcher / Editor distinction_

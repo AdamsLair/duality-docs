@@ -7,9 +7,6 @@ version: "v2"
 
 This article will provide a quick overview on the different ways in which object data interacts with Duality.
 
-* TOC
-{:toc}
-
 # Introduction
 
 When defining a new custom object type such as Components or Resources, chances are that they will contain data, like health points, score values, follow targets or something similar. As part of your editor workflow and when running your game, Duality will need to interact with this data in three different ways - and while you usually don't need to worry about that, it can sometimes be useful to know what happens behind the scenes. The following sections will detail how exactly Duality will approach your objects, and what you can do to influence this.
