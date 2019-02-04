@@ -242,7 +242,7 @@ header {
     span {
       color: rgba( #FFF, 0.5);
       font-size: 13px;
-      @media (max-width: 1120px) {
+      @media (max-width: 1000px) {
         display: none;
       }
     }
@@ -393,7 +393,7 @@ footer {
   nav.sidebar, main {
     display: table-cell;
     box-sizing: border-box;
-    @media (max-width: 1120px) {
+    @media (max-width: 1000px) {
       display: block;
       width: 100%;
     }
@@ -405,6 +405,17 @@ nav.sidebar {
   background: #eee;
   padding: 20px 30px;
   vertical-align: top;
+
+  /* While in side-by-side layout, sticky only the sidebar contents */
+  .sidebarcontent {
+    top: 20px;
+    position: sticky;
+    /* Un-sticky them when switching to page header layout */
+    @media (max-width: 1000px) {
+      top: 0;
+      position: static;
+    }
+  }
 
   a#addPage {
     float: right;
@@ -422,13 +433,13 @@ nav.sidebar {
 
   a.contentLink {
     display: none;
-    @media (max-width: 1120px) {
+    @media (max-width: 1000px) {
       display: inline;
     }
   }
   a.pageLink {
     display: inline;
-    @media (max-width: 1120px) {
+    @media (max-width: 1000px) {
       display: none;
     }
   }
@@ -471,7 +482,7 @@ nav.sidebar {
     }
   }
 
-  @media (max-width: 1120px) {
+  @media (max-width: 1000px) {
     columns: 200px;
     column-rule: 1px solid rgba(0, 0, 0, 0.1);
     column-gap: 40px;
@@ -486,7 +497,7 @@ div.wrapper {
   margin: 0 auto;
   width: auto;
   max-width: 1100px;
-  @media (max-width: 1120px) {
+  @media (max-width: 1000px) {
     max-width: 824px;
   }
 }
