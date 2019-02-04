@@ -3,6 +3,7 @@ title: "Requirements"
 category: "introduction"
 displayOrder: 0
 version: "v3"
+notoc: true
 ---
 
 To launch a Duality application, the end user needs the [.Net Framework 4.5](https://www.google.de/#hl=en&q=.net+framework+4.5) on Windows machines, or the equivalent [Mono](http://www.mono-project.com/) version on non-Windows machines. The actual hardware minimum to launch a Duality application depends on the application itself, but graphics support for OpenGL 3.0 or OpenGL ES 2.0 is a common baseline.

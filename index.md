@@ -3,6 +3,7 @@ title: "Home"
 category: "introduction"
 displayOrder: -100
 version: "v3"
+notoc: true
 ---
 
 Welcome to the Duality docs pages! If you're looking for a **developer manual**, check the side bar to your left. 

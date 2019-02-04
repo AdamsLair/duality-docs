@@ -6,26 +6,21 @@
   {% assign pageUrlWithoutExt = page.url | split: '.html' | first %}
   {% assign childPages = site.pages | where: 'version', targetVersion | where: 'parent', pageUrlWithoutExt %}
   {% assign siblingPages = site.pages | where: 'version', targetVersion | where: 'parent', page.parent %}
-  <!-- Debug Output -->
-  <ul class="debug">
-    <li>Path: {{ page.path | jsonify }}</li>
-    <li>URL: {{ page.url | jsonify }}</li>
-    <li>URL (no ext): {{ pageUrlWithoutExt | jsonify }}</li>
-    <li>Version: {{ page.version | jsonify }}</li>
-    <li>Category: {{ page.category | jsonify }}</li>
-    <li>Children: {{ childPages.size | jsonify }}</li>
-    <li>Siblings: {{ siblingPages.size | jsonify }}</li>
-    <li>Parent: {% if parentPage %} {{ parentPage.url | jsonify }} {% else %} null {% endif %}</li>
-  </ul>
+
   <a id="addPage" class="button" href="{{ site.github.repository_url }}">Add Page</a>
-  <!-- If we have either, only display parent and child pages -->
-  {% if parentPage or childPages.size > 0 %}
-    {% if parentPage %}
-      <a class="contentLink" href="{{ site.baseurl }}{{ parentPage.url }}#mainContent">&lt; Go Back</a>
-      <a class="pageLink" href="{{ site.baseurl }}{{ parentPage.url }}">&lt; Go Back</a>
-    {% else %}
-      <a href="{{ site.baseurl }}/">&lt; Go Back</a>
+
+  <div class="sidebarcontent">
+    <!-- If we are displaying anything but the top level page overview, display a back button -->
+    {% if parentPage or childPages.size > 0 or page.notoc != true %}
+      {% if parentPage %}
+        <a class="contentLink" href="{{ site.baseurl }}{{ parentPage.url }}#mainContent">&lt; Go Back</a>
+        <a class="pageLink" href="{{ site.baseurl }}{{ parentPage.url }}">&lt; Go Back</a>
+      {% else %}
+        <a href="{{ site.baseurl }}/">&lt; Go Back</a>
+      {% endif %}
     {% endif %}
+
+    <!-- If we have child pages, display an overview of them -->
     {% if childPages.size > 0 %}
       <h4>{{ page.title }}</h4>
       <ul>
@@ -36,6 +31,11 @@
           </li>
         {% endfor %}
       </ul>
+    <!-- If we have a page-local table of contents, display that one -->
+    {% elsif page.notoc != true %}
+      <h4>{{ page.title }}</h4>
+      {% include toc.html html=content h_max=3 sanitize=true %}
+    <!-- If we have sibling pages, display links to them -->
     {% elsif siblingPages.size > 0 %}
       <h4>{{ parentPage.title }}</h4>
       <ul>
@@ -46,48 +46,46 @@
           </li>
         {% endfor %}
       </ul>
+    <!-- Otherwise, display top-level manual pages grouped by category. -->
     {% else %}
-      <h4>{{ page.title }}</h4>
+      {% assign sortedPages = site.pages | where: 'version', targetVersion | sort: 'displayOrder' %}
+      {% for category in site.topLevelCategories %}
+        <h4>{{ category.title }}</h4>
+        <ul>
+          {% for pageItem in sortedPages %}
+            {% if pageItem.category and pageItem.category == category.id %}
+              <li>
+                <a class="contentLink" href="{{ site.baseurl }}{{ pageItem.url }}#mainContent">{{ pageItem.title }}</a>
+                <a class="pageLink" href="{{ site.baseurl }}{{ pageItem.url }}">{{ pageItem.title }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      {% endfor %}
     {% endif %}
-  <!-- Otherwise, display top-level manual pages grouped by category. -->
-  {% else %}
-    {% assign sortedPages = site.pages | where: 'version', targetVersion | sort: 'displayOrder' %}
-    {% for category in site.topLevelCategories %}
-      <h4>{{ category.title }}</h4>
+    <!-- Display available versions of this page -->
+    {% assign versionPath = page.version | prepend: '/' %}
+    {% assign urlAfterVersion = page.url | split: versionPath | last %}
+    {% assign versionPages = "" | split: "" %}
+    {% for pageItem in site.pages %}
+      {% assign itemVersionPath = pageItem.version | prepend: '/' %}
+      {% assign itemUrlAfterVersion = pageItem.url | split: itemVersionPath | last %}
+      {% if itemUrlAfterVersion == urlAfterVersion %}
+        {% assign versionPages = versionPages | push: pageItem %}
+      {% endif %}
+    {% endfor %}
+    {% assign sortedVersionPages = versionPages | sort:"version" %}
+    <div class="versionList">
+      <h4>Versions:</h4>
       <ul>
-        {% for pageItem in sortedPages %}
-          {% if pageItem.category and pageItem.category == category.id %}
-            <li>
-              <a class="contentLink" href="{{ site.baseurl }}{{ pageItem.url }}#mainContent">{{ pageItem.title }}</a>
-              <a class="pageLink" href="{{ site.baseurl }}{{ pageItem.url }}">{{ pageItem.title }}</a>
-            </li>
+        {% for pageItem in sortedVersionPages %}
+          {% if pageItem.version == targetVersion %}
+            <li id="activeVersion">{{ pageItem.version }}</li>
+          {% else %}
+            <li><a href="{{ site.baseurl }}{{ pageItem.url }}">{{ pageItem.version }}</a></li>
           {% endif %}
         {% endfor %}
       </ul>
-    {% endfor %}
-  {% endif %}
-  <!-- Display available versions of this page -->
-  {% assign versionPath = page.version | prepend: '/' %}
-  {% assign urlAfterVersion = page.url | split: versionPath | last %}
-  {% assign versionPages = "" | split: "" %}
-  {% for pageItem in site.pages %}
-    {% assign itemVersionPath = pageItem.version | prepend: '/' %}
-    {% assign itemUrlAfterVersion = pageItem.url | split: itemVersionPath | last %}
-    {% if itemUrlAfterVersion == urlAfterVersion %}
-      {% assign versionPages = versionPages | push: pageItem %}
-    {% endif %}
-  {% endfor %}
-  {% assign sortedVersionPages = versionPages | sort:"version" %}
-  <div class="versionList">
-    <h4>Versions:</h4>
-    <ul>
-      {% for pageItem in sortedVersionPages %}
-        {% if pageItem.version == targetVersion %}
-          <li id="activeVersion">{{ pageItem.version }}</li>
-        {% else %}
-          <li><a href="{{ site.baseurl }}{{ pageItem.url }}">{{ pageItem.version }}</a></li>
-        {% endif %}
-      {% endfor %}
-    </ul>
+    </div>
   </div>
 </nav>
