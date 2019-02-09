@@ -434,13 +434,13 @@ nav.sidebar {
 
   a.contentLink {
     display: none;
-    @media (max-width: 1000px) {
+    @media (max-width: 600px) {
       display: inline;
     }
   }
   a.pageLink {
     display: inline;
-    @media (max-width: 1000px) {
+    @media (max-width: 600px) {
       display: none;
     }
   }
