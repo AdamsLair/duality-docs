@@ -356,8 +356,7 @@ main {
     border: none;
     height: 1.2em;
     width: 1.2em;
-    position: relative;
-    top: 0.25em;
+    vertical-align: middle;
   }
 
   /* Remove borders around images in tables, as we can assume
