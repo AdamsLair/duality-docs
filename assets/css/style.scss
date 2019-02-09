@@ -284,6 +284,10 @@ main {
     line-height: 1.5;
   }
 
+  li > ul, li > ol {
+    margin: 5px 0;
+  }
+
   ul {
     padding-left: 30px;
     @media (max-width: 600px) {
