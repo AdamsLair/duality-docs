@@ -29,3 +29,7 @@ topLevelCategories:
     title: 'Advanced Topics'
   - id: 'development'
     title: 'Development'
+
+# Support for GitHub-flavored markdown Emoji
+plugins:
+  - jemoji
