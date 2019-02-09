@@ -25,9 +25,14 @@
   </ul>
   {% endcomment %}
 
-  <a id="addPage" class="button" href="{{ site.github.repository_url }}">Add Page</a>
-
   <div class="sidebarcontent">
+    <!-- Display editing buttons -->
+    {% if childPages.size > 0 or page.notoc %}
+      <a id="editButton" class="button" href="{{ site.github.repository_url }}">Add Page</a>
+    {% else %}
+      <a id="editButton" class="button" href="{{ site.github.repository_url }}/edit/{{ site.github.source.branch }}/{{ page.path }}">Edit Page</a>
+    {% endif %}
+
     <!-- If we are displaying anything but the top level page overview, display a back button -->
     {% if parentPage or childPages.size > 0 or page.notoc != true %}
       {% if parentPage %}
