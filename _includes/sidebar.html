@@ -1,11 +1,29 @@
 <nav class="sidebar">
-  <!-- Determine parent, child and sibling pages -->
   {% assign targetVersion = page.version %}
-  {% assign parentUrl = page.parent | append: '.html' %}
+  {% assign localBaseUrl = '/pages/' | append: targetVersion | append: '/' %}
+  {% assign parentUrl = localBaseUrl | append: page.parent | append: '.html' %}
   {% assign parentPage = site.pages | where: 'version', targetVersion | where: 'url', parentUrl | first %}
   {% assign pageUrlWithoutExt = page.url | split: '.html' | first %}
-  {% assign childPages = site.pages | where: 'version', targetVersion | where: 'parent', pageUrlWithoutExt %}
+  {% assign localPageUrlWithoutExt = pageUrlWithoutExt | replace_first: localBaseUrl, '' %}
+  {% assign childPages = site.pages | where: 'version', targetVersion | where: 'parent', localPageUrlWithoutExt %}
   {% assign siblingPages = site.pages | where: 'version', targetVersion | where: 'parent', page.parent %}
+
+  {% comment %}
+  <!-- Debug Output -->
+  <ul class="debug">
+    <li>Path: {{ page.path | jsonify }}</li>
+    <li>Local Base URL: {{ localBaseUrl | jsonify }}</li>
+    <li>URL: {{ page.url | jsonify }}</li>
+    <li>URL (no ext): {{ pageUrlWithoutExt | jsonify }}</li>
+    <li>Local URL (no ext): {{ localPageUrlWithoutExt | jsonify }}</li>
+    <li>Parent URL: {{ parentUrl | jsonify }}</li>
+    <li>Version: {{ page.version | jsonify }}</li>
+    <li>Category: {{ page.category | jsonify }}</li>
+    <li>Children: {{ childPages | map: 'url' | jsonify }}</li>
+    <li>Siblings: {{ siblingPages | map: 'url' | jsonify }}</li>
+    <li>Parent: {% if parentPage %} {{ parentPage.url | jsonify }} {% else %} null {% endif %}</li>
+  </ul>
+  {% endcomment %}
 
   <a id="addPage" class="button" href="{{ site.github.repository_url }}">Add Page</a>
 

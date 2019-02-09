@@ -1,6 +1,6 @@
 ---
 title: "Best Practices"
-parent: "/pages/v2/Guidelines"
+parent: "Guidelines"
 displayOrder: 100
 version: "v2"
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Common Pitfalls"
-parent: "/pages/v2/Guidelines"
+parent: "Guidelines"
 displayOrder: 0
 version: "v2"
 ---

@@ -42,7 +42,7 @@ Or this, if it's not a top-level, but a child page:
 ```
 ---
 title: "Name of the article"
-parent: "/pages/vX/FileNameWithoutExtension"
+parent: "LocalPageFolder/FileNameWithoutExtension"
 displayOrder: 0
 version: "vX"
 ---
