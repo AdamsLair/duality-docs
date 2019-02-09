@@ -24,17 +24,17 @@ As an example, here is an Editor Action that adds a context menu entry to `Pixma
 ```csharp
 public class OpenMyWindow : EditorAction<Pixmap>
 {
-  public override string Name
-  {
-    get { return "Open My Window"; }
-  }
+	public override string Name
+	{
+		get { return "Open My Window"; }
+	}
 
-  public override void Perform(IEnumerable<Pixmap> pixmaps)
-  {
-    MyWindow window = new MyWindow();
-    window.SetPixmaps(pixmaps);
-    window.Show();
-  }
+	public override void Perform(IEnumerable<Pixmap> pixmaps)
+	{
+		MyWindow window = new MyWindow();
+		window.SetPixmaps(pixmaps);
+		window.Show();
+	}
 }
 ```
 
@@ -47,18 +47,18 @@ For example, the following is the Editor Action used to convert `Pixmaps` to `Te
 ```csharp
 public class PixmapToTexture : EditorSingleAction<Pixmap>
 {
-  public override string Name
-  {
-    get { return "Create Texture"; }
-  }
+	public override string Name
+	{
+		get { return "Create Texture"; }
+	}
 
-  public override void Perform(Pixmap obj)
-  {
-    // Get a path for the new texture resource
-    string texPath = PathHelper.GetFreePath(obj.FullName, Resource.GetFileExtByType<Texture>());
-    Texture tex = new Texture(obj);
-    tex.Save(texPath);
-  }
+	public override void Perform(Pixmap obj)
+	{
+		// Get a path for the new texture resource
+		string texPath = PathHelper.GetFreePath(obj.FullName, Resource.GetFileExtByType<Texture>());
+		Texture tex = new Texture(obj);
+		tex.Save(texPath);
+	}
 }
 ```
 
@@ -80,11 +80,11 @@ You can react to these different contexts by overriding the `MatchesContext` met
 ```csharp
 public class MyEditorAction : EditorAction<MyResourceType>
 {
-  /* Rest of implementation skipped */
-  public override bool MatchesContext(string context)
-  {
-    return context == DualityEditorApp.ActionContextOpenRes;
-  }
+	/* Rest of implementation skipped */
+	public override bool MatchesContext(string context)
+	{
+		return context == DualityEditorApp.ActionContextOpenRes;
+	}
 }
 ```
 
@@ -101,9 +101,9 @@ Editor actions matching certain parameters can be retrived by calling `DualityEd
 ```csharp
 List<GameObject> targetObjects = /* get the objects to perform the actions on*/;
 IEnumerable<IEditorAction> actions = DualityEditorApp.GetEditorActions(
-  typeof(GameObject), 
-  targetObjects, 
-  DualityEditorApp.ActionContextContextMenu);
+	typeof(GameObject), 
+	targetObjects, 
+	DualityEditorApp.ActionContextContextMenu);
 ```
 
 ## <a name="custom-actions"></a>Custom Action Contexts
@@ -119,11 +119,11 @@ Then, modify your Editor Actions so `MatchesContext` returns true when given tha
 ```csharp
 public class MyEditorAction : EditorAction<TargetType>
 {
-  /* Rest of implementation skipped */
-  public override bool MatchesContext(string context)
-  {
-    return context == "NewContext";
-  }
+	/* Rest of implementation skipped */
+	public override bool MatchesContext(string context)
+	{
+		return context == "NewContext";
+	}
 }
 ```
 

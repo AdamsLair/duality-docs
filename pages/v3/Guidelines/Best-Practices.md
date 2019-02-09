@@ -74,13 +74,13 @@ Defining a public property in your source Component, which can be assigned by th
 ```csharp 
 public class FooComponent
 {
-    // Also works fine with Components of any type, or lists of objects.
-    private GameObject target;
-    public GameObject TargetObject
-    {
-        get { return this.target; }
-        set { this.target= value; }
-    }
+	// Also works fine with Components of any type, or lists of objects.
+	private GameObject target;
+	public GameObject TargetObject
+	{
+		get { return this.target; }
+		set { this.target= value; }
+	}
 }
 ```
 

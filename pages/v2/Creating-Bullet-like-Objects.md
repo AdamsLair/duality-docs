@@ -40,24 +40,24 @@ Now we need to code a Component to handle the bullets logic. So, open your game'
 ```csharp
 public class BulletController : Component, ICmpUpdatable, ICmpInitializable, ICmpCollisionListener
 {
-    public void OnInit(InitContext context)
-    {
-    }
-    public void OnUpdate()
-    {
-    }
-    public void OnShutdown(ShutdownContext context)
-    {
-    }
-    public void OnCollisionBegin(Component sender, CollisionEventArgs args)
-    {
-    }
-    public void OnCollisionEnd(Component sender, CollisionEventArgs args)
-    {
-    }
-    public void OnCollisionSolve(Component sender, CollisionEventArgs args)
-    {
-    }
+	public void OnInit(InitContext context)
+	{
+	}
+	public void OnUpdate()
+	{
+	}
+	public void OnShutdown(ShutdownContext context)
+	{
+	}
+	public void OnCollisionBegin(Component sender, CollisionEventArgs args)
+	{
+	}
+	public void OnCollisionEnd(Component sender, CollisionEventArgs args)
+	{
+	}
+	public void OnCollisionSolve(Component sender, CollisionEventArgs args)
+	{
+	}
 }
 ```
 
@@ -78,9 +78,9 @@ private RigidBody m_RigidBody;
 
 public void OnInit(InitContext context)
 {
-    if (context != InitContext.Activate) return;
-    m_Transform = GameObj.GetComponent<Transform>();
-    m_RigidBody = GameObj.GetComponent<RigidBody>();
+	if (context != InitContext.Activate) return;
+	m_Transform = GameObj.GetComponent<Transform>();
+	m_RigidBody = GameObj.GetComponent<RigidBody>();
 }
 ```
 
@@ -99,7 +99,7 @@ public float Speed { get; set; } = 30f;
 
 public void OnUpdate()
 {
-    m_RigidBody.LinearVelocity = Vector2.FromAngleLength(m_Transform.Angle, Speed);
+	m_RigidBody.LinearVelocity = Vector2.FromAngleLength(m_Transform.Angle, Speed);
 }
 ```
 
@@ -120,14 +120,14 @@ And now we just increment our counter in OnUpdate. When it exceeds LifeTime, we 
 ```csharp
 public void OnUpdate()
 {
-    m_RigidBody.LinearVelocity = Vector2.FromAngleLength(m_Transform.Angle, Speed);
-    m_LifetimeCounter += Time.TimeMult;
+	m_RigidBody.LinearVelocity = Vector2.FromAngleLength(m_Transform.Angle, Speed);
+	m_LifetimeCounter += Time.TimeMult;
 
-    if (m_LifetimeCounter > LifeTime)
-    {
-        //GameObj is a reference to this Components parent GameObject
-        Scene.Current.RemoveObject(GameObj);
-    }
+	if (m_LifetimeCounter > LifeTime)
+	{
+		//GameObj is a reference to this Components parent GameObject
+		Scene.Current.RemoveObject(GameObj);
+	}
 }
 ```
 
@@ -162,17 +162,17 @@ public ContentRef<Prefab> BulletPrefab { get; set; }
 
 void ICmpUpdatable.OnUpdate()
 {
-    if (DualityApp.Keyboard[Key.Space] && BulletPrefab != null)
-    {
-        Transform transform = GameObj.GetComponent<Transform>();
-        GameObject bullet = BulletPrefab.Res.Instantiate(transform.Pos, transform.Angle);
+	if (DualityApp.Keyboard[Key.Space] && BulletPrefab != null)
+	{
+		Transform transform = GameObj.GetComponent<Transform>();
+		GameObject bullet = BulletPrefab.Res.Instantiate(transform.Pos, transform.Angle);
 
-        Scene.Current.AddObject(bullet);
-    }
+		Scene.Current.AddObject(bullet);
+	}
 
-    /*
-    * Ship Movement code
-    */
+	/*
+	* Ship Movement code
+	*/
 }
 ```
 
@@ -198,20 +198,20 @@ public float FiringDelay { get; set; } = 10f;
 
 void ICmpUpdatable.OnUpdate()
 {
-    m_FiringDelayCounter += Time.TimeMult;
-    if (DualityApp.Keyboard[Key.Space] && BulletPrefab != null 
-            && m_FiringDelayCounter > FiringDelay)
-    {
-        m_FiringDelayCounter = 0;
-        Transform transform = GameObj.GetComponent<Transform>();
-        GameObject bullet = BulletPrefab.Res.Instantiate(transform.Pos, transform.Angle);
+	m_FiringDelayCounter += Time.TimeMult;
+	if (DualityApp.Keyboard[Key.Space] && BulletPrefab != null 
+			&& m_FiringDelayCounter > FiringDelay)
+	{
+		m_FiringDelayCounter = 0;
+		Transform transform = GameObj.GetComponent<Transform>();
+		GameObject bullet = BulletPrefab.Res.Instantiate(transform.Pos, transform.Angle);
 
-        Scene.Current.AddObject(bullet);
-    }
+		Scene.Current.AddObject(bullet);
+	}
 
-    /*
-    * Ship Movement code
-    */
+	/*
+	* Ship Movement code
+	*/
 }
 ```
 
@@ -235,13 +235,13 @@ First, add a Creator property to the BulletController Component:
 ```csharp
 public class BulletController : Component, ICmpUpdatable, ICmpInitializable, ICmpCollisionListener
 {
-    private Transform m_Transform;
-    private RigidBody m_RigidBody;
-    private float m_LifetimeCounter;
+	private Transform m_Transform;
+	private RigidBody m_RigidBody;
+	private float m_LifetimeCounter;
 
-    public float LifeTime { get; set; } = 100f;
-    public float Speed { get; set; } = 30f;
-    public GameObject Creator { get; set; }
+	public float LifeTime { get; set; } = 100f;
+	public float Speed { get; set; } = 30f;
+	public GameObject Creator { get; set; }
 ```
 
 And in the Player Component, after instantiating the bullet, get a reference to it's BulletController component and set the value of the Creator field:
@@ -249,20 +249,20 @@ And in the Player Component, after instantiating the bullet, get a reference to 
 ```csharp
 void ICmpUpdatable.OnUpdate()
 {
-    m_FiringDelayCounter += Time.TimeMult;
-    if (DualityApp.Keyboard[Key.Space] && BulletPrefab != null 
-            && m_FiringDelayCounter > FiringDelay)
-    {
-        m_FiringDelayCounter = 0;
-        Transform transform = GameObj.GetComponent<Transform>();
-        GameObject bullet = BulletPrefab.Res.Instantiate(transform.Pos, transform.Angle);
+	m_FiringDelayCounter += Time.TimeMult;
+	if (DualityApp.Keyboard[Key.Space] && BulletPrefab != null 
+			&& m_FiringDelayCounter > FiringDelay)
+	{
+		m_FiringDelayCounter = 0;
+		Transform transform = GameObj.GetComponent<Transform>();
+		GameObject bullet = BulletPrefab.Res.Instantiate(transform.Pos, transform.Angle);
 
-        BulletController bulletController = bullet.GetComponent<BulletController>();
-        bulletController.Creator = GameObj;
+		BulletController bulletController = bullet.GetComponent<BulletController>();
+		bulletController.Creator = GameObj;
 
-        Scene.Current.AddObject(bullet);
-    }
-    /*Other Player.OnUpdate Code below*/
+		Scene.Current.AddObject(bullet);
+	}
+	/*Other Player.OnUpdate Code below*/
 }
 ```
 
@@ -271,14 +271,14 @@ Now in the OnCollisionBegin method of the BulletController component we need to 
 ```csharp
 public void OnCollisionBegin(Component sender, CollisionEventArgs args)
 {
-    //Do not collide with whatever created the bullet
-    if (args.CollideWith == Creator) return;
+	//Do not collide with whatever created the bullet
+	if (args.CollideWith == Creator) return;
 
-    //We cast to RigidBodyCollisionEventArgs to get access to the info about the shapes involved.
-    var rigidBodyArgs = args as RigidBodyCollisionEventArgs;
-    if (rigidBodyArgs != null && rigidBodyArgs.OtherShape.IsSensor) return;
+	//We cast to RigidBodyCollisionEventArgs to get access to the info about the shapes involved.
+	var rigidBodyArgs = args as RigidBodyCollisionEventArgs;
+	if (rigidBodyArgs != null && rigidBodyArgs.OtherShape.IsSensor) return;
 
-    Scene.Current.RemoveObject(GameObj);
+	Scene.Current.RemoveObject(GameObj);
 }
 ```
 
@@ -289,21 +289,21 @@ public Vector3 FiringOffset { get; set; } = new Vector3(0, -40, 0);
 
 void ICmpUpdatable.OnUpdate()
 {
-    m_FiringDelayCounter += Time.TimeMult;
-    if (DualityApp.Keyboard[Key.Space] && BulletPrefab != null 
-            && m_FiringDelayCounter > FiringDelay)
-    {
-        m_FiringDelayCounter = 0;
-        Transform transform = GameObj.GetComponent<Transform>();
-        GameObject bullet = BulletPrefab.Res.Instantiate(transform.Pos + 
-                            transform.GetWorldVector(FiringOffset), transform.Angle);
+	m_FiringDelayCounter += Time.TimeMult;
+	if (DualityApp.Keyboard[Key.Space] && BulletPrefab != null 
+			&& m_FiringDelayCounter > FiringDelay)
+	{
+		m_FiringDelayCounter = 0;
+		Transform transform = GameObj.GetComponent<Transform>();
+		GameObject bullet = BulletPrefab.Res.Instantiate(transform.Pos + 
+							transform.GetWorldVector(FiringOffset), transform.Angle);
 
-        BulletController bulletController = bullet.GetComponent<BulletController>();
-        bulletController.Creator = GameObj;
+		BulletController bulletController = bullet.GetComponent<BulletController>();
+		bulletController.Creator = GameObj;
 
-        Scene.Current.AddObject(bullet);
-    }
-    /*Other Player.OnUpdate Code below*/
+		Scene.Current.AddObject(bullet);
+	}
+	/*Other Player.OnUpdate Code below*/
 }
 ```
 
@@ -322,14 +322,14 @@ public ContentRef<Sound> Sound { get; set; }
 
 public void OnInit(InitContext context)
 {
-    if (context != InitContext.Activate) return;
+	if (context != InitContext.Activate) return;
 
-    if (Sound != null)
-    {
-        DualityApp.Sound.PlaySound(Sound);
-    }
-    m_Transform = GameObj.GetComponent<Transform>();
-    m_RigidBody = GameObj.GetComponent<RigidBody>();
+	if (Sound != null)
+	{
+		DualityApp.Sound.PlaySound(Sound);
+	}
+	m_Transform = GameObj.GetComponent<Transform>();
+	m_RigidBody = GameObj.GetComponent<RigidBody>();
 }
 ```
 
@@ -343,21 +343,21 @@ public ContentRef<Prefab> OnCollisionPrefab { get; set; }
 
 public void OnCollisionBegin(Component sender, CollisionEventArgs args)
 {
-    //Do not collide with whatever created the bullet
-    if (args.CollideWith == Creator) return;
+	//Do not collide with whatever created the bullet
+	if (args.CollideWith == Creator) return;
 
-    //We cast to RigidBodyCollisionEventArgs to get access to the info about the shapes involved.
-    var rigidBodyArgs = args as RigidBodyCollisionEventArgs;
-    if (rigidBodyArgs != null && rigidBodyArgs.OtherShape.IsSensor) return;
+	//We cast to RigidBodyCollisionEventArgs to get access to the info about the shapes involved.
+	var rigidBodyArgs = args as RigidBodyCollisionEventArgs;
+	if (rigidBodyArgs != null && rigidBodyArgs.OtherShape.IsSensor) return;
 
-    //Spawn Prefab as needed
-    if (OnCollisionPrefab != null)
-    {
-        var onCollideInstance = OnCollisionPrefab.Res.Instantiate(m_Transform.Pos);
-        Scene.Current.AddObject(onCollideInstance);
-    }
+	//Spawn Prefab as needed
+	if (OnCollisionPrefab != null)
+	{
+		var onCollideInstance = OnCollisionPrefab.Res.Instantiate(m_Transform.Pos);
+		Scene.Current.AddObject(onCollideInstance);
+	}
 
-    Scene.Current.RemoveObject(GameObj);
+	Scene.Current.RemoveObject(GameObj);
 }
 ```
 

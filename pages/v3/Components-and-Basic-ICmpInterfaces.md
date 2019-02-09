@@ -64,20 +64,20 @@ using Duality.Resources;
 
 namespace MyNamespace
 {
-    public class MyCustomComponent : Component, ICmpInitializable
-    {
-        void ICmpInitializable.OnActivate()
-        {
-            DualityApp.Sound.PlaySound(Sound.Beep);
-            Logs.Game.Write("...and so it begins.");
-        }
+	public class MyCustomComponent : Component, ICmpInitializable
+	{
+		void ICmpInitializable.OnActivate()
+		{
+			DualityApp.Sound.PlaySound(Sound.Beep);
+			Logs.Game.Write("...and so it begins.");
+		}
 
-        void ICmpInitializable.OnDeactivate()
-        {
-            DualityApp.Sound.PlaySound(Sound.Beep);
-            Logs.Game.Write("...and so it ends.");
-        }
-    }
+		void ICmpInitializable.OnDeactivate()
+		{
+			DualityApp.Sound.PlaySound(Sound.Beep);
+			Logs.Game.Write("...and so it ends.");
+		}
+	}
 }
 ```
 So, what did we just change? If you add this component to an object and run the game in the editor sandbox, you will hear a beep sound when pressing the play button, and another one when hitting stop - each of them accompanied by a console log. The activate and deactivate handlers above wrap the active lifetime of its component. In general, anything implementing ICmpInitializable interface must implement two functions, `OnActivate()` and `OnDeactivate()`. 
@@ -91,16 +91,16 @@ using Duality;
 
 namespace MyNamespace
 {
-    public class MyCustomComponent : Component, ICmpUpdatable
-    {
-        private int frameCounter = 0;
+	public class MyCustomComponent : Component, ICmpUpdatable
+	{
+		private int frameCounter = 0;
 
-        void ICmpUpdatable.OnUpdate()
-        {
-            // Example: We'll count how many frames have passed.
-            this.frameCounter++;
-        }
-    }
+		void ICmpUpdatable.OnUpdate()
+		{
+			// Example: We'll count how many frames have passed.
+			this.frameCounter++;
+		}
+	}
 }
 ```
 That's the gist of `ICmpUpdatable`, even though you probably want to do something else than counting frames in a real-world use case. The `OnUpdate` method is where you can put everything that you want to be executed each frame.
@@ -115,24 +115,24 @@ using Duality.Components.Renderers;
 
 namespace MyNamespace
 {
-    [RequiredComponent(typeof(SpriteRenderer))]
-    public class MyCustomComponent : Component, ICmpInitializable
-    {
-        private SpriteRenderer spriteRenderer;
+	[RequiredComponent(typeof(SpriteRenderer))]
+	public class MyCustomComponent : Component, ICmpInitializable
+	{
+		private SpriteRenderer spriteRenderer;
 
-        void ICmpInitializable.OnActivate()
-        {
-            this.spriteRenderer = this.GameObj.GetComponent<SpriteRenderer>();
-        }
+		void ICmpInitializable.OnActivate()
+		{
+			this.spriteRenderer = this.GameObj.GetComponent<SpriteRenderer>();
+		}
 
-        void ICmpInitializable.OnDeactivate()
-        {
-            // It's not really required to nullify references.
-            // But this *is* where you clean up, so might as well
-            // do some cleaning up.
-            this.spriteRenderer = null;
-        }
-    }
+		void ICmpInitializable.OnDeactivate()
+		{
+			// It's not really required to nullify references.
+			// But this *is* where you clean up, so might as well
+			// do some cleaning up.
+			this.spriteRenderer = null;
+		}
+	}
 }
 ```
 

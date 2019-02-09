@@ -54,8 +54,8 @@ Then, write this on your OnInit() method:
 ```csharp
 if (context == InitContext.Activate)
 {
-     DualityApp.Keyboard.KeyUp+=Keyboard_KeyUp;
-     PlayAnimation(4, 2);
+	 DualityApp.Keyboard.KeyUp+=Keyboard_KeyUp;
+	 PlayAnimation(4, 2);
 }
 ```
 So, what is going on here?
@@ -80,9 +80,9 @@ Here is the method:
 ```csharp
 private void PlayAnimation(int firstFrame, int frameCount)
 {
-     var animation = this.GameObj.GetComponent<AnimSpriteRenderer>();
-     animation.AnimFirstFrame = firstFrame;
-     animation.AnimFrameCount = frameCount;
+	 var animation = this.GameObj.GetComponent<AnimSpriteRenderer>();
+	 animation.AnimFirstFrame = firstFrame;
+	 animation.AnimFrameCount = frameCount;
 
 }
 ```
@@ -93,15 +93,15 @@ Add this to the rest of your class:
 ```csharp
 public void OnUpdate()
 {
-    if (DualityApp.Keyboard[Key.Right])
-    {
-        PlayAnimation(0, 4);
-    }
+	if (DualityApp.Keyboard[Key.Right])
+	{
+		PlayAnimation(0, 4);
+	}
 }
 
 void Keyboard_KeyUp(object sender, KeyboardKeyEventArgs e)
 {
-     PlayAnimation(4, 2);
+	 PlayAnimation(4, 2);
 }
 ```
 

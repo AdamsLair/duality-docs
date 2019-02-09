@@ -18,15 +18,15 @@ There are two different language constructs in C# that are closely related to da
 ```csharp
 public class Foo : Component
 {
-    // Field
-    private float health = 100.0f;
-    
-    // Property
-    public float Health
-    {
-        get { return this.health; }
-        set { this.health = value; }
-    }
+	// Field
+	private float health = 100.0f;
+	
+	// Property
+	public float Health
+	{
+		get { return this.health; }
+		set { this.health = value; }
+	}
 }
 ```
 
@@ -41,8 +41,8 @@ On the other hand, **a property defines an access point** to retrieve or modify 
 ```csharp
 public float Health
 {
-    get { return this.health; }
-    set { this.health = value; }
+	get { return this.health; }
+	set { this.health = value; }
 }
 ```
 
