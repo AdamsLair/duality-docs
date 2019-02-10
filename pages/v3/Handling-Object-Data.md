@@ -68,7 +68,7 @@ To change this behavior on a member-by-member basis, you can decorate them with 
 
 ## Custom Editors
 
-To take all matters into your own hands, you can also go the extra mile and implement a custom editor for any object type, or even groups of object types that share a certain interface. Property editors are defined in editor plugins, which is a topic on its own that shouldn't be opened up in detail at this point - however, you can find some samples [here](/AdamsLair/duality/tree/master/Source/Editor/DualityEditor/Controls/PropertyEditors) and [here](/AdamsLair/duality/tree/master/Source/Plugins/EditorBase/PropertyEditors).
+To take all matters into your own hands, you can also go the extra mile and implement a custom editor for any object type, or even groups of object types that share a certain interface. Property editors are defined in editor plugins, which is a topic on its own that shouldn't be opened up in detail at this point - however, you can find some samples [here](https://github.com/AdamsLair/duality/tree/master/Source/Editor/DualityEditor/Controls/PropertyEditors) and [here](https://github.com/AdamsLair/duality/tree/master/Source/Plugins/EditorBase/PropertyEditors).
 
 # Serialization
 
