@@ -71,9 +71,10 @@
       </ul>
     <!-- Otherwise, display top-level manual pages grouped by category. -->
     {% else %}
-      {% assign sortedPages = site.pages | where: 'version', targetVersion | sort: 'displayOrder' %}
-      {% for category in site.topLevelCategories %}
-        {% assign categoryPages = sortedPages | where: 'category', category.id %}
+      {% assign topLevelPages = site.pages | where: 'version', targetVersion | where_exp: 'item', 'item.category != nil' | where_exp: 'item', 'item.parent == nil' %}
+      {% assign sortedTopLevelPages = topLevelPages | sort: 'displayOrder' %}
+      {% for category in site.categoryDescriptions %}
+        {% assign categoryPages = sortedTopLevelPages | where: 'category', category.id %}
         {% if categoryPages.size > 0 %}
           <h4>{{ category.title }}</h4>
           <ul>

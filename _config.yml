@@ -17,8 +17,8 @@ links:
   - title: 'Chat'
     url: 'https://chat.duality2d.net'
 
-# Top-Level categories, to be displayed in the nav overview
-topLevelCategories:
+# Descriptions for the categories we have, used for top-level display
+categoryDescriptions:
   - id: 'introduction'
     title: 'Introduction'
   - id: 'tutorials'
