@@ -33,3 +33,32 @@ categoryDescriptions:
 # Support for GitHub-flavored markdown Emoji
 plugins:
   - jemoji
+
+# Default values for front matter variables
+defaults:
+  - scope: # Applies to all pages
+      path: ""
+      type: "pages"
+    values:
+      # Which layout HTML to use
+      layout: "default"
+      # The display title of the page
+      title:
+      # Parent page, as path without extension relative to the pages version root folder.
+      # Example: 'Foo/Bar/SomePage' on a v2 page would resolve to '/pages/v2/Foo/Bar/SomePage.html'
+      parent:
+      # The category this page belongs to. If no parent is set, the page will be displayed
+      # under this category in the top-level chapter overview.
+      category: 
+      # Whether this page should not use an auto-generated table of contents in the sidebar
+      # and instead display nav links to its sibling pages.
+      notoc: false
+      # The order in which sidebar page links are displayed. Higher values will move this page
+      # further down, lower values will move it further up.
+      displayOrder: 0
+      # Version identifier of this page, e.g. 'v2', 'v3' or similar
+      version: 
+      # An array of paths under which previous versions of this page were found. Paths are formatted
+      # without extension, and relative to the pages version root folder.
+      # Example: 'Foo/Bar/SomePage' to a v2 page would resolve to '/pages/v2/Foo/Bar/SomePage.html'
+      formerPaths: []
