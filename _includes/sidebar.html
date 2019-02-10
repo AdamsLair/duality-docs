@@ -88,17 +88,31 @@
         {% endif %}
       {% endfor %}
     {% endif %}
+
     <!-- Display available versions of this page -->
     {% assign versionPath = page.version | prepend: '/' %}
     {% assign urlAfterVersion = page.url | split: versionPath | last %}
+    {% assign urlAfterVersion = urlAfterVersion | slice: 1, urlAfterVersion.size %}
+    {% assign urlAfterVersionWithoutExt = urlAfterVersion | split: '.html' | first %}
     {% assign versionPages = "" | split: "" %}
+    <!-- Iterate over all pages to find the current one in different versions -->
     {% for pageItem in site.pages %}
       {% assign itemVersionPath = pageItem.version | prepend: '/' %}
       {% assign itemUrlAfterVersion = pageItem.url | split: itemVersionPath | last %}
-      {% if itemUrlAfterVersion == urlAfterVersion %}
+      {% assign itemUrlAfterVersion = itemUrlAfterVersion | slice: 1, itemUrlAfterVersion.size %}
+      {% assign itemUrlAfterVersionWithoutExt = itemUrlAfterVersion | split: '.html' | first %}
+      {% comment %} <!-- Match pages with an equal URL, except the version part --> {% endcomment %}
+      {% if itemUrlAfterVersionWithoutExt == urlAfterVersionWithoutExt %}
+        {% assign versionPages = versionPages | push: pageItem %}
+      {% comment %} <!-- Match (future) pages that formerly had the current pages URL --> {% endcomment %}
+      {% elsif pageItem.formerPaths contains urlAfterVersionWithoutExt %}
+        {% assign versionPages = versionPages | push: pageItem %}
+      {% comment %} <!-- Match (past) pages which have an URL from the current pages former path list --> {% endcomment %}
+      {% elsif page.formerPaths contains itemUrlAfterVersionWithoutExt %}
         {% assign versionPages = versionPages | push: pageItem %}
       {% endif %}
     {% endfor %}
+    <!-- Display a full list of available page versions -->
     {% assign sortedVersionPages = versionPages | sort:"version" %}
     <div class="versionList">
       <h4>Versions:</h4>
