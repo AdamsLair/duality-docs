@@ -73,17 +73,18 @@
     {% else %}
       {% assign sortedPages = site.pages | where: 'version', targetVersion | sort: 'displayOrder' %}
       {% for category in site.topLevelCategories %}
-        <h4>{{ category.title }}</h4>
-        <ul>
-          {% for pageItem in sortedPages %}
-            {% if pageItem.category and pageItem.category == category.id %}
+        {% assign categoryPages = sortedPages | where: 'category', category.id %}
+        {% if categoryPages.size > 0 %}
+          <h4>{{ category.title }}</h4>
+          <ul>
+            {% for pageItem in categoryPages %}
               <li>
                 <a class="contentLink" href="{{ site.baseurl }}{{ pageItem.url }}#mainContent">{{ pageItem.title }}</a>
                 <a class="pageLink" href="{{ site.baseurl }}{{ pageItem.url }}">{{ pageItem.title }}</a>
               </li>
-            {% endif %}
-          {% endfor %}
-        </ul>
+            {% endfor %}
+          </ul>
+        {% endif %}
       {% endfor %}
     {% endif %}
     <!-- Display available versions of this page -->
