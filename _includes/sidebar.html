@@ -5,8 +5,9 @@
   {% assign parentPage = site.pages | where: 'version', targetVersion | where: 'url', parentUrl | first %}
   {% assign pageUrlWithoutExt = page.url | split: '.html' | first %}
   {% assign localPageUrlWithoutExt = pageUrlWithoutExt | replace_first: localBaseUrl, '' %}
-  {% assign childPages = site.pages | where: 'version', targetVersion | where: 'parent', localPageUrlWithoutExt %}
-  {% assign siblingPages = site.pages | where: 'version', targetVersion | where: 'parent', page.parent %}
+  {% assign sortedPages = site.pages | where: 'version', targetVersion | sort: 'displayOrder' %}
+  {% assign childPages = sortedPages | where: 'parent', localPageUrlWithoutExt %}
+  {% assign siblingPages = sortedPages | where: 'parent', page.parent %}
 
   {% comment %}
   <!-- Debug Output -->
@@ -71,10 +72,9 @@
       </ul>
     <!-- Otherwise, display top-level manual pages grouped by category. -->
     {% else %}
-      {% assign topLevelPages = site.pages | where: 'version', targetVersion | where_exp: 'item', 'item.category != nil' | where_exp: 'item', 'item.parent == nil' %}
-      {% assign sortedTopLevelPages = topLevelPages | sort: 'displayOrder' %}
+      {% assign topLevelPages = sortedPages | where: 'version', targetVersion | where_exp: 'item', 'item.category != nil' | where_exp: 'item', 'item.parent == nil' %}
       {% for category in site.categoryDescriptions %}
-        {% assign categoryPages = sortedTopLevelPages | where: 'category', category.id %}
+        {% assign categoryPages = topLevelPages | where: 'category', category.id %}
         {% if categoryPages.size > 0 %}
           <h4>{{ category.title }}</h4>
           <ul>
