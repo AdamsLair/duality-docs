@@ -40,7 +40,8 @@
         <a class="contentLink" href="{{ site.baseurl }}{{ parentPage.url }}#mainContent">&lt; Go Back</a>
         <a class="pageLink" href="{{ site.baseurl }}{{ parentPage.url }}">&lt; Go Back</a>
       {% else %}
-        <a href="{{ site.baseurl }}/">&lt; Go Back</a>
+        <!-- Use the Home page of the current version -->
+        <a href="{{ site.baseurl }}{{ localBaseUrl }}Home.html">&lt; Go Back</a>
       {% endif %}
     {% endif %}
 
