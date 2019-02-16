@@ -279,6 +279,20 @@ main {
     padding: 20px 20px;
   }
 
+  // Add underline borders for higher level headings in page texts
+  h1 {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  }
+
+  h2 {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.075);
+  }
+
+  // Avoid underline border for the very first / page title heading
+  h1:first-of-type {
+    border-bottom: none;
+  }
+
   p, ul, ol {
     margin: 15px 0;
     line-height: 1.5;
