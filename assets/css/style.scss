@@ -296,7 +296,11 @@ main {
   p, ul, ol {
     margin: 15px 0;
     line-height: 1.5;
-    hyphens: auto;
+    // In low-width mode, enable hyphenation to avoid noisy text layout.
+    // Not yet supported in all browsers, but that's fine.
+    @media (max-width: 600px) {
+      hyphens: auto;
+    }
   }
 
   li > ul, li > ol {
