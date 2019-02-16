@@ -296,6 +296,7 @@ main {
   p, ul, ol {
     margin: 15px 0;
     line-height: 1.5;
+    hyphens: auto;
   }
 
   li > ul, li > ol {
