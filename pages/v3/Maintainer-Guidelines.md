@@ -11,7 +11,7 @@ This page outlines some of the guidelines we follow when developing Duality itse
 
 There are three golden rules for applying the guidelines described here:
 
-> **First:** Local guidelines take precedence over global guidelines.
+> **First:** Local guidelines override global guidelines.
 
 Duality consists not only of one main project, but also uses several dependencies, some of which are forked third party projects. As such, they are primarily maintained by different people and inherit an entirely different set of rules. The guidelines described here **only apply unless overruled** by guidelines of a smaller scope, such as per-project guidelines in a dependency.
 
