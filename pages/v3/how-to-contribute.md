@@ -53,7 +53,8 @@ Now, what do you actually do? Here's how to start:
 
 Here are some general tips on your first Pull Request:
 
-  * Read this: [10 Tips For Better Pull Requests](http://blog.ploeh.dk/2015/01/15/10-tips-for-better-pull-requests/)
+  * Make sure you have read the latest [maintainer guidelines](Maintainer-Guidelines).
+  * For some more advice, read this: [10 Tips For Better Pull Requests](http://blog.ploeh.dk/2015/01/15/10-tips-for-better-pull-requests/)
   * If you're working on user interfaces, do usability testing.
   * Make sure it doesn't crash and always behaves non-destructive.
   * Make sure to obey the coding standards that are present throughout Duality. Just look through some code files and make sure your code looks like everything else. You'll get a feel for it.
