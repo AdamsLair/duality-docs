@@ -469,7 +469,7 @@ nav.sidebar {
   .sidebarcontent {
     top: 20px;
     position: sticky;
-    max-height: calc(100vh - 100px);
+    max-height: calc(100vh - 50px);
     overflow: auto;
 
     /* Un-sticky them when switching to page header layout */
