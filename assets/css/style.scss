@@ -447,17 +447,37 @@ footer {
 nav.sidebar {
   width: 275px;
   background: #eee;
-  padding: 20px 30px;
   vertical-align: top;
+
+  /* While in side-by-side, split padding between sidebar and content div 
+   * so scrollbars are aligned in the middle nicely */
+  padding: 10px 15px;
+  .sidebarcontent {
+    padding: 10px 15px;
+  }
+
+  /* When in page header layout, put all the padding in the sidebar wrap,
+   * so multi-column keeps its distance to the container borders */
+  @media (max-width: 1000px) {
+    padding: 20px 30px;
+    .sidebarcontent {
+      padding: 0px;
+    }
+  }
 
   /* While in side-by-side layout, sticky only the sidebar contents */
   .sidebarcontent {
     top: 20px;
     position: sticky;
+    max-height: calc(100vh - 50px);
+    overflow: auto;
+
     /* Un-sticky them when switching to page header layout */
     @media (max-width: 1000px) {
       top: 0;
       position: static;
+      max-height: none;
+      overflow: hidden;
     }
   }
 
