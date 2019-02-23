@@ -1,5 +1,5 @@
 <main id="mainContent">
   <a id="editButton" class="button" href="{{ site.github.repository_url }}/edit/{{ site.github.source.branch }}/{{ page.path }}">Edit Page</a>
   <h1>{{ page.title }}</h1>
-  {{ content }}
+  {% include anchor_headings.html html=content h_max=3 anchorTitle='Back to top' anchorBody='Back ↑' anchorClass='backToTop' linkOverride='#top' %}
 </main>

@@ -293,6 +293,17 @@ main {
     border-bottom: none;
   }
 
+  a.backToTop {
+    font-size: 14px;
+    float: right;
+
+    // Hide as long as we have a sidebar
+    display: none;
+    @media (max-width: 1000px) {
+      display: inline;
+    }
+  }
+
   p, ul, ol {
     margin: 15px 0;
     line-height: 1.5;
