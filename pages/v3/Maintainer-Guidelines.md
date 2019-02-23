@@ -99,19 +99,19 @@ For using some of the style guidelines, we recommend enabling the display of whi
 - A comment should **provide high level information and context**, not repeat what the code already says.
 - In general, aim for **one comment per semantic block** of code. Besides helping other developers to understand the code, it also encourages a clear structure by organizing code in semantic blocks in the first place. Example:
 
-  ```csharp
-  private void FooMethod()
-  {
-      // A short description of what happens here
-      int bar = this.DoSomething();
-      string fooBar = this.DoSomethingElse(bar, 42);
-      fooBar += "_SomeSuffix";
+```csharp
+private void FooMethod()
+{
+	// A short description of what happens here
+	int bar = this.DoSomething();
+	string fooBar = this.DoSomethingElse(bar, 42);
+	fooBar += "_SomeSuffix";
 
-      // Another short description of the second block
-      this.DoSomethingMore(fooBar);
-      return fooBar;
-  }
-  ```
+	// Another short description of the second block
+	this.DoSomethingMore(fooBar);
+	return fooBar;
+}
+```
 
 - Don't use comments to stash unused code indefinitely, remove it instead.
 - Temporarily commented out code should be tagged with a timestamp and remark describing the reason for its removal, so it can be safely cleaned up in the future.
