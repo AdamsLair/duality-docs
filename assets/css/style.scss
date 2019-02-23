@@ -467,14 +467,14 @@ nav.sidebar {
 
   /* While in side-by-side layout, sticky only the sidebar contents */
   .sidebarcontent {
-    top: 20px;
+    top: 0px;
     position: sticky;
     max-height: calc(100vh - 50px);
     overflow: auto;
 
     /* Un-sticky them when switching to page header layout */
     @media (max-width: 1000px) {
-      top: 0;
+      top: 0px;
       position: static;
       max-height: none;
       overflow: hidden;
