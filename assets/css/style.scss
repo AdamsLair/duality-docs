@@ -515,6 +515,12 @@ nav.sidebar {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     font-size: 75%;
 
+    /* Hackfix for not being able to scroll all the way down with a sticky sidebar
+     * that is higher than the viewport while the main view is at the top: Add some
+     * extra space at the bottom of the sidebar content to increase the scrollable
+     * area by about the same size as the header bar height. */
+    padding-bottom: 30px;
+
     h4 {
       font-weight: normal;
       margin-bottom: 0px;
