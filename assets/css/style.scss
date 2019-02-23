@@ -449,11 +449,11 @@ nav.sidebar {
   background: #eee;
   vertical-align: top;
 
-  /* While in side-by-side, split padding between sidebar and content div 
-   * so scrollbars are aligned in the middle nicely */
-  padding: 10px 15px;
+  /* While in side-by-side, keep all padding to the content div 
+   * so scrollbars are aligned to the side nicely */
+  padding: 0px;
   .sidebarcontent {
-    padding: 10px 15px;
+    padding: 20px 30px;
   }
 
   /* When in page header layout, put all the padding in the sidebar wrap,
