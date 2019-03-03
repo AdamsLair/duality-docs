@@ -1,0 +1,12 @@
+{% comment %}
+  Use like this from within a markdown file:
+  
+  {% include video.html url='../img/SomePage/YourVideoWithoutFileExtension' %}
+
+{% endcomment %}
+
+<video preload="metadata" muted="muted" loop="loop" onmousedown="if (!this.controls && event.button == 0) { if (this.paused) { this.play(); } else { this.pause(); } }">
+    <source src="{{ include.url }}.mp4" type="video/mp4" />
+</video>
+<!-- Not using a shared video container, because margin auto wouldn't work anymore then -->
+<div class="video-subtitle">Gif-like video - Click to Play</div>

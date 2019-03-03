@@ -389,6 +389,30 @@ main {
     width: 1.2em;
     vertical-align: middle;
   }
+  video {
+    display: block;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+
+    height: auto; 
+    max-width: 100%; 
+    cursor: pointer;
+
+    /* Make some space for the video subtitle, which
+     * is a separate element that uses the videos border
+     * as a background. */
+    padding-bottom: 1.5em;
+  }
+  div.video-subtitle {
+    text-align: center;
+    font-size: 75%;
+    margin-top: -2.25em;
+  }
 
   /* Remove borders around images in tables, as we can assume
    * that a table already provides some sort of framing. */
