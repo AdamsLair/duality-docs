@@ -42,7 +42,7 @@ A Duality project spans the folder in which editor and engine application are lo
 
 # Editor Layout
 
-There you are, sitting in front of your computer screen and staring at some grey-ish thing named Dualitor. What next? Where is the game content going to be? When do you get to write some code? What are all these areas and why are they _all empty?_ Well. May I Introduce?
+So at this point you're probably looking at a collection of grey-ish areas in the Duality editor. In case you've worked with similar editors before, you may recognize the design and already have a solid idea on how to use it - but if not, let's introduce you to the most important parts of the UI:
 
 ![](../img/GettingStarted/DualitorViews.png)
 
