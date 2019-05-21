@@ -46,9 +46,23 @@
 
     <!-- Debug Output -->
     <ul class="debug">
-      <li>First: {{ childPages.size > 0 | jsonify }}</li>
-      <li>Second: {{ page.notoc != true | jsonify }}</li>
-      <li>Third: {{ page.parent == null and siblingPages.size > 0 | jsonify }}</li>
+      {% if childPages.size > 0 %}
+      <li>First: true</li>
+      {% else %}
+      <li>First: false</li>
+      {% endif %}
+
+      {% if page.notoc != true %}
+      <li>Second: true</li>
+      {% else %}
+      <li>Second: false</li>
+      {% endif %}
+      
+      {% if page.parent == null and siblingPages.size > 0 %}
+      <li>Third: true</li>
+      {% else %}
+      <li>Third: false</li>
+      {% endif %}
     </ul>
 
     <!-- If we have child pages, display an overview of them -->
