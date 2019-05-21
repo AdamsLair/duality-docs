@@ -9,7 +9,6 @@
   {% assign childPages = sortedPages | where: 'parent', localPageUrlWithoutExt %}
   {% assign siblingPages = sortedPages | where: 'parent', page.parent %}
 
-  {% comment %}
   <!-- Debug Output -->
   <ul class="debug">
     <li>Path: {{ page.path | jsonify }}</li>
@@ -23,8 +22,8 @@
     <li>Children: {{ childPages | map: 'url' | jsonify }}</li>
     <li>Siblings: {{ siblingPages | map: 'url' | jsonify }}</li>
     <li>Parent: {% if parentPage %} {{ parentPage.url | jsonify }} {% else %} null {% endif %}</li>
+    <li>CategoryDescriptions: {{ site.categoryDescriptions | map: 'id' | jsonify }}</li>
   </ul>
-  {% endcomment %}
 
   <div class="sidebarcontent">
     <!-- Display editing buttons -->
