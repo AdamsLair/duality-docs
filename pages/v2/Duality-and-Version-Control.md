@@ -93,10 +93,12 @@ DDoc.chm
 DesignTimeData.dat
 DualityEditor.pdb
 DualityEditor.xml
+```
 
 If you're using **git**, here is a sample `.gitignore` file for you to start with. 
 
 ### `.gitignore`
+
 ```
 YourProjectFolder/Source/Packages/
 YourProjectFolder/Backup/
