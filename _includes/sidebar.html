@@ -44,6 +44,13 @@
       {% endif %}
     {% endif %}
 
+    <!-- Debug Output -->
+    <ul class="debug">
+      <li>First: {{ childPages.size > 0 | jsonify }}</li>
+      <li>Second: {{ page.notoc != true | jsonify }}</li>
+      <li>Third: {{ page.parent == null and siblingPages.size > 0 | jsonify }}</li>
+    </ul>
+
     <!-- If we have child pages, display an overview of them -->
     {% if childPages.size > 0 %}
       <h4>{{ page.title }}</h4>
