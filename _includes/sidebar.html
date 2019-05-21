@@ -73,8 +73,19 @@
     <!-- Otherwise, display top-level manual pages grouped by category. -->
     {% else %}
       {% assign topLevelPages = sortedPages | where: 'version', targetVersion | where_exp: 'item', 'item.category != nil' | where_exp: 'item', 'item.parent == nil' %}
+      <!-- Debug Output -->
+      <ul class="debug">
+        <li>TopLevelPages: {{ topLevelPages | map: 'url' | jsonify }}</li>
+      </ul>
       {% for category in site.categoryDescriptions %}
         {% assign categoryPages = topLevelPages | where: 'category', category.id %}
+        <!-- Debug Output -->
+        <ul class="debug">
+          <li>Category: {{ category | jsonify }}</li>
+          <li>Category ID: {{ category.id | jsonify }}</li>
+          <li>Category Title: {{ category.title | jsonify }}</li>
+          <li>CategoryPages: {{ categoryPages | map: 'url' | jsonify }}</li>
+        </ul>
         {% if categoryPages.size > 0 %}
           <h4>{{ category.title }}</h4>
           <ul>
