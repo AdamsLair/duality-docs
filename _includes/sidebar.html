@@ -25,7 +25,7 @@
     <li>Parent: {% if parentPage %} {{ parentPage.url | jsonify }} {% else %} null {% endif %}</li>
     <li>CategoryDescriptions: {{ site.categoryDescriptions | map: 'id' | jsonify }}</li>
   </ul>
-  {% comment %}
+  {% endcomment %}
 
   <div class="sidebarcontent">
     <!-- Display editing buttons -->
