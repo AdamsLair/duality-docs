@@ -97,7 +97,8 @@ DualityEditor.xml
 
 If you're using **git**, here is a sample `.gitignore` file for you to start with. 
 
-### `.gitignore`
+### Example Git Ignore File
+
 ```
 YourProjectFolder/Source/Packages/
 YourProjectFolder/Backup/
