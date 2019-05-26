@@ -23,6 +23,7 @@
     <li>Children: {{ childPages | map: 'url' | jsonify }}</li>
     <li>Siblings: {{ siblingPages | map: 'url' | jsonify }}</li>
     <li>Parent: {% if parentPage %} {{ parentPage.url | jsonify }} {% else %} null {% endif %}</li>
+    <li>CategoryDescriptions: {{ site.categoryDescriptions | map: 'id' | jsonify }}</li>
   </ul>
   {% endcomment %}
 
@@ -61,7 +62,7 @@
       <h4>{{ page.title }}</h4>
       {% include toc.html html=content h_max=3 sanitize=true %}
     <!-- If we have sibling pages, display links to them -->
-    {% elsif siblingPages.size > 0 %}
+    {% elsif page.parent != null and siblingPages.size > 0 %}
       <h4>{{ parentPage.title }}</h4>
       <ul>
         {% for pageItem in siblingPages %}
