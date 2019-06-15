@@ -51,7 +51,7 @@ Create a new game object (or use an existing game object) that wishes to emit so
 
 Drag the AudioData resource file into the SoundEmitter component in the object inspector. Your SoundEmitter component will look like this (in this case "pulsefire" is the filename of the sound I used. It will be different in your case.).
 
-![](../img/AudioHandling/soundEmitterAfterAddingSound.PNG)
+![](../img/AudioHandling/SoundEmitterAfterAddingSound.PNG)
 
 Also, if you take a look at the project view you will notice that the Duality editor has created a Sound resource out of the AudioData resource we provided.
 
