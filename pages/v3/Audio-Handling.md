@@ -70,17 +70,23 @@ So far we have only worked with the editor to play sounds so let's jump into som
 Here's how you'd play some background music:
 
 ```csharp
+// Declare fields in some Component class
 private ContentRef<Sound> sound = null;
 private SoundInstance instance = null;
+```
 
-// grab a reference to the Sound resource (our music loop)
-this.sound = ContentProvider.RequestContent<Sound>(@"Data\MusicLoop.Sound.Res");
-
-// start playing
-this.instance = DualityApp.Sound.PlaySound(this.sound);
-
-// set the Looped property to true as we want the music to loop
-this.instance.Looped = true;
+```csharp
+private void StartAudio()
+{
+	// Grab a reference to the Sound resource (our music loop)
+	this.sound = ContentProvider.RequestContent<Sound>(@"Data\MusicLoop.Sound.Res");
+	
+	// Start playing
+	this.instance = DualityApp.Sound.PlaySound(this.sound);
+	
+	// Set the Looped property to true as we want the music to loop
+	this.instance.Looped = true;
+}
 ```
 
 ### Fading in and out
@@ -91,25 +97,25 @@ Starting and stopping music immediately with no fading can be quite abrupt and o
 // start the ambience music
 // ambience music plays regardless of which state the player is in
 this.ambienceLoop.BeginFadeIn(5.0f);
+```
 
-// query the game state
+```csharp
+// The player is in combat: Fade out the Exploration music and fade in the Combat music
 if (Player.IsInCombat())
 {
-    // the player is in combat
-    // fade out the Exploration music and fade in the Combat music
-    this.explorationLoop.FadeOut(5.0f);
-    this.combatLoop.FadeIn(5.0f);
-
-} else
+	this.ambienceLoop.FadeOut(5.0f);
+	this.combatLoop.FadeIn(5.0f);
+}
+// The player is not in combat: Fade out the Combat music and fade in the Exploration music
+else
 {
-    // the player is not in combat
-    // fade out the Combat music and fade in the Exploration music
-    this.combatLoop.FadeOut(5.0f);
-    this.explorationLoop.FadeIn(5.0f);
+	// The player is not in combat: Fade out the Combat music and fade in the Exploration music
+	this.combatLoop.FadeOut(5.0f);
+	this.ambienceLoop.FadeIn(5.0f);
 }
 ```
 
-In this example `ambienceLoop`, `explorationLoop` and `combatLoop` are SoundInstance objects and we call the `BeginFadeIn`, `FadeIn` and `FadeOut` helper methods with a fade time of 5 seconds.
+In this example `ambienceLoop` and `combatLoop` are SoundInstance objects and we call the `BeginFadeIn`, `FadeIn` and `FadeOut` helper methods with a fade time of 5 seconds.
 
 # Applying audio effects
 
@@ -120,8 +126,7 @@ Effects are another way to make your game's audio feel more dynamic and reactive
 You can think of a low pass filter as essentially "audio blur". It can be used in many ways to enhance the player experience (eg. drown out the audio to signal to the player that they are low on health).
 
 ```csharp
-// change the low pass factor
-// lower values cut off more frequencies
+// Change the low pass factor. Lower values cut off more frequencies
 this.soundInstance.Lowpass = 0.5f;
 ```
 
@@ -130,6 +135,6 @@ this.soundInstance.Lowpass = 0.5f;
 Changing the pitch can be useful for slow-mo effects!
 
 ```csharp
-// change the pitch factor
+// Change the pitch factor
 this.soundInstance.Pitch = 1.0f;
 ```
