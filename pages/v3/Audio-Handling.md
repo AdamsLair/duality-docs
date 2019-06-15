@@ -43,7 +43,7 @@ Let's now play a simple sound using Duality's SoundEmitter component. If you rea
 
 Drag any sound file to your project view. The sound file has to be in .ogg format. For 3D audio to kick in it must also be a mono sound file. Upon dragging in the sound file the Duality editor will create a new AudioData resource file for us. In this case my sound file was called "pulsefire".
 
-![](../img/AudioHandling/audioDataResource.png)
+![](../img/AudioHandling/audioDataResource.PNG)
 
 Create a new game object (or use an existing game object) that wishes to emit sound. Add a new SoundEmitter component to the object.
 
@@ -51,11 +51,11 @@ Create a new game object (or use an existing game object) that wishes to emit so
 
 Drag the AudioData resource file into the SoundEmitter component in the object inspector. Your SoundEmitter component will look like this (in this case "pulsefire" is the filename of the sound I used. It will be different in your case.).
 
-![](../img/AudioHandling/soundEmitterAfterAddingSound.png)
+![](../img/AudioHandling/soundEmitterAfterAddingSound.PNG)
 
 Also, if you take a look at the project view you will notice that the Duality editor has created a Sound resource out of the AudioData resource we provided.
 
-![](../img/AudioHandling/soundResource.png)
+![](../img/AudioHandling/soundResource.PNG)
 
 Now, when you run your game the sound should start playing and when you move your game object around the listener it should pan accordingly between the left and right speakers. Once again, your sound file must be in mono for 3D audio to work!
 
