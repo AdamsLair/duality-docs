@@ -70,34 +70,11 @@ In the initial commit of your project, you will spend a lot of time adding files
 - `Source/Code/../bin` and `Source/Code/../obj` are the output and intermediate folders for building your game plugins. There is a post-build step that copies the binaries over to `Plugins` where they need to be, so we don't need either of those folders. Ignore!
 - `Plugins` (the entire content, not the folder) except for the game and editor plugin files that you build yourself from the `Source` folder. Adding them to version control means a few megabytes of extra data, but it can pay off for the added convenience of not having to build the source code after checkout just to start the game or run the editor.
 - `Backup` because that's what our version control system already does.
-- The following files from the main folder, as they are auto-installed dependencies, user or temporary data:
-
-```
-NVorbis.*
-OpenTK.GLControl.*
-OpenTK.*
-FarseerDuality.*
-Microsoft.Web.XmlTransform.*
-FarseerDuality.*
-PopupControl.*
-WeifenLuo.WinFormsUI.Docking.*
-logfile*.*
-perflog*.*
-Aga.Controls.*
-Duality.*
-AdamsLair.WinForms.*
-DualityLauncher.*
-DualityUpdater.*
-DualityPrimitives.*
-DDoc.chm
-DesignTimeData.dat
-DualityEditor.pdb
-DualityEditor.xml
-```
-
-If you're using **git**, here is a sample `.gitignore` file for you to start with. 
+- All files from the main folder that are not part of the Duality download package, as they're auto-installed on first launch after checkout. The only exception are the files `DefaultUserData.dat` and `AppData.dat`, which should not be ignored.
 
 ### Example Git Ignore File
+
+If you're using **git**, here is a sample `.gitignore` file for you to start with. 
 
 ```
 YourProjectFolder/Source/Packages/
@@ -155,5 +132,6 @@ YourProjectFolder/Source/Code/CorePlugin/GamePlugin.core.xml
 YourProjectFolder/Source/Code/EditorPlugin/bin/
 YourProjectFolder/Source/Code/EditorPlugin/obj/
 YourProjectFolder/Source/Code/EditorPlugin/GamePlugin.core.xml
-YourProjectFolder/Source/Code/ProjectPlugins.v12.suo
+YourProjectFolder/Source/Code/*.suo
+YourProjectFolder/Source/Code/.vs
 ```
