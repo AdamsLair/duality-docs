@@ -5,13 +5,13 @@ displayOrder: 0
 version: "v3"
 ---
 
-Typical errors that can be easily avoided.
+Typical errors which can be easily avoided.
 
 # Workflow
 
 ## Ignoring Logged Errors
 
-Duality has a logging system that knows three basic types of logs: Infos, Warnings and Errors. While developing and testing games with Duality, you should always keep an eye on the **Log View** in the editor, or the console window in your test runs.
+Duality has a logging system that knows three basic types of logs: Infos, Warnings and Errors. While developing and testing games with Duality, you should be careful and keep an eye on the **Log View** in the editor, or the console window in your test runs.
 
 * **Info** messages can safely be ignored, they're usually just providing context and tell you what happens.
 * **Warning** messages are a reason for concern, but some of them are fine. They want you to look at them an investigate.
