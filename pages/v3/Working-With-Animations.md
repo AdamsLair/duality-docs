@@ -28,11 +28,15 @@ Insert 3 in the SpriteSheetCoumns and 2 in the SpriteSheetRows. SpriteFrameBorde
 ![](../img/Animation/Animation2_5.png)
 
 Create a new GameObject by right-clicking in the scene view and give it a name: Billy (I call it that)
-In Billy, add a new AnimSpriteRenderer Component.
+In Billy, add a new SpriteAnimator (New -> Graphics -> SpriteAnimator).  This will automatically create a Transform and SpriteRenderer in your GameObject.
 
 ![](../img/Animation/Animation3.png)
 
-You will Duality's logo appearing. That's ok. Drag Billy's Pixmap over AnimSpriteRenderer and you'll see Billy in your scene.
+You will Duality's logo appearing. That's ok. In the SpriteRenderer, drag Billy's Pixmap from the Project View window over the SharedMaterial and update the width and height of the SpriteRenderer to match the size of the spritesheet to a height of 205 and a width of 231.
+
+![](../img/Animation/Animation3_5.png)
+
+Now you'll see Billy (correctly proportioned) in your scene.
 
 ![](../img/Animation/Animation4.png)
 
