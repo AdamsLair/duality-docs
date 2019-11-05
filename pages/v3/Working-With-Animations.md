@@ -32,7 +32,7 @@ In Billy, add a new SpriteAnimator (New -> Graphics -> SpriteAnimator).  This wi
 
 ![](../img/Animation/Animation3.png)
 
-You will Duality's logo appearing. That's ok. Drag Billy's Pixmap over AnimSpriteRenderer and you'll see Billy in your scene.
+You will Duality's logo appearing. That's ok. In the SpriteRender, drag Billy's Pixmap from the Project View window over the SharedMaterial and you'll see Billy in your scene.
 
 ![](../img/Animation/Animation4.png)
 
