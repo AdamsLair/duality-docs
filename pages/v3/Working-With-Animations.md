@@ -12,6 +12,7 @@ Very few games are made that don't need animations. Duality supports animations 
 So, what is needed for an animation?
 A spritesheet. A spritesheet is nothing more than a sequence of images that when shown in sequence form an animation.
 So, let's just use this one (Downloaded from OpenGameArt, character created by Bevouliin):
+
 ![](../img/Animation/Animation1.png)
 
 Save it somewhere on your computer...
