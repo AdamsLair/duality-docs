@@ -28,7 +28,7 @@ Insert 3 in the SpriteSheetCoumns and 2 in the SpriteSheetRows. SpriteFrameBorde
 ![](../img/Animation/Animation2_5.png)
 
 Create a new GameObject by right-clicking in the scene view and give it a name: Billy (I call it that)
-In Billy, add a new SpriteAnimator.  (New -> Graphics -> SpriteAnimator)  This will automatically create a Transform and SpriteRenderer in your GameObject.
+In Billy, add a new SpriteAnimator (New -> Graphics -> SpriteAnimator).  This will automatically create a Transform and SpriteRenderer in your GameObject.
 
 ![](../img/Animation/Animation3.png)
 
