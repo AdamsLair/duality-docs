@@ -32,7 +32,11 @@ In Billy, add a new SpriteAnimator (New -> Graphics -> SpriteAnimator).  This wi
 
 ![](../img/Animation/Animation3.png)
 
-You will Duality's logo appearing. That's ok. In the SpriteRender, drag Billy's Pixmap from the Project View window over the SharedMaterial and you'll see Billy in your scene.
+You will Duality's logo appearing. That's ok. In the SpriteRenderer, drag Billy's Pixmap from the Project View window over the SharedMaterial and update the width and height of the SpriteRenderer to match the size of the spritesheet to a height of 205 and a width of 231.
+
+![](../img/Animation/Animation3_5.png)
+
+Now you'll see Billy (correctly proportioned) in your scene.
 
 ![](../img/Animation/Animation4.png)
 
