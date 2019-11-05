@@ -23,7 +23,9 @@ Looking to the right you see a few fields that relate to animation. In our examp
 
 ![](../img/Animation/Animation2.png)
 
-Insert 3 in the AnimCols and 2 in the AnimRows. AnimFrameBorder is only if you have borders between the frames.
+Insert 3 in the SpriteSheetCoumns and 2 in the SpriteSheetRows. SpriteFrameBorder is only if you have borders between the frames and click the Import button.  This will create your Atlas for you.  It should now look like this:
+
+![](../img/Animation/Animation2_5.png)
 
 Create a new GameObject by right-clicking in the scene view and give it a name: Billy (I call it that)
 In Billy, add a new AnimSpriteRenderer Component.
