@@ -15,14 +15,14 @@ So, let's just use this one (Downloaded from OpenGameArt, character created by B
 
 ![](../img/Animation/Animation1.png)
 
-Save it somewhere on your computer...
-
-And open Duality.
+Save it somewhere on your computer and open Duality.
 
 Drag and drop the spritesheet to the project view.
 
 Looking to the right you see a few fields that relate to animation. In our example, you see Billy six times doing different things.
+
 ![](../img/Animation/Animation2.png)
+
 Insert 3 in the AnimCols and 2 in the AnimRows. AnimFrameBorder is only if you have borders between the frames.
 
 Create a new GameObject by right-clicking in the scene view and give it a name: Billy (I call it that)
