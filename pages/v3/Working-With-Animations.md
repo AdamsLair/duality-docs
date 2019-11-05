@@ -42,7 +42,7 @@ Now you'll see Billy (correctly proportioned) in your scene.
 
 Pressing play, you will see the full animation running, slowly.
 
-By tweaking the values in AnimSpriteRenderer, you can control the animation speed, when it starts, when it ends, if it starts automatically, etc.
+By tweaking the values in SpriteAnimator, you can control the animation speed, when it starts, when it ends, if it starts automatically, etc.
 
 # Controlling Animations
 
@@ -79,9 +79,9 @@ Here is the method:
 ```csharp
 private void PlayAnimation(int firstFrame, int frameCount)
 {
-	var animation = this.GameObj.GetComponent<AnimSpriteRenderer>();
-	animation.AnimFirstFrame = firstFrame;
-	animation.AnimFrameCount = frameCount;
+	var animation = this.GameObj.GetComponent<SpriteAnimator>();
+	animation.FirstFrame = firstFrame;
+	animation.FrameCount = frameCount;
 }
 ```
 
