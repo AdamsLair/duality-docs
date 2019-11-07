@@ -32,7 +32,9 @@ In Billy, add a new SpriteAnimator (New -> Graphics -> SpriteAnimator).  This wi
 
 ![](../img/Animation/Animation3.png)
 
-You will see the Duality logo appearing. That's ok. In the SpriteRenderer, drag Billy's Pixmap from the Project View window over the SharedMaterial and update the values of the Rect to be positioned at -35 and -51.2 with a width of 77 and a height of 102.5. Set the AnimDuration to 1.0, the FirstFrame to 0 and the FrameCount to 4 (The walk animation is 4 frames long).
+You will see the Duality logo appearing. That's ok. In the SpriteRenderer, drag Billy's Pixmap from the Project View window over the SharedMaterial and update the values of the Rect to be positioned at -35 and -51.2 with a width of 77 and a height of 102.5. These values are the size of a single cell frame of the spritesheet (231 / 3 = 77 and 205 / 2 = 102.5). 
+
+Set the AnimDuration to 1.0, the FirstFrame to 0 and the FrameCount to 4 (The walk animation is 4 frames long).
 
 ![](../img/Animation/Animation3_5.png)
 
