@@ -2,7 +2,7 @@
 title: 'Audio Handling'
 category: 'basics'
 displayOrder: 30
-version: 'v3'
+version: 'v4'
 ---
 
 Visuals are just half of what makes a game. Audio is the other half that completes the experience. Audio gives feedback to the player, adds to the immersion of the game and helps ground visuals. In this article we will take a look at how audio handling works in Duality.
