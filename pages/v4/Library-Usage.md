@@ -23,7 +23,7 @@ There are various kinds of libraries that you can use with Duality, some of them
 
 ## Duality Plugins
 
-In the easiest case, you simply want your game plugin to reference another Duality plugin. Just use the "Add Reference" dialog and browse to the dll file of the plugin, and that's it. No additional steps required.
+In the easiest case, you simply want your game plugin to reference another Duality plugin. Just use the "Add Reference" dialog and browse to the dll or project file of the plugin, and that's it. No additional steps required.
 
 However, you should be careful not to mix core and editor plugins. While an editor plugin can reference whatever it wants, a core plugin should never rely on an editor plugin - otherwise, your game would depend on the presence of an editor, rendering the launcher application non-functional.
 
