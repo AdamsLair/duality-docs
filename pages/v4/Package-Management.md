@@ -38,7 +38,7 @@ Depending on the kind of changes that have been introduced with a Package update
 
 ## Packages? Online? Can I opt-out?
 
-Yes, you are free to only use file and project references in your projects. Duality does not care about how package management is and is fully functional without any kind of Package Management and doesn't require it in any way as long as the files end up in the same location. You can also specify a different package repository using a [Nuget.config](https://docs.microsoft.com/en-us/nuget/consume-packages/configuring-nuget-behavior) file, this can even be a local folder.
+Yes, you are free to only use file and project references in your projects. Duality does not care and is fully functional without any kind of Package Management as long as the files end up in the same location. You can also specify a different package repository using a [Nuget.config](https://docs.microsoft.com/en-us/nuget/consume-packages/configuring-nuget-behavior) file, this can even be a local folder.
 
 # Publishing Packages
 
