@@ -13,7 +13,7 @@ In general, when you want to use a (managed) library in your game plugin, you wi
 
 ![](../img/LibraryUsage/AddReference.png)
 
-If you're familiar with it, you can also use the Visual Studio integrated version of NuGet and add your dependency as a package - though it is advised not to do that for Duality plugin packages specifically, since they are already handled by Duality itself.
+You can also use the Visual Studio integrated version of NuGet and add your dependency as a package. In fact since v4 this is now the default way duality manages packages.
 
 Depending on the type of library you're referencing, you may need to take care of some additional things. Being able to compile your game plugin with the new reference is one thing, making sure Duality is able to locate it at runtime is another one.
 
@@ -23,19 +23,19 @@ There are various kinds of libraries that you can use with Duality, some of them
 
 ## Duality Plugins
 
-In the easiest case, you simply want your game plugin to reference another Duality plugin. Just use the "Add Reference" dialog and browse into the Plugins folder of your Duality project to select the plugin you need, and that's it. No additional steps required.
+In the easiest case, you simply want your game plugin to reference another Duality plugin. Just use the "Add Reference" dialog and browse to the dll file of the plugin, and that's it. No additional steps required.
 
 However, you should be careful not to mix core and editor plugins. While an editor plugin can reference whatever it wants, a core plugin should never rely on an editor plugin - otherwise, your game would depend on the presence of an editor, rendering the launcher application non-functional.
 
 ## Managed Libraries
 
-You can reference managed libraries that are not Duality plugins as well, same procedure as above. In order to make sure that the Duality runtime is able to locate your referenced library, put it into the Plugins folder, right next to your game plugin. In most cases, that's all you need to know.
+You can reference managed libraries that are not Duality plugins as well, same procedure as above. In most cases, that's all you need to know.
 
-### Portability and (non-) Portable Class Libraries
+### Portability and (non-) .NET Standard Class Libraries
 
-By default, Duality game plugins are [Portable Class Libraries](Framework-Structure.md), which means that they limit themselves to a subset of the .Net Framework that is known to be portable across a range of platforms. To keep this contract intact, you can only reference libraries that use a similar or smaller subset of .Net, thus retaining portability.
+By default, Duality game plugins are [.NET Standard Class Libraries](Framework-Structure.md), which means that they limit themselves to a subset of .NET that is known to be portable across all .NET implementations. To keep this contract intact, you can only reference libraries that use a similar or smaller subset of .NET, thus retaining portability. See the [microsoft .NET Standard docs page](https://docs.microsoft.com/en-us/dotnet/standard/net-standard) for more info about .NET Standard.  
 
-There may be cases where this gets in the way, or you simply don't care about other platforms. In this case, just [convert](http://stackoverflow.com/q/20094075/2015377) your game plugin project to be a non-portable / regular C# class library and reference your dependency as usual. Duality is fine with either one.
+There may be cases where this gets in the way, or you simply don't care about other platforms. In this case can modify the `TargetFramework` element in the `csproj` file of your plugin so it targets `net472`. 
 
 ### 32 Bit / x86 Managed Libraries
 
