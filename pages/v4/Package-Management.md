@@ -46,19 +46,16 @@ Another cool thing about Package Management is, that everyone is free to introdu
 
 1. Create a new Duality plugin. Bonus points for hosting it on GitHub. If you need examples on how a Duality plugin project looks like, you may want to take a look at official [Core](https://github.com/AdamsLair/duality/tree/master/Source/Plugins) and [Editor](https://github.com/AdamsLair/duality/tree/master/Source/Plugins/EditorModules) plugins.
 2. Develop a first stable or prototype version that is somewhat ready to be used.
-3. Get a [NuGet account](https://www.nuget.org/) and read about [how to publish Nuget Packages](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package).
-4. Create a `.nuspec` file for your new Duality Package. There is also an [official specification](http://docs.nuget.org/docs/reference/nuspec-reference) of these, in case you need it.
+3. Get a [NuGet account](https://www.nuget.org/) and read about [how to publish Nuget Packages](https://docs.microsoft.com/en-us/nuget/nuget-org/publish-a-package).
+4. In most cases using the project file itself should suffice to create a nuget package with the [dotnet cli](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package-dotnet-cli). Some things to note:
   - Your Package `id` should be structured like this: `YourName.Duality.Plugins.PluginName` for Core plugins or `YourName.Duality.Editor.Plugins.PluginName` for Editor plugins.
-  - In order for your Package to be identified as Duality Package, `tags` should contain both `Duality` and `Plugin`. it is also a useful guideline to include `Core`, `Editor` or `Sample`, depending on what your Package contains. Do not combine them, but instead publish distinct packages for Core, Editor and Samples.
+  - In order for your Package to be identified as Duality Package, `PackageTags` should contain both `Duality` and `Plugin`. it is also a useful guideline to include `Core`, `Editor` or `Sample`, depending on what your Package contains. Do not combine them, but instead publish distinct packages for Core, Editor and Samples.
   - You need to explicitly specify the version of your Package. It is strongly recommended to use the above guidelines on Major, Minor and Patch numbers. Don't specify a Build number.
-  - The Package `title` and `summary` is what will be displayed to the user in the list of available Packages.
-  - The `description` is what they will see after selecting it. it may be much larger and more thorough than the summary.
-  - `projectUrl` and `iconUrl` will be used accordingly. If you hosted your project on GitHub, I'd recommend to upload the icon (32x32 .png) there as well and specify the direct / raw image link as icon url and the GitHub project page as project url.
-  - In the list of `files`, you should include every file that belongs to your plugin.
-    - Binary files go to the "lib" `target`. **Do not** include files that are actually part of a dependency.
-    - Content / Data / Resource files go to the "content" `target`, or a subdirectory of it.
   - As far as dependencies go, Core plugins should at least depend on `AdamsLair.Duality` and Editor plugins should at least depend on `AdamsLair.Duality.Editor`. Feel free to add more dependencies to other (Duality and non-Duality) Packages when required.
-    - **Do not** explicitly refer to any of the Assemblies that are already included in Duality itself, e.g. **do not** refer to `AdamsLair.OpenTK`, `AdamsLair.WinForms` or similar. Those are to be considered part of the overall environment.
-  - You can find plenty of examples [here](https://github.com/AdamsLair/duality/tree/master/Build/NuGetPackageSpecs).
-  - Also, **do not** use the online editor of the NuGet Gallery to edit any of the properties you've set in the `.nuspec` file, as this [will apparently introduce inconsistencies](https://forum.duality2d.net/viewtopic.php?p=5003#p5003) between the gallery entry and the package.
-5. Let NuGet build the package and push it to the repository. It will be available to everyone in a few minutes.
+  - **Do not** explicitly refer to any of the Assemblies that are already included in Duality itself, e.g. **do not** refer to `AdamsLair.OpenTK`, `AdamsLair.WinForms` or similar. Those are to be considered part of the overall environment.
+  - A full list of metadata properties van be found [here](https://docs.microsoft.com/en-us/dotnet/core/tools/csproj#nuget-metadata-properties)
+5. Run `dotnet pack` on your project file to generate the nuget package.
+6. Upload your nuget package to nuget
+  - **do not** use the online editor of the NuGet Gallery to edit any of the properties you've set in the `.nuspec` file, as this [will apparently introduce inconsistencies](https://forum.duality2d.net/viewtopic.php?p=5003#p5003) between the gallery entry and the package.
+
+Alternatively you can use the [nuget.exe cli](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package) to pack a `.nuspec file`. Some examples can be found [here](https://github.com/AdamsLair/duality/tree/master/Build/NuGetPackageSpecs). Its recommended however to use the `dotnet cli`.
