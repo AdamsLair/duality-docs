@@ -15,11 +15,14 @@ This chapter describes some concepts behind Package Management in Duality, and h
 
 Duality has been built with a modular architecture in mind, which means it can be split up into a lot of distinct parts - like the Scene View, Help Advisor, Steering, Dynamic Lighting and many more. Because most of these parts don't interact directly with each other, it's easy to add, remove or switch each part individually, without breaking the whole system. This is modular design. Now, in order to make those modules more conveniently accessible, all the files of a single module can be packed into a single one and annotated with a description of what's inside. This is what's called a Package.
 
-## What can it do for me?
+## How can I use Packages?
 
-The main feat of Package Management is added convenience. Because all of the Packages are stored in a central online repository to which Duality can connect, you don't even need to leave the editor in order to install or uninstall new Packages. Updating is just a mouse click away and is similarly automated. 
+The main feat of Package Management is added convenience. 
 
-To access Package Management functionality, open the `File` menu and click `Manage Packages...`. A user dialog will appear to guide you through everything else.
+As of v4 the integrated package manager in duality was removed and now uses [Package References](https://docs.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files), the default way of managing packages in .NET. This means you are free to choose your tool of choice to manage your packages: 
+- [dotnet tooling](https://docs.microsoft.com/en-us/nuget/reference/dotnet-commands)
+- [integrated package manager in visual studio](https://docs.microsoft.com/en-us/nuget/consume-packages/install-use-packages-visual-studio)
+- just manually edit the csproj file.
 
 ## Updating Packages
 
@@ -35,14 +38,7 @@ Depending on the kind of changes that have been introduced with a Package update
 
 ## Packages? Online? Can I opt-out?
 
-Yes. Duality is fully functional without any kind of Package Management and doesn't require it in any way. Removing it entirely from Duality requires a few steps:
-
-1. To make the Package dialog go away permanently, open the Package dialog and uninstall the `Package Manager Frontend` Package. (Yes, it can actually uninstall itself.) Restart the editor to apply the uninstall progress.
-2. Close the editor again and delete `PackageConfig.xml` from your Duality folder.
-3. If you want to save some disk space, delete `Source/packages` as well. 
-
-If you're proficient with NuGet, you can also use a custom Package repository instead of the default one. Open 
-`PackageConfig.xml` and replace the appropriate URL with the one you want to use. You can also enter a relative folder path on your local disk.
+Yes, you are free to only use file and project references in your projects. Duality does not care about how package management is and is fully functional without any kind of Package Management and doesn't require it in any way as long as the files end up in the same location. You can also specify a different package repository using a [Nuget.config](https://docs.microsoft.com/en-us/nuget/consume-packages/configuring-nuget-behavior) file, this can even be a local folder.
 
 # Publishing Packages
 
