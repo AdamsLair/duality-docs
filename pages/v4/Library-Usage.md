@@ -13,7 +13,7 @@ In general, when you want to use a (managed) library in your game plugin, you wi
 
 ![](../img/LibraryUsage/AddReference.png)
 
-You can also use the Visual Studio integrated version of NuGet and add your dependency as a package. In fact since v4 this is now the default way duality manages packages.
+You can also use the Visual Studio integrated NuGet Package Manager and add your dependency as a package. In doing so a `PackageReference` element will be added to the csproj, [see](https://docs.microsoft.com/en-us/nuget/consume-packages/package-references-in-project-files) for more info about PackageReferences. Since v4 this is now the default way Duality manages packages.
 
 Depending on the type of library you're referencing, you may need to take care of some additional things. Being able to compile your game plugin with the new reference is one thing, making sure Duality is able to locate it at runtime is another one.
 
