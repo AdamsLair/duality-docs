@@ -53,7 +53,7 @@ Another cool thing about Package Management is, that everyone is free to introdu
   - You need to explicitly specify the version of your Package. It is strongly recommended to use the above guidelines on Major, Minor and Patch numbers. Don't specify a Build number.
   - As far as dependencies go, Core plugins should at least depend on `AdamsLair.Duality` and Editor plugins should at least depend on `AdamsLair.Duality.Editor`. Feel free to add more dependencies to other (Duality and non-Duality) Packages when required.
   - **Do not** explicitly refer to any of the Assemblies that are already included in Duality itself, e.g. **do not** refer to `AdamsLair.OpenTK`, `AdamsLair.WinForms` or similar. Those are to be considered part of the overall environment.
-  - A full list of metadata properties van be found [here](https://docs.microsoft.com/en-us/dotnet/core/tools/csproj#nuget-metadata-properties)
+  - A full list of metadata properties can be found [here](https://docs.microsoft.com/en-us/dotnet/core/tools/csproj#nuget-metadata-properties)
 5. Run `dotnet pack` on your project file to generate the nuget package.
 6. Upload your nuget package to nuget
   - **do not** use the online editor of the NuGet Gallery to edit any of the properties you've set in the `.nuspec` file, as this [will apparently introduce inconsistencies](https://forum.duality2d.net/viewtopic.php?p=5003#p5003) between the gallery entry and the package.
