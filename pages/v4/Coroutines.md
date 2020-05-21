@@ -13,7 +13,7 @@ _Coroutines are very similar to threads. However, coroutines are cooperatively m
 
 A Coroutine is a piece of code that executes "in parallel", over a certain amount of time, or generally asynchronously, with another; in our particular case, it is code that should run for an arbitrarily long amount of frames, without getting in the way of the usual flow of your code.
 
-This ~does not mean~ that the Coroutine is operating on a separate thread, and thus can be written ignoring the usual constraints of the Update-Draw loop of the game engine; each step of the Coroutine should be able to be performed in one Update call, so don't go around looking for prime numbers in a Coroutine, chances are your game would stutter.
+This **does not mean** that the Coroutine is operating on a separate thread, and thus can be written ignoring the usual constraints of the Update-Draw loop of the game engine; each step of the Coroutine should be able to be performed in one Update call, so don't go around looking for prime numbers in a Coroutine, chances are your game would stutter.
 
 # A simple example
 
