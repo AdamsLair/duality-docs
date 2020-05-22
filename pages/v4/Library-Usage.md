@@ -27,6 +27,8 @@ In the easiest case, you simply want your game plugin to reference another Duali
 
 However, you should be careful not to mix core and editor plugins. While an editor plugin can reference whatever it wants, a core plugin should never rely on an editor plugin - otherwise, your game would depend on the presence of an editor, rendering the launcher application non-functional.
 
+Unless your plugin directly depends on a plugin you can add the reference to either the `GameLauncher` project for core plugins or the `GameEditor` project for editor plugins.
+
 ## Managed Libraries
 
 You can reference managed libraries that are not Duality plugins as well, same procedure as above. In most cases, that's all you need to know.

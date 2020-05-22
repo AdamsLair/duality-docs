@@ -11,13 +11,11 @@ This short article will give you a quick intro to using Tilemaps in Duality. It 
 
 Tilemaps are great for a lot of reasons, but as neat as they are, not every game needs them and we don't want to clutter everyone's workspace with a feature that only some select people will use. That's why tilemaps are not part of the Duality core, but implemented in a plugin that you can install. As with most plugins, there are two ways to get them.
 
-## Via Package Manager
+## Via Nuget
 
-This is certainly the easiest way and recommended for basically everyone. Open up the Package Manager by clicking the `File / Manage Packages...` menu item, switch the View to `Online Repository` and select the `Tilemaps (Editor)` package, which will install `Tilemaps (Core)` as a dependency as well. Click the `Install` button in the lower right of the dialog, wait for the progress bar to finish and hit `Apply` afterwards. The editor will restart and you will now have tilemaps at your disposal.
+This is certainly the easiest way and recommended for basically everyone. Install the [Tilemaps (Editor)](https://www.nuget.org/packages/AdamsLair.Duality.Editor.Plugins.Tilemaps/) and the [Tilemaps (Core)](https://www.nuget.org/packages/AdamsLair.Duality.Plugins.Tilemaps/) using either the integrated package manager in visual studio or with the commandline.
 
-![](../img/Tilemaps/ManagePackages.png)
-
-You might have noticed that **there is also a `Tilemaps Sample` package**. Feel free to install it and take a look to get a preview on one of the potential tilemap setups! If you are a new user, please make sure to uninstall the sample again before proceeding with this tutorial so we have a clean slate to start with.
+You might have noticed that **there is also a [Tilemaps Sample](https://www.nuget.org/packages/AdamsLair.Duality.Samples.Tilemaps/) package**. Feel free to install it and take a look to get a preview on one of the potential tilemap setups! If you are a new user, please make sure to uninstall the sample again before proceeding with this tutorial so we have a clean slate to start with.
 
 ## Via source code
 
