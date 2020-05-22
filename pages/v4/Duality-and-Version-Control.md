@@ -60,12 +60,14 @@ If you're an experienced version control user, you know that you sometimes need 
 
 When you initially downloaded and installed Duality, you may have noticed that there was no dedicated installer software, only a solution file with some projects. Building it for the first time will download all the required packages and copies them into place. After this you can run Duality.
 
-This is not a one-off operation - if you delete all files except for the ones that came with the download, you can simply build Duality again to restore these files. We can use this behavior to keep our version control repository clean of all binaries.
+This is not a one-off operation - if you delete all files except for the ones that came with the download, you can simply build your solutions again to restore these files. We can use this behavior to keep our version control repository clean of all binaries.
 
 ## The Initial Setup Commit
 
-In the initial commit of your project, you will spend a lot of time adding files to your version control systems ignore list. Let's go through the most important files and folders to ignore, and see _why_ they should be ignored:
+The duality project template already comes with a pre-configured .gitignore file for you so you don't have to do this yourself. However it is good to know why some files are ignored and others are not.
 
+Let's go through the most important files and folders to ignore, and see _why_ they should be ignored:
 - Build output files (`**/bin`, `**/obj`, `Duality/Plugins`, `Duality/*.dll` etc) are the output files/folders building your game so we don't need these. Ignore!
-- `Backup` because that's what our version control system already does.
-- All files from the main folder that are not part of the Duality download package, as they're auto-installed on first launch after checkout. The only exception are the files `DefaultUserData.dat` and `AppData.dat`, which should not be ignored.
+- `Duality/Backup` because that's what our version control system already does.
+- `Duality/Temp` these contain only temporary files which are not needed to be under source control.
+- `Source/.vs` this folder contains temporary files used by visual studio.
