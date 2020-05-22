@@ -11,7 +11,7 @@ This article will provide a quick overview on how to manage user input in Dualit
 
 In Duality, user input comes in one of four different forms, depending on the input device you're querying: Mouse, keyboard, gamepad and joystick input are supported. All the input devices are accessible using public, static `DualityApp` API and are identified by a description string that they provide. They may become available or unavailable at runtime.
 
-To get a quick overview, you can also check out the **Input Handling sample** in the package manager. It demonstrates how to use ever input device and as all samples, it comes with source code.
+To get a quick overview, you can also check out the [**Input Handling sample**](https://www.nuget.org/packages/AdamsLair.Duality.Samples.InputHandling/). It demonstrates how to use ever input device and as all samples.
 
 ## Mouse
 
