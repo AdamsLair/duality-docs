@@ -66,7 +66,6 @@ This is not a one-off operation - if you delete all files except for the ones th
 
 In the initial commit of your project, you will spend a lot of time adding files to your version control systems ignore list. Let's go through the most important files and folders to ignore, and see _why_ they should be ignored:
 
-- `**/bin` and `**/obj` are the output and intermediate folders for building your game. There is a post-build step that copies the binaries over to the root Duality folder and the `Plugins` folder where they need to be, so we don't need either of those folders. Ignore!
-- `Plugins` (the entire content, not the folder) except for the game and editor plugin files that you build yourself from the `Source` folder. Adding them to version control means a few megabytes of extra data, but it can pay off for the added convenience of not having to build the source code after checkout just to start the game or run the editor.
+- Build output files (`**/bin`, `**/obj`, `Duality/Plugins`, `Duality/*.dll` etc) are the output files/folders building your game so we don't need these. Ignore!
 - `Backup` because that's what our version control system already does.
 - All files from the main folder that are not part of the Duality download package, as they're auto-installed on first launch after checkout. The only exception are the files `DefaultUserData.dat` and `AppData.dat`, which should not be ignored.
