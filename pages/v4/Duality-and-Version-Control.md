@@ -71,3 +71,28 @@ Let's go through the most important files and folders to ignore, and see _why_ t
 - `Duality/Backup` because that's what our version control system already does.
 - `Duality/Temp` these contain only temporary files which are not needed to be under source control.
 - `Source/.vs` this folder contains temporary files used by visual studio.
+
+### Example Git Ignore File
+
+If you're using **git**, here is a sample `.gitignore` file from the template for you to start with. 
+
+```
+# Build output files
+**/bin
+**/obj
+
+# Duality specific files
+Duality/Temp
+Duality/Backup
+Duality/UserData.dat
+Duality/DesignTimeData.dat
+Duality/*.pdb
+Duality/*.dll
+Duality/*.exe
+Duality/*.txt
+Duality/*.xml
+Duality/Plugins
+
+# Visual studio specific files
+Source/.vs
+```
