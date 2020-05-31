@@ -10,10 +10,8 @@ baseurl: ''
 
 # External links, to be displayed in the top
 links:
-  - title: 'Project'
+  - title: 'About Duality'
     url: 'https://www.duality2d.net'
-  - title: 'Forum'
-    url: 'https://forum.duality2d.net'
   - title: 'Chat'
     url: 'https://chat.duality2d.net'
 
