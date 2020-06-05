@@ -67,9 +67,9 @@ This is not a one-off operation - if you delete all files except for the ones th
 The duality project template already comes with a pre-configured .gitignore file for you so you don't have to do this yourself. However it is good to know why some files are ignored and others are not.
 
 Let's go through the most important files and folders to ignore, and see _why_ they should be ignored:
-- Build output files (`**/bin`, `**/obj`, `Duality/Plugins`, `Duality/*.dll` etc) are the output files/folders building your game so we don't need these. Ignore!
-- `Duality/Backup` because that's what our version control system already does.
-- `Duality/Temp` these contain only temporary files which are not needed to be under source control.
+- Build output files (`**/bin`, `**/obj`, `Plugins`, `*.dll` etc) are the output files/folders building your game so we don't need these. Ignore!
+- `Backup` because that's what our version control system already does.
+- `Temp` these contain only temporary files which are not needed to be under source control.
 - `Source/.vs` this folder contains temporary files used by visual studio.
 
 ### Example Git Ignore File
