@@ -70,7 +70,7 @@ Let's go through the most important files and folders to ignore, and see _why_ t
 - Build output files (`**/bin`, `**/obj`, `Plugins`, `*.dll` etc) are the output files/folders building your game so we don't need these. Ignore!
 - `Backup` because that's what our version control system already does.
 - `Temp` these contain only temporary files which are not needed to be under source control.
-- `Source/.vs` this folder contains temporary files used by visual studio.
+- `/.vs` this folder contains temporary files used by visual studio.
 
 ### Example Git Ignore File
 
