@@ -94,5 +94,5 @@ If you're using **git**, here is a sample `.gitignore` file from the template fo
 /Plugins
 
 # Visual studio specific files
-Source/.vs
+/.vs
 ```
