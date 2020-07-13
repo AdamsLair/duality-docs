@@ -19,7 +19,7 @@ Binary deployment is not usually a task you will face - except if you're a Duali
 
 ### Updating Package Specs
 
-In order to deploy a new package release, update all `AssemblyInfo.cs` and `.nuspec` files to their new [semantic version](http://semver.org/) number. Most of the time, this can be done automatically using the [Update Package Versions script](https://github.com/AdamsLair/duality/tree/master/Build/Scripts), which will lead you through an interactive process of reviewing changes since the last package update, updating version numbers and finally creating a new git commit with the package update. However, if you updated a dependency that is not itself part of the main repository, make sure to **update the .nuspec dependency entry** as well - prior to executing the above script. Failing to do so will break the binary release of Duality for both updaters and new users.
+In order to deploy a new package release, update all versions in `.csproj` files and `.nuspec` files to their new [semantic version](http://semver.org/) number. Most of the time, this can be done automatically using the [Update Package Versions script](https://github.com/AdamsLair/duality/tree/master/Build/Scripts), which will lead you through an interactive process of reviewing changes since the last package update, updating version numbers and finally creating a new git commit with the package update. However, if you updated a dependency that is not itself part of the main repository, make sure to **update the .nuspec dependency entry** as well - prior to executing the above script. Failing to do so will break the binary release of Duality for both updaters and new users.
 
 ### Merging into `Release`
 
