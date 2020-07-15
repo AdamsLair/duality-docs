@@ -80,9 +80,9 @@ Here is the method:
 ```csharp
 private void PlayAnimation(int firstFrame, int frameCount)
 {
-	 var animation = this.GameObj.GetComponent<AnimSpriteRenderer>();
-	 animation.AnimFirstFrame = firstFrame;
-	 animation.AnimFrameCount = frameCount;
+	 var animation = this.GameObj.GetComponent<SpriteAnimator>();
+	 animation.FirstFrame = firstFrame;
+	 animation.FrameCount = frameCount;
 
 }
 ```
