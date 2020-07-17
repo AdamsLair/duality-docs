@@ -24,9 +24,31 @@ Enough with the feature circus. Let's begin.
 
 Your first step should be to check whether your system meets all the requirements for developing games with Duality. Don't worry. There aren't that many:
 
-1. Make sure that the **.Net Framework 4.5** (or higher) is installed on your system. It usually is, since it comes with Windows Update and is a requirement for a lot of modern applications. If you're not sure whether to get it or not, you may just [download it](https://www.google.de/#hl=en&q=.net+framework+4.5) and let the installer decide.
-2. Next, you're going to need **Visual Studio** (2013 Update 3 or newer), which will be your main tool for writing source code. If you happen to have a professional version of it laying around, you can use that one. Otherwise, you can get a free version from Microsoft, just look for [Visual Studio Community Edition](http://www.visualstudio.com/). Download it and install it. (_Note:_ Express versions are not supported. Use the Community version instead!)
-3. Now get the [latest binary package](https://get.duality2d.net/) of Duality. It should be a .zip file. Extract it and run **`DualityEditor.exe`**. You should see a splash screen followed by the Duality environment.
+1. Make sure that the **.Net Framework 4.7.2** (or higher) is installed on your system. It usually is, since it comes with Windows Update and is a requirement for a lot of modern applications. If you're not sure whether to get it or not, you may just [download it](https://www.google.de/#hl=en&q=.net+framework+4.7.2) and let the installer decide.
+2. Next, you're going to need **Visual Studio** (2019 or newer), which will be your main tool for writing source code. If you happen to have a professional version of it laying around, you can use that one. Otherwise, you can get a free version from Microsoft, just look for [Visual Studio Community Edition](http://www.visualstudio.com/). Download it and install it. (_Note:_ Express versions are not supported. Use the Community version instead!)
+3. Since we will be using the dotnet cli you need to have this installed. This is already installed if you have [.net core installed](https://docs.microsoft.com/en-us/dotnet/core/tools/).
+
+With those prerequisites met you can install duality. As of v4 there are 2 ways you can do this.
+
+## Zip file
+This is the way duality was distributed in the past:
+1. Get the [latest binary package](https://get.duality2d.net/) of duality
+2. Extract it
+3. Run `dotnet build`
+4. Open **`DualityEditor.exe`**. You should see a splash screen followed by the Duality environment.
+
+## Dotnet new template
+As of v4 we now also have a [dotnet new template](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-new). With this template you can create new duality solutions from the commandline and it even updates filenames to match the name of your game! To use this template you first have to install the [nuget package](https://www.nuget.org/packages/AdamsLair.Duality.Templates) with dotnet new:
+1. Run `dotnet new --install AdamsLair.Duality.Templates`. This will install the latest package. 
+
+NOTE: For prerelease packages you need to specify the full version (`dotnet new --install AdamsLair.Duality.Templates::versionhere`).
+
+Next you can create a new duality solution:
+1. Create a new folder for your duality solution `mkdir gamename`
+2. Go to the folder `cd gamename`
+3. Run `dotnet new dualitysolution --allow-scripts yes`. This will install duality and use the name of the folder for the name of your game. It also builds the solution which is why you need to pass in `--allow-scripts yes` to avoid a prompt.
+
+After duality is installed open **`DualityEditor.exe`**. You should see a splash screen followed by the Duality environment.
 
 That's it! You have successfully installed Duality.
 
@@ -38,7 +60,7 @@ Each application handles its files and projects differently, but most of them de
 
 While this approach may sound ridiculous at first, there is a practical reason for it: Duality is still under development and backwards compatibility can not always be guaranteed. Looking at long term development, it can't be entirely ruled out that there are updates that will break projects set up in previous versions of Duality. By carrying its own version of engine and editor, each project will remain safely play- and editable. Although you can still update them manually, old projects can live on without issues.
 
-A Duality project spans the folder in which editor and engine application are located, as well as all of its subfolders. Thus, the folder to which you've extracted the binary package during installation already _is_ a Duality project! It hasn't been set up specifically, but still: Nothing prevents you from developing your game right there. Duality also has a `File / New Project...` dialog that allows you to do some more advanced setup, but let's skip that for now.
+A Duality project spans the folder in which editor and engine application are located, as well as all of its subfolders. Thus, the folder to which you've extracted the binary package or used the template during installation already _is_ a Duality project! It hasn't been set up specifically, but still: Nothing prevents you from developing your game right there. Duality also has a `File / New Project...` dialog that allows you to do some more advanced setup, but let's skip that for now.
 
 # Editor Layout
 
