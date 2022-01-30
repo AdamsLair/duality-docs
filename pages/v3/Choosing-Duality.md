@@ -8,7 +8,7 @@ notoc: true
 
 Someone once said: "Every game engine sucks - but each in its own, unique way". Choosing an engine is not about going through a shopping list of billboard features, it's not even about deciding which one is "better". It's about setting priorities and identifying requirements: What does your game need, and what do _you_ need, as a developer? What do you value? This guide is here to help you decide whether your next project should be made with Duality.
 
-_If you haven't read the info page yet, [head over here](https://www.duality2d.net) first._
+_If you haven't read the info page yet, [head over here](https://adamslair.github.io/duality) first._
 
 # About Duality
 
@@ -34,4 +34,4 @@ So let's take a close, honest look. If you're with us by the end of this chapter
 - **It's all pure .Net**, so use whichever C#, F# or other .Net language you want. Duality does not tie you to a specific runtime environment and relies on well-tested common infrastructure rather than re-inventing it. Game code are just .Net assemblies, and package management is just NuGet in a wrapper - the ecosystem you already know.
 - **Zero Licensing Issues**. It's just [plain old MIT](https://tldrlegal.com/license/mit-license). No cost involved, no splash screens or pro versions or subscription plans. 
 
-Any questions? [Talk to us](https://chat.duality2d.net/)!
+Any questions? [Talk to us](https://discord.com/invite/ZgnhPzr)!

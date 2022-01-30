@@ -11,9 +11,9 @@ baseurl: ''
 # External links, to be displayed in the top
 links:
   - title: 'About Duality'
-    url: 'https://www.duality2d.net'
+    url: 'https://adamslair.github.io/duality'
   - title: 'Chat'
-    url: 'https://chat.duality2d.net'
+    url: 'https://discord.com/invite/ZgnhPzr'
 
 # Descriptions for the categories we have, used for top-level display
 categoryDescriptions:

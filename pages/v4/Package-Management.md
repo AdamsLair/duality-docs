@@ -56,6 +56,6 @@ Another cool thing about Package Management is, that everyone is free to introdu
   - A full list of metadata properties can be found [here](https://docs.microsoft.com/en-us/dotnet/core/tools/csproj#nuget-metadata-properties)
 5. Run `dotnet pack` on your project file to generate the nuget package.
 6. Upload your nuget package to nuget
-  - **do not** use the online editor of the NuGet Gallery to edit any of the properties you've set in the `.nuspec` file, as this [will apparently introduce inconsistencies](https://forum.duality2d.net/viewtopic.php?p=5003#p5003) between the gallery entry and the package.
+  - **do not** use the online editor of the NuGet Gallery to edit any of the properties you've set in the `.nuspec` file, as this [will apparently introduce inconsistencies](https://github.com/AdamsLair/duality/discussions/viewtopic.php?p=5003#p5003) between the gallery entry and the package.
 
 Alternatively you can use the [nuget.exe cli](https://docs.microsoft.com/en-us/nuget/create-packages/creating-a-package) to pack a `.nuspec file`. Some examples can be found [here](https://github.com/AdamsLair/duality/tree/master/Build/NuGetPackageSpecs). Its recommended however to use the `dotnet cli`.
