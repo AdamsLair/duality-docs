@@ -6,7 +6,9 @@ description: "Developer manual for the Duality game engine"
 repository: 'AdamsLair/duality-docs'
 
 # Empty base URL for custom domain 'docs.duality2d.net' instead of 'adamslair.github.io/duality-docs'
-baseurl: ''
+# baseurl: ''
+# Now back to the *.github.io/* URL
+baseurl: '/duality-docs'
 
 # External links, to be displayed in the top
 links:
