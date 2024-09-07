@@ -34,4 +34,4 @@ So let's take a close, honest look. If you're with us by the end of this chapter
 - **It's all pure .NET**, so use whichever C#, F# or other .NET language you want. Duality does not tie you to a specific runtime environment and relies on well-tested common infrastructure rather than re-inventing it. Game code are just .NET assemblies, and package management is done using the standard tooling in .NET - the ecosystem you already know.
 - **Zero Licensing Issues**. It's just [plain old MIT](https://tldrlegal.com/license/mit-license). No cost involved, no splash screens or pro versions or subscription plans. 
 
-Any questions? [Talk to us](https://discord.gg/GsZuF8W5)!
+Any questions? [Talk to us](https://discord.gg/JZxzXrzXc6)!
