@@ -15,7 +15,7 @@ Let's start this article with some general words of advice, in case you are not 
 
 Think of it as a sophisticated backup and collaboration strategy. When working on a project, you will gradually introduce changes. Most of the time,  these changes will be done in several work sessions, and after a few sessions, you might decide to make a backup to have a safe haven to return to, should any of your future changes screw something up.
 
-Version control systems are a way to automate your workflow and organize all versions of all the files in a certain place, so you don't have to bother. On top of that, they are also able to do things that would require a tremendous organization effort otherwise, such as merging two different versions of your project after you and a colleage have worked on it independently for a while.
+Version control systems are a way to automate your workflow and organize all versions of all the files in a certain place, so you don't have to bother. On top of that, they are also able to do things that would require a tremendous organization effort otherwise, such as merging two different versions of your project after you and a colleague have worked on it independently for a while.
 
 ## Why Should You Use Version Control?
 
@@ -54,84 +54,45 @@ Of course there are more than those two, and the choice is yours. The most impor
 
 # Version Control in Duality
 
-If you're an experienced version control user, you know that you sometimes need to be careful which files to add to the system, and which ones to keep out of it. In fact, adding _all_ files of a Duality project to version control would be an incredibly wasteful thing to do. It's always good to keep your repository nice and clean, with only the essential files persistently versioned, while keeping out redundancy and temp noise.
+If you're an experienced version control user, you know that you sometimes need to be careful which files to add to the system, and which ones to keep out of it. In fact, adding _all_ files of a Duality project to version control would be an incredibly wasteful thing to do. It's always good to keep your repository nice and clean, with only the essential files persistently versioned, while keeping out redundancy and temp noise. In v4 duality made this easier to achieve because all binaries are now deployed from the project files in your solution so its no longer needed to put these under source control.
 
 ## Duality as a Self-Installing Application
 
-When you initially downloaded and installed Duality, you may have noticed that there was no dedicated installer software, but a stripped-down version of the Duality editor itself. Running it for the first time, it started to download all the required packages, copied them into place and restarted itself to apply the update.
+When you initially downloaded and installed Duality, you may have noticed that there was no dedicated installer software, only a solution file with some projects. Building it for the first time will download all the required packages and copies them into place. After this you can run Duality.
 
-This is not a one-off operation - if you delete all files except for the ones that came with the download, Duality will re-install itself and all packages in the exact version they were present before. We can use this behavior to keep our version control repository clean of most binaries, while at the same time making sure that a checkout is all that is needed for opening and running your Duality project.
+This is not a one-off operation - if you delete all files except for the ones that came with the download, you can simply build your solutions again to restore these files. We can use this behavior to keep our version control repository clean of all binaries.
 
 ## The Initial Setup Commit
 
-In the initial commit of your project, you will spend a lot of time adding files to your version control systems ignore list. Let's go through the most important files and folders to ignore, and see _why_ they should be ignored:
+The duality project template already comes with a pre-configured .gitignore file for you so you don't have to do this yourself. However it is good to know why some files are ignored and others are not.
 
-- `Source/Packages` is where Duality package management caches local copies of each package before copying them to their proper folder in the main directory. If any package that should be installed isn't represented in this directory, it will be re-installed. Since this is exactly what we want, this folder should not be version-controlled, so new checkouts won't have it.
-- `Source/Code/../bin` and `Source/Code/../obj` are the output and intermediate folders for building your game plugins. There is a post-build step that copies the binaries over to `Plugins` where they need to be, so we don't need either of those folders. Ignore!
-- `Plugins` (the entire content, not the folder) except for the game and editor plugin files that you build yourself from the `Source` folder. Adding them to version control means a few megabytes of extra data, but it can pay off for the added convenience of not having to build the source code after checkout just to start the game or run the editor.
+Let's go through the most important files and folders to ignore, and see _why_ they should be ignored:
+- Build output files (`**/bin`, `**/obj`, `Plugins`, `*.dll` etc) are the output files/folders building your game so we don't need these. Ignore!
 - `Backup` because that's what our version control system already does.
-- All files from the main folder that are not part of the Duality download package, as they're auto-installed on first launch after checkout. The only exception are the files `DefaultUserData.dat` and `AppData.dat`, which should not be ignored.
+- `Temp` these contain only temporary files which are not needed to be under source control.
+- `/.vs` this folder contains temporary files used by visual studio.
 
 ### Example Git Ignore File
 
-If you're using **git**, here is a sample `.gitignore` file for you to start with. 
+If you're using **git**, here is a sample `.gitignore` file from the template for you to start with. 
 
 ```
-YourProjectFolder/Source/Packages/
-YourProjectFolder/Backup/
-YourProjectFolder/Temp/
-YourProjectFolder/Plugins/*
-!YourProjectFolder/Plugins/GamePlugin.core.dll
-!YourProjectFolder/Plugins/GamePlugin.core.pdb
-!YourProjectFolder/Plugins/GamePlugin.core.xml
-!YourProjectFolder/Plugins/EditorPlugin.editor.dll
-!YourProjectFolder/Plugins/EditorPlugin.editor.pdb
-!YourProjectFolder/Plugins/EditorPlugin.editor.xml
-YourProjectFolder/NVorbis.dll
-YourProjectFolder/OpenTK.GLControl.dll
-YourProjectFolder/OpenTK.GLControl.xml
-YourProjectFolder/OpenTK.dll
-YourProjectFolder/OpenTK.dll.config
-YourProjectFolder/OpenTK.pdb
-YourProjectFolder/OpenTK.xml
-YourProjectFolder/FarseerDuality.xml
-YourProjectFolder/FarseerDuality.pdb
-YourProjectFolder/Microsoft.Web.XmlTransform.dll
-YourProjectFolder/NVorbis.XML
-YourProjectFolder/FarseerDuality.dll
-YourProjectFolder/EditorUserData.xml
-YourProjectFolder/PopupControl.dll
-YourProjectFolder/PopupControl.pdb
-YourProjectFolder/DualityUpdater.exe
-YourProjectFolder/DualityPrimitives.pdb
-YourProjectFolder/WeifenLuo.WinFormsUI.Docking.dll
-YourProjectFolder/WeifenLuo.WinFormsUI.Docking.pdb
-YourProjectFolder/logfile.txt
-YourProjectFolder/logfile_editor.txt
-YourProjectFolder/logfile_editor_prev.txt
-YourProjectFolder/perflog.txt
-YourProjectFolder/Aga.Controls.dll
-YourProjectFolder/Aga.Controls.pdb
-YourProjectFolder/Duality.pdb
-YourProjectFolder/Duality.xml
-YourProjectFolder/AdamsLair.WinForms.pdb
-YourProjectFolder/AdamsLair.WinForms.xml
-YourProjectFolder/perflog_editor.txt
-YourProjectFolder/DDoc.chm
-YourProjectFolder/DesignTimeData.dat
-YourProjectFolder/DualityEditor.pdb
-YourProjectFolder/DualityEditor.xml
-YourProjectFolder/DualityLauncher.exe
-YourProjectFolder/DualityLauncher.exe.config
-YourProjectFolder/DualityLauncher.pdb
-YourProjectFolder/DualityPrimitives.XML
-YourProjectFolder/AdamsLair.WinForms.dll
-YourProjectFolder/Source/Code/CorePlugin/bin/
-YourProjectFolder/Source/Code/CorePlugin/obj/
-YourProjectFolder/Source/Code/CorePlugin/GamePlugin.core.xml
-YourProjectFolder/Source/Code/EditorPlugin/bin/
-YourProjectFolder/Source/Code/EditorPlugin/obj/
-YourProjectFolder/Source/Code/EditorPlugin/GamePlugin.core.xml
-YourProjectFolder/Source/Code/*.suo
-YourProjectFolder/Source/Code/.vs
+# Build output files
+**/bin
+**/obj
+
+# Duality specific files
+/Temp
+/Backup
+/UserData.dat
+/DesignTimeData.dat
+*.pdb
+/*.dll
+/*.exe
+/*.txt
+/*.xml
+/Plugins
+
+# Visual studio specific files
+/.vs
 ```
